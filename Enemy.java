@@ -11,56 +11,52 @@ public class Enemy extends Observable {
 	private int tick_counter;
 
 	public int getHealth() {
+		System.out.println("Enemy getHelath - visszatér az életerõvel");
 		return this.health;
 	}
 
-	/**
-	 * 
-	 * @param health
-	 */
 	public void setHealth(int health) {
+		System.out.println("Enemy setHelath - beállítja az életerõt");
 		this.health = health;
 	}
 
 	public int getSpeed() {
+		System.out.println("Enemy getSpeed - visszatér a sebességgel");
 		return this.speed;
 	}
 
-	/**
-	 * 
-	 * @param speed
-	 */
 	public void setSpeed(int speed) {
+		System.out.println("Enemy setSpeed - beállítja a sebességet");
 		this.speed = speed;
 	}
 
 	public Position getPosition() {
+		System.out.println("Enemy getPosition - visszatér a pozícióval");
 		return this.position;
 	}
 
-	/**
-	 * 
-	 * @param position
-	 */
 	public void setPosition(Position position) {
+		System.out.println("Enemy setPosition - beállítja a pozíciót");
 		this.position = position;
 	}
 
 	public int getMagicPowerGain() {
+		System.out.println("Enemy getMagicPowerGain - beállítja a nyert varázserõ értékét");
 		return this.magicPowerGain;
 	}
 
-	/**
-	 * 
-	 * @param magicPowerGain
-	 */
 	public void setMagicPowerGain(int magicPowerGain) {
+		System.out.println("Enemy setMagicPowerGain - visszatér a nyert varázserõ értékével");
 		this.magicPowerGain = magicPowerGain;
 	}
 
 	public void tick() {
-		// TODO - implement Enemy.tick
-		throw new UnsupportedOperationException();
+		System.out.println("Enemy tick ");
+	}
+	
+	public void Attacked(int a){
+		System.out.println("Enemy Attacked - paraméter értékével csökkent az életerõ");
+		setHealth(10);//todo:paraméter számítsa  -arnold
 	}
 
 }

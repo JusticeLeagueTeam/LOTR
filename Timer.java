@@ -18,7 +18,7 @@ public class Timer {
 	}
 
 	public void setGame(int Game) {
-		//ez a metódus biztos kell? - arnold
+		//ez a metódus szvsz nem kell - arnold
 		System.out.println("Timer setGame -");
 	}
 

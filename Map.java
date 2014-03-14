@@ -90,9 +90,9 @@ public class Map {
 	}
 
 
-	public Position enemyStep(int Position) {
+	public Position enemyStep(Position position) {
 		//paramétert be kell majd állítani - arnold
-		System.out.println("Map enemyStep - visszatér egy p Position-nel ahova léphet az ellenfél");
+		System.out.println("Map enemyStep - paraméter alapján visszatér egy p Position-nel ahova léphet az ellenfél");
 		return new Position();
 	}
 

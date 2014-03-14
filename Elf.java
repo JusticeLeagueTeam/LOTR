@@ -2,8 +2,7 @@ package LOTR;
 public class Elf extends Enemy {
 
 	public Elf() {
-		// TODO - implement Elf.Elf
-		throw new UnsupportedOperationException();
+		System.out.println("Elf konstruktor");
 	}
 
 }

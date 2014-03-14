@@ -6,8 +6,8 @@ public class Game {
 	
 	public Game(){
 		System.out.println("Game konstruktor - Game objektum létrejött.");
-		Timer timer=new Timer();
-		Map map=new Map();
+		//Timer timer=new Timer();
+		//Map map=new Map();
 	}
 
 	public void endGame() {
@@ -23,7 +23,7 @@ public class Game {
 	}
 
 	public void tick() {
-		System.out.println("Game tick - ");
+		System.out.println("Game tick - ellenõrzi, hogy a játékos nyert vagy vesztett");
 	}
 
 

@@ -4,27 +4,21 @@ public class Player {
 	private int magicPower;
 	
 	public Player(){
-		System.out.println("Player objektum létrejött.");
+		System.out.println("Player konstruktor - Player objektum létrejött.");
 	}
 
 	public int getMagicPower() {
+		System.out.println("Player getMagicPower - visszaadja a játékos életerejét");
 		return this.magicPower;
 	}
 
-	/**
-	 * 
-	 * @param magicPower
-	 */
 	public void setMagicPower(int magicPower) {
+		System.out.println("Player setMagicPower - átállítja a játékos életerejét");
 		this.magicPower = magicPower;
 	}
 
-	/**
-	 * 
-	 * @param DefenseTool
-	 */
 	public void createDefenseTool(DefenseTools DefenseTool) {
-		System.out.println("creatDefenseTool metódus - Player csinált egy defenseTool-t");
+		System.out.println("Player creatDefenseTool - Player csinált egy defenseTool-t");
 	}
 
 }

@@ -9,40 +9,32 @@ public class Barrier extends DefenseTools implements Observer {
 	private boolean elfOrDwarfFlag;
 
 	public int getRetardingValue() {
+		System.out.println("Barrier getRetardingValue");
 		return this.retardingValue;
 	}
 
-	/**
-	 * 
-	 * @param retardingValue
-	 */
 	public void setRetardingValue(int retardingValue) {
+		System.out.println("Barrier setRetardingValue");
 		this.retardingValue = retardingValue;
 	}
 
 	public boolean getElfOrDwarfFlag() {
+		System.out.println("Barrier getElfOrDwarfFlag");
 		return this.elfOrDwarfFlag;
 	}
 
-	/**
-	 * 
-	 * @param elfOrDwarfFlag
-	 */
 	public void setElfOrDwarfFlag(boolean elfOrDwarfFlag) {
+		System.out.println("Barrier setElfOrDwarfFlag");
 		this.elfOrDwarfFlag = elfOrDwarfFlag;
 	}
 
 	public void effectEnemy() {
-		// TODO - implement Barrier.effectEnemy
-		throw new UnsupportedOperationException();
+		System.out.println("Barrier effectEnemy");
 	}
-
-
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Barrier update - ellenõrzi, hogy van-e ellenfél a közelében");
 	}
 
 }

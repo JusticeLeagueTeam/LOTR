@@ -2,8 +2,7 @@ package LOTR;
 public class SmallTower extends Tower {
 
 	public SmallTower() {
-		// TODO - implement SmallTower.SmallTower
-		throw new UnsupportedOperationException();
+		System.out.println("SmallTower konstruktor - kis torony létrejött");
 	}
 
 }

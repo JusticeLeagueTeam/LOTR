@@ -5,26 +5,24 @@ public class DefenseTools {
 	private int cost;
 
 	public Position getPosition() {
+		System.out.println("DefenseTools getPosition");
 		return this.position;
 	}
 
-	/**
-	 * 
-	 * @param position
-	 */
+
 	public void setPosition(Position position) {
+		System.out.println("DefenseTools setPosition");
 		this.position = position;
 	}
 
 	public int getCost() {
+		System.out.println("DefenseTools getCost");
 		return this.cost;
 	}
 
-	/**
-	 * 
-	 * @param cost
-	 */
+
 	public void setCost(int cost) {
+		System.out.println("DefenseTools setCost");
 		this.cost = cost;
 	}
 

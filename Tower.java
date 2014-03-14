@@ -10,53 +10,41 @@ public class Tower extends DefenseTools {
 	private int tick_counter;
 
 	public int getFiringSpeed() {
+		System.out.println("Tower getFiringSpeed - visszaadja a támadás sebességét");
 		return this.firingSpeed;
 	}
 
-	/**
-	 * 
-	 * @param firingSpeed
-	 */
 	public void setFiringSpeed(int firingSpeed) {
+		System.out.println("Tower setFiringSpeed - beállítja a támadás sebességét");
 		this.firingSpeed = firingSpeed;
 	}
 
 	public int getFiringRange() {
+		System.out.println("Tower getFiringRange - visszaadja a hatótávot");
 		return this.firingRange;
 	}
 
-	/**
-	 * 
-	 * @param firingRange
-	 */
 	public void setFiringRange(int firingRange) {
+		System.out.println("Tower setFiringRange - beállítja a hatótávot");
 		this.firingRange = firingRange;
 	}
 
 	public boolean getElfOrDwarfFlag() {
+		System.out.println("Tower getElfOrDwarfFlag - visszaadja a flag-et");
 		return this.elfOrDwarfFlag;
 	}
 
-	/**
-	 * 
-	 * @param elfOrDwarfFlag
-	 */
 	public void setElfOrDwarfFlag(boolean elfOrDwarfFlag) {
+		System.out.println("Tower setElfOrDwarfFlag - beállítja a flag-et");
 		this.elfOrDwarfFlag = elfOrDwarfFlag;
 	}
 
-	/**
-	 * 
-	 * @param observable
-	 */
 	public void update(Observable observable) {
-		// TODO - implement Tower.update
-		throw new UnsupportedOperationException();
+		System.out.println("Tower update - ellenõrzi, hogy van-e ellenség a hatókörében");
 	}
 
 	public void tick() {
-		// TODO - implement Tower.tick
-		throw new UnsupportedOperationException();
+		System.out.println("Tower tick - töveli a tick_counter-t eggyel");
 	}
 
 }
