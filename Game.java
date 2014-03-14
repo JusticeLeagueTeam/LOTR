@@ -1,27 +1,30 @@
 package LOTR;
 public class Game {
 
-	private Map map;
-	private Timer timer;
+	//Map map;
+	//Timer timer;
+	
+	public Game(){
+		System.out.println("Game konstruktor - Game objektum létrejött.");
+		Timer timer=new Timer();
+		Map map=new Map();
+	}
 
 	public void endGame() {
-		// TODO - implement Game.endGame
-		throw new UnsupportedOperationException();
+		System.out.println("Game endGame - játék vége");
 	}
 
 	public void startGame() {
-		// TODO - implement Game.startGame
-		throw new UnsupportedOperationException();
+		System.out.println("Game startGame - indul a játékmenet");
 	}
 
 	public void winGame() {
-		// TODO - implement Game.winGame
-		throw new UnsupportedOperationException();
+		System.out.println("Game wingame - a játékos nyert");
 	}
 
 	public void tick() {
-		// TODO - implement Game.tick
-		throw new UnsupportedOperationException();
+		System.out.println("Game tick - ");
 	}
+
 
 }

@@ -2,33 +2,30 @@ package LOTR;
 public class Timer {
 
 	private int period;
-	private Game game;
+	//Game game;//felesleges - arnold
+	
+	public Timer(){
+		System.out.println("Timer konstruktor - Timer objektum létrejött.");
+	}
 
 	public void run() {
-		// TODO - implement Timer.run
-		throw new UnsupportedOperationException();
+		System.out.println("Timer run - ");
 	}
 
-	/**
-	 * 
-	 * @param intParameter
-	 */
 	public void setPeriod(int intParameter) {
 		this.period = intParameter;
+		System.out.println("Timer setPeriod - periódusidõ beállítása");
 	}
 
-	/**
-	 * 
-	 * @param Game
-	 */
 	public void setGame(int Game) {
-		// TODO - implement Timer.setGame
-		throw new UnsupportedOperationException();
+		//ez a metódus biztos kell? - arnold
+		System.out.println("Timer setGame -");
 	}
 
 	public void tick() {
-		// TODO - implement Timer.tick
-		throw new UnsupportedOperationException();
+		System.out.println("Timer tick - letelt egy órajel");
 	}
+	
+
 
 }

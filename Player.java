@@ -2,6 +2,10 @@ package LOTR;
 public class Player {
 
 	private int magicPower;
+	
+	public Player(){
+		System.out.println("Player objektum létrejött.");
+	}
 
 	public int getMagicPower() {
 		return this.magicPower;
@@ -20,8 +24,7 @@ public class Player {
 	 * @param DefenseTool
 	 */
 	public void createDefenseTool(DefenseTools DefenseTool) {
-		// TODO - implement Player.createDefenseTool
-		throw new UnsupportedOperationException();
+		System.out.println("creatDefenseTool metódus - Player csinált egy defenseTool-t");
 	}
 
 }

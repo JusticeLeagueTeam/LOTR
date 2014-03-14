@@ -4,111 +4,100 @@ import java.util.LinkedList;
 
 public class Map {
 
-	private Game game;
+	//Game game;//ez kell? a main-ben van már egy, viszont a map-ben meg van egy game meg a timer-ben is, szóval mindenképp javítani köll- arnold
 	private LinkedList enemies;
 	private LinkedList towers;
 	private LinkedList barriers;
-	private Player player;
+	//Player player;
 	private LinkedList magicStones;
-
-	public Game getGame() {
-		return this.game;
+	private int tick_counter;
+	
+	public Map(){
+		System.out.println("Map konstruktor - Map objektum létrejött.");
+		Player player=new Player();
+		tick_counter=0;
 	}
 
-	/**
-	 * 
-	 * @param game
-	 */
-	public void setGame(Game game) {
-		this.game = game;
-	}
+	//public Game getGame() {
+		//return this.game;
+		//ez szerintem törölhetõ metódus - arnold
+	//}
+
+	//public void setGame(Game game) {
+	//	this.game = game;
+		//ez szerintem törölhetõ metódus - arnold
+	//}
 
 	public LinkedList getEnemies() {
+		System.out.println("Map - getEnemies - ellenfelek listáját lekéri");
 		return this.enemies;
 	}
 
-	/**
-	 * 
-	 * @param enemies
-	 */
 	public void setEnemies(LinkedList enemies) {
+		System.out.println("Map - setEnemies - ellenfelek listáját beállítja");
 		this.enemies = enemies;
-	}
+		}
 
 	public int getTickCount() {
-		// TODO - implement Map.getTickCount
-		throw new UnsupportedOperationException();
+		System.out.println("Map - getTickCount - órajelek számát visszaadja");
+		return tick_counter;
 	}
 
-	/**
-	 * 
-	 * @param tickCount
-	 */
 	public void setTickCount(int tickCount) {
-		// TODO - implement Map.setTickCount
-		throw new UnsupportedOperationException();
+		System.out.println("Map - setTickCount - órajelek számát növeli eggyel");
+		tick_counter=tickCount;
 	}
 
 	public LinkedList getTowers() {
+		System.out.println("Map - getTowers - tornyok listáját lekéri");
 		return this.towers;
 	}
 
-	/**
-	 * 
-	 * @param towers
-	 */
+
 	public void setTowers(LinkedList towers) {
+		System.out.println("Map - setTowers - tornyok listáját beállítja");
 		this.towers = towers;
 	}
 
 	public LinkedList getBarriers() {
+		System.out.println("Map - getBarriers - akadályok listáját lekéri");
 		return this.barriers;
 	}
 
-	/**
-	 * 
-	 * @param barriers
-	 */
 	public void setBarriers(LinkedList barriers) {
+		System.out.println("Map - setBarriers - akadályok listáját beállítja");
 		this.barriers = barriers;
 	}
 
-	public Player getPlayer() {
-		return this.player;
-	}
+	//public Player getPlayer() {
+	//	return this.player;
+		//törölhetõ, úgyis csak annyi az egész player, hogy az elején létrehozzuk - arnold
+	//}
 
-	/**
-	 * 
-	 * @param player
-	 */
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
+	//public void setPlayer(Player player) {
+	//	this.player = player;
+		//törölhetõ, getPlayer komment miatt - arnold
+	//}
 
 	public LinkedList getMagicStones() {
+		System.out.println("Map - getMagicStones - varázskövek listáját lekéri");
 		return this.magicStones;
 	}
 
-	/**
-	 * 
-	 * @param magicStones
-	 */
 	public void setMagicStones(LinkedList magicStones) {
+		System.out.println("Map - setMagicStones - varázskövek listáját beállítja");
 		this.magicStones = magicStones;
 	}
 
-	/**
-	 * 
-	 * @param Position
-	 */
+
 	public Position enemyStep(int Position) {
-		// TODO - implement Map.enemyStep
-		throw new UnsupportedOperationException();
+		//paramétert be kell majd állítani - arnold
+		System.out.println("Map enemyStep - visszatér egy p Position-nel ahova léphet az ellenfél");
+		return new Position();
 	}
 
 	public void tick() {
-		// TODO - implement Map.tick
-		throw new UnsupportedOperationException();
+		System.out.println("Map tick");
 	}
 
 }
