@@ -1,3 +1,4 @@
+package LOTR;
 public class SmallTower extends Tower {
 
 	public SmallTower() {

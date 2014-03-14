@@ -1,3 +1,4 @@
+package LOTR;
 public class DefenseTools {
 
 	private Position position;

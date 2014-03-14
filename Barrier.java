@@ -1,3 +1,8 @@
+package LOTR;
+
+import java.util.Observable;
+import java.util.Observer;
+
 public class Barrier extends DefenseTools implements Observer {
 
 	private int retardingValue;
@@ -30,6 +35,14 @@ public class Barrier extends DefenseTools implements Observer {
 	public void effectEnemy() {
 		// TODO - implement Barrier.effectEnemy
 		throw new UnsupportedOperationException();
+	}
+
+
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

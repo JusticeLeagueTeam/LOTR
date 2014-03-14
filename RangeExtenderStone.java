@@ -1,3 +1,4 @@
+package LOTR;
 public class RangeExtenderStone extends MagicStone {
 
 	private int rangeExtendingValue;

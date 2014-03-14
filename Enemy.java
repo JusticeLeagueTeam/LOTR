@@ -1,3 +1,7 @@
+package LOTR;
+
+import java.util.Observable;
+
 public class Enemy extends Observable {
 
 	private int health;

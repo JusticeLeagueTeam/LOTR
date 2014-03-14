@@ -1,3 +1,7 @@
+package LOTR;
+
+import java.util.Observable;
+
 public class Tower extends DefenseTools {
 
 	private int firingSpeed;

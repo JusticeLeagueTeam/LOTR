@@ -1,3 +1,7 @@
+package LOTR;
+
+import java.util.LinkedList;
+
 public class Map {
 
 	private Game game;

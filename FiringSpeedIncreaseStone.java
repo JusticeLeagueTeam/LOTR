@@ -1,3 +1,4 @@
+package LOTR;
 public class FiringSpeedIncreaseStone extends MagicStone {
 
 	private int firingSpeedIncreaseValue;

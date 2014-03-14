@@ -1,3 +1,4 @@
+package LOTR;
 public class Human extends Enemy {
 
 	public Human() {

@@ -1,3 +1,4 @@
+package LOTR;
 public class Dwarf extends Enemy {
 
 	public Dwarf() {

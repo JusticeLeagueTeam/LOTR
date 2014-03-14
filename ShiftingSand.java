@@ -1,3 +1,4 @@
+package LOTR;
 public class ShiftingSand extends Barrier {
 
 	public ShiftingSand() {

@@ -1,3 +1,4 @@
+package LOTR;
 public class Player {
 
 	private int magicPower;

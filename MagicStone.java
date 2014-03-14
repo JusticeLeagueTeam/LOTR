@@ -1,3 +1,4 @@
+package LOTR;
 public abstract class MagicStone extends DefenseTools {
 
 	private boolean wasItUsed;

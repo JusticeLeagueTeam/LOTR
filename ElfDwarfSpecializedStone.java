@@ -1,3 +1,4 @@
+package LOTR;
 public class ElfDwarfSpecializedStone extends MagicStone {
 
 	public void effectDefenseTool() {
