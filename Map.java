@@ -5,18 +5,32 @@ import java.util.LinkedList;
 public class Map {
 
 	//Game game;//ez kell? a main-ben van már egy, viszont a map-ben meg van egy game meg a timer-ben is, szóval mindenképp javítani köll- arnold
-	private LinkedList enemies;
-	private LinkedList towers;
-	private LinkedList barriers;
-	//Player player;
-	private LinkedList magicStones;
+	//private LinkedList enemies;
+	//private LinkedList towers;
+	//private LinkedList barriers;
+	//private LinkedList magicStones;
 	private int tick_counter;
 	
-	public Player player;
+	//azert statikus, mert csak egy van belole, es ennek a metodusait
+	//barhonnan el kell tudni erni, es mindenkinek ennek az egy attributumait
+	//kell modositsa, pl. MagicPower -> tornyok tamadasa, ellenfelek sebzese soran
+	public static Player player;
+	
+	//ezeknek statikusnak kene lennie, mert pl a player-bol nem tudjuk maskent
+	//hozzaadni az uj tornyot, akadalyt
+	//ha tudtok jobb megoldast, irjatok meg -B
+	public static LinkedList enemies;
+	public static LinkedList towers;
+	public static LinkedList barriers;
+	public static LinkedList magicStones;
 	
 	public Map(){
 		System.out.println("Map konstruktor - Map objektum létrejött.");
 		player=new Player();
+		enemies=new LinkedList<Enemy>();
+		towers=new LinkedList<Tower>();
+		barriers=new LinkedList<Barrier>();
+		magicStones=new LinkedList<MagicStone>();		
 		tick_counter=0;
 	}
 

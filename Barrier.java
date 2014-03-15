@@ -30,6 +30,8 @@ public class Barrier extends DefenseTools implements Observer {
 
 	public void effectEnemy() {
 		System.out.println("Barrier effectEnemy");
+		//A Map.enemies -en végig kell menni, es ahol egy enemy position-je
+		//megegyezik a barrier position-jevel, azt lassitja
 	}
 
 	@Override

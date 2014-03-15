@@ -40,7 +40,7 @@ public class Tower extends DefenseTools {
 	}
 
 	public void update(Observable observable) {
-		System.out.println("Tower update - ellenõrzi, hogy van-e ellenség a hatókörében");
+		System.out.println("Tower update - ellenõrzi, hogy van-e ellenség a hatókörében");		
 	}
 
 	public void tick() {

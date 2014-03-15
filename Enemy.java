@@ -23,6 +23,19 @@ public class Enemy extends Observable {
 		//es ennyivel csokkenti
 		//this.health=this.health-health;
 		this.health = health;
+		
+		/*Ha az eletereje nullara vagy az ala csokken 
+		if(this.health<=0)
+		{
+			//szekvenciaban nekunk dispose()  van, de a C# -ban van
+			//javaban finalize() metodust kell hivni
+			try {
+				this.finalize();
+			} catch (Throwable e) {
+				e.printStackTrace();
+			}
+		}
+		*/
 	}
 
 	public int getSpeed() {
@@ -58,17 +71,24 @@ public class Enemy extends Observable {
 	public void tick() {
 		System.out.println("Enemy tick ");
 		//itt visszahivas tortenik a Map.enemyStep(pos) metodusra	
-		Map map = new Map();
+		Map map = new Map();		
+		this.setPosition(map.enemyStep(getPosition()));
 		
-		//this.setPosition(map.enemyStep(getPosition()));
-		
-		Position p=map.enemyStep(getPosition());
-    	setPosition(p);//szekv diagramban move() van, az hibás - arnold
+		//java.util.observable.notifyObservers() beepitett metodusa
+		//ertesiti a regisztralt observer-eket a valtozasrol
+		//notifyObservers();
+
 	}
 	
 	public void Attacked(int a){
 		System.out.println("Enemy Attacked - paraméter értékével csökkent az életerõ");
-		setHealth(10);//todo:paraméter számítsa  -arnold
+		setHealth(a);//todo:paraméter számítsa  -arnold
+		
+		//amikor setHealth() hivodik, akkor utana ugyanannyival no a Player
+		//varazsereje is, igy ezt is megkell hivni itt.
+		//a player statikus, igy a map letrejottekor lesz belole egy
+		//igy ennek a metodusai barmikor hivhatoak
+		Map.player.setMagicPower(a);
 	}
 
 }

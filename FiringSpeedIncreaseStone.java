@@ -16,8 +16,8 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 	}
 
 	public void effectTower() {
-		// TODO - implement FiringSpeedIncreaseStone.effectTower
-		throw new UnsupportedOperationException();
+		//vegig megy a Map.towers listán, amelyiknek a pozicioja megegyezik
+		// az o poziciojaval, annak meghivja a setFiringSpeed() metodusat.
 	}
 
 }
