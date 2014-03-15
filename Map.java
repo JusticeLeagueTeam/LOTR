@@ -12,9 +12,11 @@ public class Map {
 	private LinkedList magicStones;
 	private int tick_counter;
 	
+	public Player player;
+	
 	public Map(){
 		System.out.println("Map konstruktor - Map objektum létrejött.");
-		Player player=new Player();
+		player=new Player();
 		tick_counter=0;
 	}
 

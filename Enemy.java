@@ -17,6 +17,11 @@ public class Enemy extends Observable {
 
 	public void setHealth(int health) {
 		System.out.println("Enemy setHelath - beállítja az életerõt");
+		//itt nem annyira allitja be, hanem annyival CSOKKENTI, tehat
+		//a torony nem tudja mennyi az enemy eletereje, hanem szimplan
+		//a torony a sebzes merteket tudja, ezt adja at paramterkent
+		//es ennyivel csokkenti
+		//this.health=this.health-health;
 		this.health = health;
 	}
 

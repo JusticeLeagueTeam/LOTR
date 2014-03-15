@@ -8,10 +8,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Justice League's sceleton!");
+		//A szekvenciaval konzisztens create() sorrendet tartsunk
+		//korabbi 4.4.1 Jatek inditasa
 		Game game=new Game();
-		Map map=new Map();
 		Timer timer=new Timer();
+		Map map=new Map();
 		Player player=new Player();
+		
+		SmallTower sm = new SmallTower();	//teszteleshez
+		map.player.createDefenseTool(sm);
+		
 		//game.timer.run();
 		//game.timer.setPeriod(50); 
 		//game.timer.setGame(game); //szekv diagramban bennhagytuk, de szvsz felesleges - arnold
@@ -30,7 +36,8 @@ public class Main {
         
         if(s.equals("tower")){
         	SmallTower st=new SmallTower();
-        	player.createDefenseTool(st);//ez a metódus biztos kell? - arnold
+        	player.createDefenseTool(st);
+        	//ez a metódus biztos kell? - arnold
         	//igazából a szekv diagramon is értelmetlen egy kicsit :) - arnold
         	//helyette get/set-tel kell, mint a többi ilyen megoldásnál - arnold
         	//ezt majd javítom (createDefenTool helyett get/set-es megoldás) - arnold
