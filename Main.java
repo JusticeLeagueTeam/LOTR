@@ -49,11 +49,8 @@ public class Main {
         }
         
         if(s.equals("enemy")){
-        	//ez azért még kérdéses srácok :D  - arnold
-        	LinkedList lili=map.getEnemies();
-        	//lili.add(new Object()); - ez egyelõre exceptiont dobna, de úgyis más lesz - arnold
-        	System.out.println("új ellenfél létrejön");
-        	map.setEnemies(lili);
+        	//map.tick() hívja a createEnemy()-t - arnold
+        	map.tick();
         	//todo: összes torony observerre feliratkozik - arnold
         	//ezt szekv diagramon jelezni - arnold
         }

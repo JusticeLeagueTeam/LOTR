@@ -39,6 +39,14 @@ public class Map {
 		System.out.println("Map - setEnemies - ellenfelek listáját beállítja");
 		this.enemies = enemies;
 		}
+	
+	public void createEnemy(){
+		enemies.add(new Elf());//implementációnál nyilván részletesebben oldjuk majd meg - arnold
+		System.out.println("Ha a tick_count megfelelõ:");
+		System.out.println("Map - createEnemy - létrejött egy új ellenfél");
+		//implementációnál itt egy for ciklis végigmegy az összes tornyon és addObserver-el feliratkozik rájuk - arnold
+		System.out.println("addObserver hívódik az összes toronyra");
+	}
 
 	public int getTickCount() {
 		System.out.println("Map - getTickCount - órajelek számát visszaadja");
@@ -99,7 +107,8 @@ public class Map {
 	}
 
 	public void tick() {
-		System.out.println("Map tick");
+		System.out.println("Map tick - ellenõrzi, hogy kell-e új enemy");
+		createEnemy();
 	}
 
 }
