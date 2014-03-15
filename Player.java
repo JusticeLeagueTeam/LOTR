@@ -5,16 +5,16 @@ public class Player {
 	private int magicPower;
 	
 	public Player(){
-		System.out.println("Player konstruktor - Player objektum létrejött.");
+		System.out.println("Player konstruktor - Player objektum lï¿½trejï¿½tt.");
 	}
 
 	public int getMagicPower() {
-		System.out.println("Player getMagicPower - visszaadja a játékos életerejét");
+		System.out.println("Player getMagicPower - visszaadja a jï¿½tï¿½kos ï¿½leterejï¿½t");
 		return this.magicPower;
 	}
 
 	public void setMagicPower(int magicPower) {
-		System.out.println("Player setMagicPower - átállítja a játékos életerejét");
+		System.out.println("Player setMagicPower - ï¿½tï¿½llï¿½tja a jï¿½tï¿½kos ï¿½leterejï¿½t");
 		//ennyivel noveli, nem annyira allitja be
 		//ha meghal egy ellenfel, az o eleterejenek ertekevel no a jatekos
 		//varazsereje
@@ -22,48 +22,55 @@ public class Player {
 	}
 
 	public void createDefenseTool(DefenseTools DefenseTool) {
-		System.out.println("Player creatDefenseTool - Player csinált egy defenseTool-t");
+		System.out.println("Player creatDefenseTool - Player csinï¿½lt egy defenseTool-t");
 		
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof SmallTower))
 		{
 			SmallTower smallTower = new SmallTower();
 			Map.towers.add(smallTower);
+			this.magicPower = this.magicPower - DefenseTool.getCost();
 		}
 		
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof BigTower))
 		{
 			BigTower bigTower = new BigTower();
 			Map.towers.add(bigTower);
+			this.magicPower = this.magicPower - DefenseTool.getCost();
 		}
 		
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof Swamp))
 		{
 			Swamp swamp = new Swamp();
 			Map.barriers.add(swamp);
+			this.magicPower = this.magicPower - DefenseTool.getCost();
 		}
 		
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof ShiftingSand))
 		{
 			ShiftingSand shiftingSand = new ShiftingSand();
 			Map.barriers.add(shiftingSand);
+			this.magicPower = this.magicPower - DefenseTool.getCost();
 		}
 		
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof FiringSpeedIncreaseStone))
 		{
 			FiringSpeedIncreaseStone firingSpeedIncreaseStone = new FiringSpeedIncreaseStone();
 			Map.magicStones.add(firingSpeedIncreaseStone);
+			this.magicPower = this.magicPower - DefenseTool.getCost();
 		}
 		
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof RangeExtenderStone))
 		{
 			RangeExtenderStone rangeExtenderStone = new RangeExtenderStone();
 			Map.magicStones.add(rangeExtenderStone);
+			this.magicPower = this.magicPower - DefenseTool.getCost();
 		}
 		
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof ElfDwarfSpecializedStone))
 		{
 			ElfDwarfSpecializedStone elfDwarfSpecializedStone = new ElfDwarfSpecializedStone();
 			Map.magicStones.add(elfDwarfSpecializedStone);
+			this.magicPower = this.magicPower - DefenseTool.getCost();
 		}
 		
 	}
