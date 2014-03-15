@@ -103,7 +103,7 @@ public class Map {
 		//t�r�lhet�, getPlayer komment miatt - arnold
 	//}
 
-	public LinkedList getMagicStones() {
+	public LinkedList getMagicStones() { 
 		System.out.println("Map - getMagicStones - var�zsk�vek list�j�t lek�ri");
 		return this.magicStones;
 	}
