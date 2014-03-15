@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Map {
 
-	//Game game;//ez kell? a main-ben van már egy, viszont a map-ben meg van egy game meg a timer-ben is, szóval mindenképp javítani köll- arnold
+	//Game game;//ez kell? a main-ben van mï¿½r egy, viszont a map-ben meg van egy game meg a timer-ben is, szï¿½val mindenkï¿½pp javï¿½tani kï¿½ll- arnold
 	//private LinkedList enemies;
 	//private LinkedList towers;
 	//private LinkedList barriers;
@@ -19,109 +19,109 @@ public class Map {
 	//ezeknek statikusnak kene lennie, mert pl a player-bol nem tudjuk maskent
 	//hozzaadni az uj tornyot, akadalyt
 	//ha tudtok jobb megoldast, irjatok meg -B
-	public static LinkedList enemies;
-	public static LinkedList towers;
-	public static LinkedList barriers;
-	public static LinkedList magicStones;
+	public static LinkedList<Enemy> enemies;
+	public static LinkedList<Tower> towers;
+	public static LinkedList<Barrier> barriers;
+	public static LinkedList<MagicStone> magicStones;
 	
 	public Map(){
-		System.out.println("Map konstruktor - Map objektum létrejött.");
+		System.out.println("Map konstruktor - Map objektum lï¿½trejï¿½tt.");
 		player=new Player();
 		enemies=new LinkedList<Enemy>();
 		towers=new LinkedList<Tower>();
 		barriers=new LinkedList<Barrier>();
 		magicStones=new LinkedList<MagicStone>();		
-		tick_counter=0;
+		this.tick_counter=0;
 	}
 
 	//public Game getGame() {
 		//return this.game;
-		//ez szerintem törölhetõ metódus - arnold
+		//ez szerintem tï¿½rï¿½lhetï¿½ metï¿½dus - arnold
 	//}
 
 	//public void setGame(Game game) {
 	//	this.game = game;
-		//ez szerintem törölhetõ metódus - arnold
+		//ez szerintem tï¿½rï¿½lhetï¿½ metï¿½dus - arnold
 	//}
 
 	public LinkedList getEnemies() {
-		System.out.println("Map - getEnemies - ellenfelek listáját lekéri");
+		System.out.println("Map - getEnemies - ellenfelek listï¿½jï¿½t lekï¿½ri");
 		return this.enemies;
 	}
 
 	public void setEnemies(LinkedList enemies) {
-		System.out.println("Map - setEnemies - ellenfelek listáját beállítja");
+		System.out.println("Map - setEnemies - ellenfelek listï¿½jï¿½t beï¿½llï¿½tja");
 		this.enemies = enemies;
 		}
 	
 	public void createEnemy(){
-		enemies.add(new Elf());//implementációnál nyilván részletesebben oldjuk majd meg - arnold
-		System.out.println("Ha a tick_count megfelelõ:");
-		System.out.println("Map - createEnemy - létrejött egy új ellenfél");
-		//implementációnál itt egy for ciklis végigmegy az összes tornyon és addObserver-el feliratkozik rájuk - arnold
-		System.out.println("addObserver hívódik az összes toronyra");
+		enemies.add(new Elf());//implementï¿½ciï¿½nï¿½l nyilvï¿½n rï¿½szletesebben oldjuk majd meg - arnold
+		System.out.println("Ha a tick_count megfelelï¿½:");
+		System.out.println("Map - createEnemy - lï¿½trejï¿½tt egy ï¿½j ellenfï¿½l");
+		//implementï¿½ciï¿½nï¿½l itt egy for ciklis vï¿½gigmegy az ï¿½sszes tornyon ï¿½s addObserver-el feliratkozik rï¿½juk - arnold
+		System.out.println("addObserver hï¿½vï¿½dik az ï¿½sszes toronyra");
 	}
 
 	public int getTickCount() {
-		System.out.println("Map - getTickCount - órajelek számát visszaadja");
+		System.out.println("Map - getTickCount - ï¿½rajelek szï¿½mï¿½t visszaadja");
 		return tick_counter;
 	}
 
 	public void setTickCount(int tickCount) {
-		System.out.println("Map - setTickCount - órajelek számát növeli eggyel");
+		System.out.println("Map - setTickCount - ï¿½rajelek szï¿½mï¿½t nï¿½veli eggyel");
 		tick_counter=tickCount;
 	}
 
 	public LinkedList getTowers() {
-		System.out.println("Map - getTowers - tornyok listáját lekéri");
+		System.out.println("Map - getTowers - tornyok listï¿½jï¿½t lekï¿½ri");
 		return this.towers;
 	}
 
 
 	public void setTowers(LinkedList towers) {
-		System.out.println("Map - setTowers - tornyok listáját beállítja");
+		System.out.println("Map - setTowers - tornyok listï¿½jï¿½t beï¿½llï¿½tja");
 		this.towers = towers;
 	}
 
 	public LinkedList getBarriers() {
-		System.out.println("Map - getBarriers - akadályok listáját lekéri");
+		System.out.println("Map - getBarriers - akadï¿½lyok listï¿½jï¿½t lekï¿½ri");
 		return this.barriers;
 	}
 
 	public void setBarriers(LinkedList barriers) {
-		System.out.println("Map - setBarriers - akadályok listáját beállítja");
+		System.out.println("Map - setBarriers - akadï¿½lyok listï¿½jï¿½t beï¿½llï¿½tja");
 		this.barriers = barriers;
 	}
 
 	//public Player getPlayer() {
 	//	return this.player;
-		//törölhetõ, úgyis csak annyi az egész player, hogy az elején létrehozzuk - arnold
+		//tï¿½rï¿½lhetï¿½, ï¿½gyis csak annyi az egï¿½sz player, hogy az elejï¿½n lï¿½trehozzuk - arnold
 	//}
 
 	//public void setPlayer(Player player) {
 	//	this.player = player;
-		//törölhetõ, getPlayer komment miatt - arnold
+		//tï¿½rï¿½lhetï¿½, getPlayer komment miatt - arnold
 	//}
 
 	public LinkedList getMagicStones() {
-		System.out.println("Map - getMagicStones - varázskövek listáját lekéri");
+		System.out.println("Map - getMagicStones - varï¿½zskï¿½vek listï¿½jï¿½t lekï¿½ri");
 		return this.magicStones;
 	}
 
 	public void setMagicStones(LinkedList magicStones) {
-		System.out.println("Map - setMagicStones - varázskövek listáját beállítja");
+		System.out.println("Map - setMagicStones - varï¿½zskï¿½vek listï¿½jï¿½t beï¿½llï¿½tja");
 		this.magicStones = magicStones;
 	}
 
 
 	public Position enemyStep(Position position) {
-		//paramétert be kell majd állítani - arnold
-		System.out.println("Map enemyStep - paraméter alapján visszatér egy p Position-nel ahova léphet az ellenfél");
+		//paramï¿½tert be kell majd ï¿½llï¿½tani - arnold
+		System.out.println("Map enemyStep - paramï¿½ter alapjï¿½n visszatï¿½r egy p Position-nel ahova lï¿½phet az ellenfï¿½l");
 		return new Position();
 	}
 
 	public void tick() {
-		System.out.println("Map tick - ellenõrzi, hogy kell-e új enemy");
+		System.out.println("Map tick - ellenï¿½rzi, hogy kell-e ï¿½j enemy");
 		createEnemy();
 	}
 
