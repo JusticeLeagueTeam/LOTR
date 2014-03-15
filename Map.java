@@ -44,7 +44,7 @@ public class Map {
 		//ez szerintem t�r�lhet� met�dus - arnold
 	//}
 
-	public LinkedList getEnemies() {
+	public LinkedList getEnemies() { 
 		System.out.println("Map - getEnemies - ellenfelek list�j�t lek�ri");
 		return this.enemies;
 	}
