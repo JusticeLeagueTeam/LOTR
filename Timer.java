@@ -5,7 +5,7 @@ public class Timer {
 	//Game game;//felesleges - arnold
 	
 	public Timer(){
-		System.out.println("Timer konstruktor - Timer objektum létrejött.");
+		System.out.println("Timer konstruktor - Timer objektum lï¿½trejï¿½tt.");
 	}
 
 	public void run() {
@@ -14,16 +14,17 @@ public class Timer {
 
 	public void setPeriod(int intParameter) {
 		this.period = intParameter;
-		System.out.println("Timer setPeriod - periódusidõ beállítása");
+		System.out.println("Timer setPeriod - periï¿½dusidï¿½ beï¿½llï¿½tï¿½sa");
 	}
 
 	public void setGame(int Game) {
-		//ez a metódus szvsz nem kell - arnold
+		//ez a metï¿½dus szvsz nem kell - arnold
+		//szerintem sem - oliver
 		System.out.println("Timer setGame -");
 	}
 
 	public void tick() {
-		System.out.println("Timer tick - letelt egy órajel");
+		System.out.println("Timer tick - letelt egy ï¿½rajel");
 	}
 	
 
