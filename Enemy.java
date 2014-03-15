@@ -57,6 +57,9 @@ public class Enemy extends Observable {
 
 	public void tick() {
 		System.out.println("Enemy tick ");
+		//itt visszahivas tortenik a Map.enemyStep(pos) metodusra	
+		//Map map = new Map();
+		//map.enemyStep(getPosition());
 	}
 	
 	public void Attacked(int a){
