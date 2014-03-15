@@ -67,8 +67,7 @@ public class Main {
         	//todo: amelyik enemynél ez fenn áll ott:
         	
         	Enemy e=new Enemy();
-        	Position p=map.enemyStep(e.getPosition());
-        	e.setPosition(p);//szekv diagramban move() van, az hibás - arnold
+        	e.tick();
         }
         
         if(s.equals("towerattack")){
