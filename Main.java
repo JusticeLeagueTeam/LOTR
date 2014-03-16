@@ -13,7 +13,7 @@ public class Main {
 		Game game=new Game();
 		Timer timer=new Timer();
 		Map map=new Map();
-		Player player=new Player();
+		//Player player=new Player(); //BalÃ¡zs Ã©szrevÃ©tele alapjÃ¡n kivettem, mivel a Playert a Map hozza lÃ©tre
 		
 		SmallTower sm = new SmallTower();	//teszteleshez
 		map.player.createDefenseTool(sm);
@@ -37,21 +37,21 @@ public class Main {
         if(s.equals("tower")){
         	SmallTower st=new SmallTower();
         	player.createDefenseTool(st);
-        	//ez a metódus biztos kell? - arnold
-        	//igazából a szekv diagramon is értelmetlen egy kicsit :) - arnold
-        	//helyette get/set-tel kell, mint a többi ilyen megoldásnál - arnold
-        	//ezt majd javítom (createDefenTool helyett get/set-es megoldás) - arnold
+        	//ez a metï¿½dus biztos kell? - arnold
+        	//igazï¿½bï¿½l a szekv diagramon is ï¿½rtelmetlen egy kicsit :) - arnold
+        	//helyette get/set-tel kell, mint a tï¿½bbi ilyen megoldï¿½snï¿½l - arnold
+        	//ezt majd javï¿½tom (createDefenTool helyett get/set-es megoldï¿½s) - arnold
         	st.getCost();
-        	player.setMagicPower(15);//honnan számoljuk ki  a paramétert? - arnold
+        	player.setMagicPower(15);//honnan szï¿½moljuk ki  a paramï¿½tert? - arnold
         	
-        	//todo: összes enemy feliratkozik a tower observerrre
+        	//todo: ï¿½sszes enemy feliratkozik a tower observerrre
         	//ezt szekv diagramon jelezni - arnold
         }
         
         if(s.equals("enemy")){
-        	//map.tick() hívja a createEnemy()-t - arnold
+        	//map.tick() hï¿½vja a createEnemy()-t - arnold
         	map.tick();
-        	//todo: összes torony observerre feliratkozik - arnold
+        	//todo: ï¿½sszes torony observerre feliratkozik - arnold
         	//ezt szekv diagramon jelezni - arnold
         }
         
@@ -60,11 +60,11 @@ public class Main {
         	map.tick();
         	//szekv diagramban enemyobjektum.tick() lenne, de helyette: - arnold
         	LinkedList lili=map.getEnemies();
-        	//todo: forciklus végigmegy rajtuk és mindegyiken tick() - arnold
+        	//todo: forciklus vï¿½gigmegy rajtuk ï¿½s mindegyiken tick() - arnold
 
-        	//todo: forciklus végigmegy rajtuk és megnézi, hogy
-        	//todo: fajtól függõen osztható-e a tick_counter fajnak megfelelõ sebességgel (pl 5-tel) - arnold
-        	//todo: amelyik enemynél ez fenn áll ott:
+        	//todo: forciklus vï¿½gigmegy rajtuk ï¿½s megnï¿½zi, hogy
+        	//todo: fajtï¿½l fï¿½ggï¿½en oszthatï¿½-e a tick_counter fajnak megfelelï¿½ sebessï¿½ggel (pl 5-tel) - arnold
+        	//todo: amelyik enemynï¿½l ez fenn ï¿½ll ott:
         	
         	Enemy e=new Enemy();
         	e.tick();
@@ -73,67 +73,67 @@ public class Main {
         if(s.equals("towerattack")){
         	timer.tick();
         	map.tick();
-        	Enemy e=new Enemy();//todo: itt is forciklusos téma lenne - arnold
-        	//todo: tehát ezt minden toronynál eljátszuk majd meg minden enemynél - arnold
+        	Enemy e=new Enemy();//todo: itt is forciklusos tï¿½ma lenne - arnold
+        	//todo: tehï¿½t ezt minden toronynï¿½l eljï¿½tszuk majd meg minden enemynï¿½l - arnold
         	e.tick();
         	Tower t=new Tower();
         	t.tick();
         	e.notifyObservers();//itt szekv diagramon a nyilat lehet, hogy elrontottam - arnold
-        	//önmagába forduló nyíl kellene - arnold
-        	System.out.println("Observable notifyObservers - ellenfél lépett, ezt jelzi az összes toronynak");
+        	//ï¿½nmagï¿½ba fordulï¿½ nyï¿½l kellene - arnold
+        	System.out.println("Observable notifyObservers - ellenfï¿½l lï¿½pett, ezt jelzi az ï¿½sszes toronynak");
         	
-        	System.out.println("Ha az ellenfél hatótávon belül van");
+        	System.out.println("Ha az ellenfï¿½l hatï¿½tï¿½von belï¿½l van");
         	t.update(e);
-        	e.Attacked(t.getFiringRange());//Attacked szekv UML-ben benne van, de szkeletonból kimaradt - arnold
-        	//valszeg osztálydiagramban sincs benne - arnold
-        	//paraméter értékéhez le kéne kérezni a támadóerõt - arnold
-        	player.setMagicPower(50);// - todo: paraméter mi alapján - arnold
-        	//setMagicPower szekv diagramon lehet, hogy önmagába nyúló nyilat érdemel? - arnold
+        	e.Attacked(t.getFiringRange());//Attacked szekv UML-ben benne van, de szkeletonbï¿½l kimaradt - arnold
+        	//valszeg osztï¿½lydiagramban sincs benne - arnold
+        	//paramï¿½ter ï¿½rtï¿½kï¿½hez le kï¿½ne kï¿½rezni a tï¿½madï¿½erï¿½t - arnold
+        	player.setMagicPower(50);// - todo: paramï¿½ter mi alapjï¿½n - arnold
+        	//setMagicPower szekv diagramon lehet, hogy ï¿½nmagï¿½ba nyï¿½lï¿½ nyilat ï¿½rdemel? - arnold
         	
-        	System.out.println("Ha az ellenfél életereje eléri a nullát");
+        	System.out.println("Ha az ellenfï¿½l ï¿½letereje elï¿½ri a nullï¿½t");
         	System.out.println("Enemy dispose()");
         }
         
         if(s.equals("barrier")){
-        	System.out.println("Ha van elég varázserõ akadály létrehozásához");
-        	//szekv diagramról lemaradt a setMagicPower - ezt kódban és ott is pótolni kell - arnold
-        	//ugyanúgy mint ahogy a tower-nél írtam createdefensetool helyett get/set-es megoldás kéne - arnold
+        	System.out.println("Ha van elï¿½g varï¿½zserï¿½ akadï¿½ly lï¿½trehozï¿½sï¿½hoz");
+        	//szekv diagramrï¿½l lemaradt a setMagicPower - ezt kï¿½dban ï¿½s ott is pï¿½tolni kell - arnold
+        	//ugyanï¿½gy mint ahogy a tower-nï¿½l ï¿½rtam createdefensetool helyett get/set-es megoldï¿½s kï¿½ne - arnold
 
-        	//szekv diagramban van setBarriers, de ahhoz kéne get is, hogy legyen mit módosítani - arnold
-        	//szintén mindkét helyen javítani kéne - arnold
+        	//szekv diagramban van setBarriers, de ahhoz kï¿½ne get is, hogy legyen mit mï¿½dosï¿½tani - arnold
+        	//szintï¿½n mindkï¿½t helyen javï¿½tani kï¿½ne - arnold
         }
         
         if(s.equals("barrier slowdown")){
-        	//végsõ megoldásban itt is forciklus lesz ami az összes enemy-n végigmegy - arnold
+        	//vï¿½gsï¿½ megoldï¿½sban itt is forciklus lesz ami az ï¿½sszes enemy-n vï¿½gigmegy - arnold
         	Enemy e=new Enemy();
         	e.notifyObservers();
         	Barrier b=new Barrier();
         	b.update(e, new Object());
         	b.effectEnemy();
-        	System.out.println("Ha egy cellában vannak:");
-        	e.setSpeed(15);//paraméter hogy jön ki? szkeletonban még nem kell tudni - arnold
+        	System.out.println("Ha egy cellï¿½ban vannak:");
+        	e.setSpeed(15);//paramï¿½ter hogy jï¿½n ki? szkeletonban mï¿½g nem kell tudni - arnold
         }
         
         if(s.equals("magicstone")){
         	//todo:createdefensestone helyett get/set - arnold
         	FiringSpeedIncreaseStone fsi=new FiringSpeedIncreaseStone();
-        	//todo:szekv diagramban lemaradt a varázserõ levonása
+        	//todo:szekv diagramban lemaradt a varï¿½zserï¿½ levonï¿½sa
         	player.setMagicPower(15);
         }
         
         if(s.equals("magicstone effect")){
         	FiringSpeedIncreaseStone fsi=new FiringSpeedIncreaseStone();
         	Tower t=new Tower();
-        	System.out.println("Ha egy cellában vannak:");
-        	t.setFiringSpeed(15);//todo:Tower-ben setTûzErõ
+        	System.out.println("Ha egy cellï¿½ban vannak:");
+        	t.setFiringSpeed(15);//todo:Tower-ben setTï¿½zErï¿½
         }
         
         if(s.equals("endgame")){
         	timer.tick();
         	game.tick();
-        	System.out.println("Ha elpusztult minden ellenség:");
+        	System.out.println("Ha elpusztult minden ellensï¿½g:");
         	game.winGame();
-        	System.out.println("Ha az ellenség elért a végzet hegyéhez:");
+        	System.out.println("Ha az ellensï¿½g elï¿½rt a vï¿½gzet hegyï¿½hez:");
         	game.endGame();
         }
         
