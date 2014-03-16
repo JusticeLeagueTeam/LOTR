@@ -1,26 +1,28 @@
 package LOTR;
 public class Game {
 
-	//Map map;
-	//Timer timer;
+	Map map;
+	Timer timer;
 	
 	public Game(){
-		System.out.println("Game konstruktor - Game objektum létrejött.");
-		//Timer timer=new Timer();
-		//Map map=new Map();
+		System.out.println("Game konstruktor - Game objektum lï¿½trejï¿½tt.");
+		Timer timer = new Timer();
+		Map map = new Map();
+		this.startGame();
+		//javÃ­tottam BalÃ¡zs Ã©szrevÃ©tele alapjÃ¡n - oliver
 	}
 
 	public void endGame() {
-		System.out.println("Game endGame - játék vége");
+		System.out.println("Game endGame - jï¿½tï¿½k vï¿½ge");
 		//ha barmelyik ellenseg pozicioja egybe esik a cel pozicioval
 	}
 
 	public void startGame() {
-		System.out.println("Game startGame - indul a játékmenet");
+		System.out.println("Game startGame - indul a jï¿½tï¿½kmenet");
 	}
 
 	public void winGame() {
-		System.out.println("Game wingame - a játékos nyert");
+		System.out.println("Game wingame - a jï¿½tï¿½kos nyert");
 		
 		if(Map.enemies.isEmpty())
 		{
@@ -29,7 +31,7 @@ public class Game {
 	}
 
 	public void tick() {
-		System.out.println("Game tick - ellenõrzi, hogy a játékos nyert vagy vesztett");
+		System.out.println("Game tick - ellenï¿½rzi, hogy a jï¿½tï¿½kos nyert vagy vesztett");
 	}
 
 
