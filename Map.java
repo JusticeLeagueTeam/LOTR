@@ -183,7 +183,7 @@ public class Map {
 	/**A Timer-tol erkezo orajelre ellenorzi, hogy szukseges-e uj ellenfel generalasa.
 	 */
 	public void tick() {
-		System.out.println("Map tick - Orajelre ellenorzi, hogy szukseges-e uj ellenfel generalasa");
+		System.out.println("Map tick - Beerkezo orajel hatasara ellenorzi, hogy szukseges-e ellenfelet generalni, leptetni");
 		createEnemy();
 	}
 
