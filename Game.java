@@ -16,7 +16,6 @@ public class Game {
 	
 	
 	/**A Game osztaly konstruktora, amely egy Game objektum letrehozasakor hivodik meg.
-	 * 	
 	 * A konstruktor hozza letre a jatek szamara az egyetlen Timer objektumot, amely a
 	 * jatek mukodesehez az utemezest nyujtja. Tovabba a Map-et vagyis palya objektumot,
 	 * amely a Player, Enemies (szovetsegesek) valamint a jatekos vedelmi eszkozeiert
@@ -25,7 +24,6 @@ public class Game {
 	 * Az objektumok letrejotte utan elinditja a jatek futasat. 
 	 */	
 	public Game(){
-		//kiiratas helye
 		System.out.println("Game konstruktor - Game objektum letrejott");
 		
 		
