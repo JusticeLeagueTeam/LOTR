@@ -38,7 +38,7 @@ public class Main {
 	        	SmallTower st=new SmallTower();
 	        	Map.player.createDefenseTool(st);
 
-	        	st.getCost();
+	        	//st.getCost(); - ez sztem createDefenseTool-on belulre kell - arnold
 	        	
 	        	//todo:az osszes enemy feliratkozik a tower observerrre - arnold
 		        }

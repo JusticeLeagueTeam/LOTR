@@ -21,11 +21,22 @@ public class Player {
 		this.magicPower = this.magicPower + magicPower;
 	}
 
-	public void createDefenseTool(DefenseTools DefenseTool) {
-		System.out.println("Player creatDefenseTool - Player csinalt egy defenseTool-t");
+	public void createDefenseTool(DefenseTools dt) {
+		System.out.println("Player creatDefenseTool - Player csinal egy defenseTool-t");
+		Map map=new Map();//map konstruktorabol lehet, hogy ki kene szedni a print-et? - arnold
+		//a main-nel amikor eloszor letrehozzuk ott kiprinteljuk a mainbol es akkot a szekv
+		//diagrammal konzisztens lesz - arnold
+		dt.getCost();
+		getMagicPower();
+		System.out.println("ha van eleg varazsero a torony megepitesere"); //ezt is csak implementacioban kodoljuk le - arnold
+		//map.towers.add((Tower) dt); //ezt sztem eleg kiprintelni most - arnold
+		System.out.println("towers add SmallTower");
+		
+		
 		
 		//ez szvsz mar implementacio, egyelore szerintem eleg elenne ezeket kiprintelni - arnold
-		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof SmallTower))
+		//meg abban sem vagyok biztos, hogy ezt eredetileg igy gondoltuk-e - arnold
+		/*if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof SmallTower))
 		{
 			SmallTower smallTower = new SmallTower();
 			Map.towers.add(smallTower);
@@ -72,7 +83,7 @@ public class Player {
 			ElfDwarfSpecializedStone elfDwarfSpecializedStone = new ElfDwarfSpecializedStone();
 			Map.magicStones.add(elfDwarfSpecializedStone);
 			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}
+		}*/
 		
 	}
 
