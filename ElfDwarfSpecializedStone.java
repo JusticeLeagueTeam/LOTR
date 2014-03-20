@@ -1,5 +1,9 @@
 package LOTR;
 public class ElfDwarfSpecializedStone extends MagicStone {
+	
+	public ElfDwarfSpecializedStone(){
+		System.out.println("ElfDwarfSpecializedStone konstruktor");
+	}
 
 	public void effectDefenseTool() {
 		// TODO - implement ElfDwarfSpecializedStone.effectDefenseTool

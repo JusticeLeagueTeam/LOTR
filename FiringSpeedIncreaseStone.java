@@ -3,6 +3,10 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 
 	private int firingSpeedIncreaseValue;
 
+	public FiringSpeedIncreaseStone(){
+		System.out.println("FiringSpeedIncreaseStone konstruktor");
+	}
+	
 	public int getFiringSpeedIncreaseValue() {
 		System.out.println("FiringSpeedIncreaseStone getFiringSpeedIncreaseValue - visszaadja a tamadoero novekedesenek merteket");
 		return this.firingSpeedIncreaseValue;

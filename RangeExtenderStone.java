@@ -2,6 +2,10 @@ package LOTR;
 public class RangeExtenderStone extends MagicStone {
 
 	private int rangeExtendingValue;
+	
+	public RangeExtenderStone(){
+		System.out.println("RangeExtenderStone konstruktor");
+	}
 
 	public int getRangeExtendingValue() {
 		System.out.println("RangeExtenderStone getRangeExtendingValue - visszaadja hatokor novelesenek erteket");
