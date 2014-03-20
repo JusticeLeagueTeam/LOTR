@@ -2,12 +2,16 @@ package LOTR;
 
 import java.util.Observable;
 
-/*
+
+/**
  * Tower osztaly a DefenseTools osztaly leszarmazottja.
  * Toronynak felel meg. A jatekos rakja le oket ha van eleg varazsereje
  * Az ellenfeleket az Observer mintan keresztul figyeli.
  * Ha egy ellenfel a hatotavolsagaba er akkor tuzel
- * Varazskovekkel javithatok a konstruktorban beallitott valtozoi 
+ * Varazskovekkel javithatok a konstruktorban beallitott valtozoi
+ * 
+ * @author justice_league
+ *
  */
 public class Tower extends DefenseTools {
 	/* tuzelesi gyakorisag */

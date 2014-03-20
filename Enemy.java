@@ -8,6 +8,9 @@ import java.util.Observable;
  * Ezek kulonbozo alapertelmezett tulajdonsagokkal rendelkeznek (sebesseg, eletero)
  * Orajel (tick) alapjan alakul a sebesseguk
  * Minden lepeskor jelzi az Observer minta alapjan ot koveto tornyoknak es akadalyoknak a lepest
+ * 
+ * @author justice_league
+ *
  */
 public class Enemy extends Observable {
 
