@@ -1,4 +1,7 @@
 package LOTR;
+/**
+ * A varazskovek egy fajtaja, a tornyok hatotavolsagat lehet vele valtoztatni.
+ */
 public class RangeExtenderStone extends MagicStone {
 
 	/**
@@ -10,14 +13,14 @@ public class RangeExtenderStone extends MagicStone {
 	 * RangeExtenderStone ko a torony hatotavolsagat noveli
 	 */
 	public RangeExtenderStone(){
-		System.out.println("RangeExtenderStone konstruktor");
+		System.out.println("RangeExtenderStone konstruktor - letrehozza a varazskovet kezdeti ertekekkel");
 	}
 
 	/**
 	 *  visszaadja hatokor novelesenek erteket
 	 */
 	public int getRangeExtendingValue() {
-		System.out.println("RangeExtenderStone getRangeExtendingValue - visszaadja hatokor novelesenek erteket");
+		System.out.println("RangeExtenderStone getRangeExtendingValue() - visszaadja hatokor novelesenek erteket");
 		return rangeExtendingValue;
 	}
 
@@ -25,7 +28,7 @@ public class RangeExtenderStone extends MagicStone {
 	 * beallitja hatokor novelesenek erteket
 	 */
 	public void setRangeExtendingValue(int rangeExtendingValue) {
-		System.out.println("RangeExtenderStone setRangeExtendingValue - beallitja hatokor novelesenek erteket");
+		System.out.println("RangeExtenderStone setRangeExtendingValue(int rangeExtendingValue) - beallitja hatokor novelesenek erteket");
 		this.rangeExtendingValue = rangeExtendingValue;
 	}
 
@@ -33,7 +36,7 @@ public class RangeExtenderStone extends MagicStone {
 	 * az adott pozicion levo toronynak beallitja a modositott paramtereit
 	 */
 	public void effectTower() {
-		System.out.println("RangeExtenderStone effectTower - az adott pozicion levo toronynak beallitja a modositott paramtereit");
+		System.out.println("RangeExtenderStone effectTower() - az adott pozicion levo toronynak beallitja a modositott paramtereit");
 	}
 
 }
