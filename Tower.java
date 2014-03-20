@@ -10,22 +10,22 @@ public class Tower extends DefenseTools {
 	private int tick_counter;
 
 	public int getFiringSpeed() {
-		System.out.println("Tower getFiringSpeed - visszaadja a támadás sebességét");
+		System.out.println("Tower getFiringSpeed - visszaadja a tamadas sebesseget");
 		return this.firingSpeed;
 	}
 
 	public void setFiringSpeed(int firingSpeed) {
-		System.out.println("Tower setFiringSpeed - beállítja a támadás sebességét");
+		System.out.println("Tower setFiringSpeed - beallitja a tamadas sebesseget");
 		this.firingSpeed = firingSpeed;
 	}
 
 	public int getFiringRange() {
-		System.out.println("Tower getFiringRange - visszaadja a hatótávot");
+		System.out.println("Tower getFiringRange - visszaadja a hatotavot");
 		return this.firingRange;
 	}
 
 	public void setFiringRange(int firingRange) {
-		System.out.println("Tower setFiringRange - beállítja a hatótávot");
+		System.out.println("Tower setFiringRange - beallitja a hatotavot");
 		this.firingRange = firingRange;
 	}
 
@@ -35,16 +35,16 @@ public class Tower extends DefenseTools {
 	}
 
 	public void setElfOrDwarfFlag(boolean elfOrDwarfFlag) {
-		System.out.println("Tower setElfOrDwarfFlag - beállítja a flag-et");
+		System.out.println("Tower setElfOrDwarfFlag - beallitja a flag-et");
 		this.elfOrDwarfFlag = elfOrDwarfFlag;
 	}
 
 	public void update(Observable observable) {
-		System.out.println("Tower update - ellenõrzi, hogy van-e ellenség a hatókörében");		
+		System.out.println("Tower update - ellenorzi, hogy van-e ellenseg a hatokoreben");		
 	}
 
 	public void tick() {
-		System.out.println("Tower tick - töveli a tick_counter-t eggyel");
+		System.out.println("Tower tick - noveli a tick_counter-t eggyel");
 	}
 
 }
