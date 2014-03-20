@@ -5,16 +5,16 @@ public class Player {
 	private int magicPower;
 	
 	public Player(){
-		System.out.println("Player konstruktor - Player objektum l�trej�tt.");
+		System.out.println("Player konstruktor");
 	}
 
 	public int getMagicPower() {
-		System.out.println("Player getMagicPower - visszaadja a j�t�kos �leterej�t");
+		System.out.println("Player getMagicPower - visszaadja a jatekos eleterejet");
 		return this.magicPower;
 	}
 
 	public void setMagicPower(int magicPower) {
-		System.out.println("Player setMagicPower - �t�ll�tja a j�t�kos �leterej�t");
+		System.out.println("Player setMagicPower - beallitja a jatekos eleterejet");
 		//ennyivel noveli, nem annyira allitja be
 		//ha meghal egy ellenfel, az o eleterejenek ertekevel no a jatekos
 		//varazsereje
@@ -22,8 +22,9 @@ public class Player {
 	}
 
 	public void createDefenseTool(DefenseTools DefenseTool) {
-		System.out.println("Player creatDefenseTool - Player csin�lt egy defenseTool-t");
+		System.out.println("Player creatDefenseTool - Player csinalt egy defenseTool-t");
 		
+		//ez szvsz mar implementacio, egyelore szerintem eleg elenne ezeket kiprintelni - arnold
 		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof SmallTower))
 		{
 			SmallTower smallTower = new SmallTower();

@@ -17,13 +17,6 @@ public class Main {
 		SmallTower sm = new SmallTower();	//teszteleshez
 		Map.player.createDefenseTool(sm);
 		
-		//String s = new String();
-		
-		/*
-		while(s.equals("exit")==false){
-		System.out.println("input:");
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		*/
 		
 		BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 		String line = null;
@@ -56,7 +49,7 @@ public class Main {
 		        }
 		        
 		        else if(command.length == 1 && command[0].equals("enemy")){
-		        	//map.tick() hÄivja a createEnemy()-t - arnold
+		        	//map.tick() hivja a createEnemy()-t - arnold
 		        	map.tick();
 		        	//todo: osszes torony observerre feliratkozik - arnold
 		        	//ezt szekv diagramon jelezni - arnold
