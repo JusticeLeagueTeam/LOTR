@@ -11,83 +11,58 @@ public class Enemy extends Observable {
 	private int tick_counter;
 
 	public int getHealth() {
-		System.out.println("Enemy getHelath - visszatér az életerõvel");
+		System.out.println("Enemy getHealth - visszater az eleterovel");
 		return this.health;
 	}
 
 	public void setHealth(int health) {
-		System.out.println("Enemy setHelath - beállítja az életerõt");
-		//itt nem annyira allitja be, hanem annyival CSOKKENTI, tehat
-		//a torony nem tudja mennyi az enemy eletereje, hanem szimplan
-		//a torony a sebzes merteket tudja, ezt adja at paramterkent
-		//es ennyivel csokkenti
-		//this.health=this.health-health;
+		System.out.println("Enemy setHelath - parameterrel csokkenti az eleterot");
 		this.health = health;
 		
-		/*Ha az eletereje nullara vagy az ala csokken 
-		if(this.health<=0)
-		{
-			//szekvenciaban nekunk dispose()  van, de a C# -ban van
-			//javaban finalize() metodust kell hivni
-			try {
-				this.finalize();
-			} catch (Throwable e) {
-				e.printStackTrace();
-			}
-		}
-		*/
 	}
 
 	public int getSpeed() {
-		System.out.println("Enemy getSpeed - visszatér a sebességgel");
+		System.out.println("Enemy getSpeed - visszater a sebesseggel");
 		return this.speed;
 	}
 
 	public void setSpeed(int speed) {
-		System.out.println("Enemy setSpeed - beállítja a sebességet");
+		System.out.println("Enemy setSpeed - beallitja a sebesseget");
 		this.speed = speed;
 	}
 
 	public Position getPosition() {
-		System.out.println("Enemy getPosition - visszatér a pozícióval");
+		System.out.println("Enemy getPosition - visszater a pozicioval");
 		return this.position;
 	}
 
 	public void setPosition(Position position) {
-		System.out.println("Enemy setPosition - beállítja a pozíciót");
+		System.out.println("Enemy setPosition - beallitja a poziciot");
 		this.position = position;
 	}
 
 	public int getMagicPowerGain() {
-		System.out.println("Enemy getMagicPowerGain - beállítja a nyert varázserõ értékét");
+		System.out.println("Enemy getMagicPowerGain - beallitja a nyert varazsero erteket");
 		return this.magicPowerGain;
 	}
 
 	public void setMagicPowerGain(int magicPowerGain) {
-		System.out.println("Enemy setMagicPowerGain - visszatér a nyert varázserõ értékével");
+		System.out.println("Enemy setMagicPowerGain - visszater a nyert varazsero ertekevel");
 		this.magicPowerGain = magicPowerGain;
 	}
 
 	public void tick() {
 		System.out.println("Enemy tick ");
-		//itt visszahivas tortenik a Map.enemyStep(pos) metodusra	
-		Map map = new Map();		
+		Map map = new Map();	
+		System.out.println("Ha tick_counter megfelel a faj haladasi sebessegenek pl oszthato 5-tel");
 		this.setPosition(map.enemyStep(getPosition()));
 		
-		//java.util.observable.notifyObservers() beepitett metodusa
-		//ertesiti a regisztralt observer-eket a valtozasrol
-		//notifyObservers();
-
+		notifyObservers();
 	}
 	
 	public void Attacked(int a){
-		System.out.println("Enemy Attacked - paraméter értékével csökkent az életerõ");
-		setHealth(a);//todo:paraméter számítsa  -arnold
-		
-		//amikor setHealth() hivodik, akkor utana ugyanannyival no a Player
-		//varazsereje is, igy ezt is megkell hivni itt.
-		//a player statikus, igy a map letrejottekor lesz belole egy
-		//igy ennek a metodusai barmikor hivhatoak
+		System.out.println("Enemy Attacked - parameter ertekevel csokkent az eletero es a varazsero");
+		setHealth(a);
 		Map.player.setMagicPower(a);
 	}
 
