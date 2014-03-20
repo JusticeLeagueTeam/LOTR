@@ -184,6 +184,8 @@ public class Map {
 	 */
 	public void tick() {
 		System.out.println("Map tick - Beerkezo orajel hatasara ellenorzi, hogy szukseges-e ellenfelet generalni, leptetni");
+		System.out.println("Map tick (dokumentacio 5.3.2) - Meghivja az Enemy tick() metodusat, amely hatasara az Enemy tick() metodusa visszahivja a Map enemyStep() metodusat, hogy megtudja, hova lephet");
+		System.out.println("Map tick (dokumentacio 5.3.3) - Meghivja a Tower es Enemy tick() metodusat");
 		createEnemy();
 	}
 
