@@ -5,7 +5,7 @@ package LOTR;
 public class FiringSpeedIncreaseStone extends MagicStone {
 
 	/**
-	 * a tamadasi gyakorisag megnovelesenek az erteke
+	 * Ezzel az ertekkel noveljuk a tuzelesi sebesseget.
 	 */
 	private int firingSpeedIncreaseValue;
 
@@ -13,27 +13,30 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 	 * torony tamadas gyakorisagat novelo ko
 	 */
 	public FiringSpeedIncreaseStone(){
-		System.out.println("FiringSpeedIncreaseStone konstruktor");
+		System.out.println("FiringSpeedIncreaseStone konstruktor - letrehozza a varazskovet kezdeti ertekekkel");
 	}
 	
 	/**
-	 * visszaadja a tamadoero novekedesenek merteket
+	 * A torony tuzelesi sebesseget valtoztato ertek lekerdezesere hasznalhato metodus
 	 */
 	public int getFiringSpeedIncreaseValue() {
-		System.out.println("FiringSpeedIncreaseStone getFiringSpeedIncreaseValue - visszaadja a tamadoero novekedesenek merteket");
+		System.out.println("FiringSpeedIncreaseStone getFiringSpeedIncreaseValue() - A torony tuzelesi sebesseget valtoztato ertek lekerdezese.");
 		return this.firingSpeedIncreaseValue;
 	}
 
 	/**
-	 * beallitja a tamadoero novekedesenek merteket
+	 *  A torony tuzelesi sebesseget valtoztato ertek beallitasara hasznalhato metodus.
 	 */
 	public void setFiringSpeedIncreaseValue(int firingSpeedIncreaseValue) {
-		System.out.println("FiringSpeedIncreaseStone setFiringSpeedIncreaseValue - beallitja a tamadoero novekedesenek merteket");
+		System.out.println("FiringSpeedIncreaseStone setFiringSpeedIncreaseValue(int firingSpeedIncreaseValue) - A torony tuzelesi sebesseget valtoztato ertek beallitasa.");
 		this.firingSpeedIncreaseValue = firingSpeedIncreaseValue;
 	}
 
+	/**
+	 *  A tornyok tulajdonsagait modositani kepes metodus.
+	 */
 	public void effectTower() {
-		System.out.println("FiringSpeedIncreaseStone effectTower - az adott pozicion megnezi, hogy van-e torony, ha igen akkor modositja a parametereit");
+		System.out.println("FiringSpeedIncreaseStone effectTower() - modositja a tornyok tulajdonsagait");
 	}
 
 }

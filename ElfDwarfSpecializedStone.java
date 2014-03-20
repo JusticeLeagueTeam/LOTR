@@ -11,28 +11,28 @@ public class ElfDwarfSpecializedStone extends MagicStone {
 	 * ElfDwarfSpecializedStone - varazskovek egyike
 	 */
 	public ElfDwarfSpecializedStone(){
-		System.out.println("ElfDwarfSpecializedStone konstruktor");
+		System.out.println("ElfDwarfSpecializedStone konstruktor - letrehozza a varazskovet  kezdeti ertekekkel");
 	}
 
 	/**
-	 * hatassal van a vedelmi eszkozre
+	 * A vedelmi eszkozok tulajdonsagait modositani kepes metodus.
 	 */
 	public void effectDefenseTool() {
-		System.out.println("ElfDwarfSpecializedStone effectDefenseTool - hatassal van a vedelmi eszkozre");
+		System.out.println("ElfDwarfSpecializedStone effectDefenseTool() - modositja a vedelmi eszkoz tulajdonsagait");
 	}
 
 	/**
-	 * hatassal van a toronyra
+	 * A tornyok tulajdonsagait modositani kepes metodus.
 	 */
 	public void effectTower() {
-		System.out.println("ElfDwarfSpecializedStone effectTower - hatassal van a toronyra");
+		System.out.println("ElfDwarfSpecializedStone effectTower() - modositja a tornyok tulajdonsagait");
 	}
 
 	/**
-	 * hatassal van az akadalyra
+	 * Az akadalyok tulajdonsagait modositani kepes metodus.
 	 */
 	public void effectBarrier() {
-		System.out.println("ElfDwarfSpecializedStone effectBarrier - hatassal van az akadalyra");
+		System.out.println("ElfDwarfSpecializedStone effectBarrier() - modositja az akadalyok tulajdonsagait");
 	}
 
 }
