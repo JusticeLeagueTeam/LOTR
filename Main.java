@@ -14,10 +14,6 @@ public class Main {
 		Timer timer=new Timer();
 		Map map=new Map();
 		
-		SmallTower sm = new SmallTower();	//teszteleshez
-		Map.player.createDefenseTool(sm);
-		
-		
 		BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 		String line = null;
 		
@@ -44,28 +40,20 @@ public class Main {
 
 	        	st.getCost();
 	        	
-	        	//todo: osszes enemy feliratkozik a tower observerrre
-	        	//ezt szekv diagramon jelezni - arnold
+	        	//todo:az osszes enemy feliratkozik a tower observerrre - arnold
 		        }
 		        
 		        else if(command.length == 1 && command[0].equals("enemy")){
 		        	//map.tick() hivja a createEnemy()-t - arnold
 		        	map.tick();
-		        	//todo: osszes torony observerre feliratkozik - arnold
-		        	//ezt szekv diagramon jelezni - arnold
-		        	
+		        	//implementacional az osszes torony observerre feliratkozik - arnold
 		        }
 		        
 		        else if(command.length == 1 && command[0].equals("move")){
 		        	timer.tick();
 		        	map.tick();
-		        	//szekv diagramban enemyobjektum.tick() lenne, de helyette: - arnold
 		        	LinkedList lili=map.getEnemies();
-		        	//todo: forciklus vegigmegy rajtuk is mindegyiken tick() - arnold
-		
-		        	//todo: forciklus vegigmegy rajtuk es megnezi, hogy
-		        	//todo: fajtol fuggetlen oszthato-e a tick_counter fajnak megfelelo sebesseggel (pl 5-tel) - arnold
-		        	//todo: amelyik enemynel ez fenn all ott:
+		        	//implemenacional forciklus vegigmegy rajtuk - arnold
 		        	
 		        	Enemy e=new Enemy();
 		        	e.tick();
@@ -74,20 +62,17 @@ public class Main {
 		        else if(command.length == 2 && command[0].equals("tower") && command[1].equals("attack")){
 		        	timer.tick();
 		        	map.tick();
-		        	Enemy e=new Enemy();//todo: itt is forciklusos tema lenne - arnold
-		        	//todo: tehat ezt minden toronynal eljatszuk majd meg minden enemynel - arnold
+		        	Enemy e=new Enemy();//implementacional forciklusos megoldas lesz
 		        	e.tick();
 		        	Tower t=new Tower();
 		        	t.tick();
-		        	e.notifyObservers();//itt szekv diagramon a nyilat lehet, hogy elrontottam - arnold
-		        	//onmagaba fordulo nyil kellene - arnold
+		        	e.notifyObservers();
 		        	System.out.println("Observable notifyObservers - ellenfel lepett, ezt jelzi az osszes toronynak");
 		        	
 		        	System.out.println("Ha az ellenfel hatotavon belul van");
 		        	t.update(e);
-		        	e.Attacked(t.getFiringRange());//Attacked szekv UML-ben benne van, de szkeletonbol kimaradt - arnold
-		        	//valszeg osztalydiagramban sincs benne - arnold
-		        	Map.player.setMagicPower(50);// - todo: parameter - arnold
+		        	e.Attacked(t.getFiringRange());
+		        	Map.player.setMagicPower(50);
 		        	
 		        	System.out.println("Ha az ellenfel eletereje eleri a nullat");
 		        	System.out.println("Enemy dispose()");
@@ -112,7 +97,6 @@ public class Main {
 		        else if(command.length == 1 && command[0].equals("magicstone")){
 		        	//todo:createdefensestone helyett get/set - arnold
 		        	FiringSpeedIncreaseStone fsi=new FiringSpeedIncreaseStone();
-		        	//todo:szekv diagramban lemaradt a varazsero levonasa
 		        	Map.player.setMagicPower(15);
 		        }
 		        
