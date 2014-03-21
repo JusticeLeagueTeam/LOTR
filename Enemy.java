@@ -117,10 +117,8 @@ public class Enemy extends Observable {
 	 */
 	public void tick() {
 		System.out.println("Enemy tick ");
-		Map map = new Map();	
 		System.out.println("Ha tick_counter megfelel a faj haladasi sebessegenek pl oszthato 5-tel");
-		this.setPosition(map.enemyStep(getPosition()));
-		
+		this.setPosition(Map.enemyStep(getPosition()));	
 		notifyObservers();
 	}
 	

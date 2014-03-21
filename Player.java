@@ -15,24 +15,34 @@ public class Player {
 
 	public void setMagicPower(int magicPower) {
 		System.out.println("Player setMagicPower - beallitja a jatekos eleterejet");
-		//ennyivel noveli, nem annyira allitja be
-		//ha meghal egy ellenfel, az o eleterejenek ertekevel no a jatekos
-		//varazsereje
 		this.magicPower = this.magicPower + magicPower;
 	}
 
 	public void createDefenseTool(DefenseTools dt) {
-		System.out.println("Player creatDefenseTool - Player csinal egy defenseTool-t");
-		Map map=new Map();//map konstruktorabol lehet, hogy ki kene szedni a print-et? - arnold
-		//a main-nel amikor eloszor letrehozzuk ott kiprinteljuk a mainbol es akkot a szekv
-		//diagrammal konzisztens lesz - arnold
+		System.out.println("Player createDefenseTool - Player csinal egy defenseTool-t");
 		dt.getCost();
 		getMagicPower();
-		System.out.println("ha van eleg varazsero a torony megepitesere"); //ezt is csak implementacioban kodoljuk le - arnold
-		//map.towers.add((Tower) dt); //ezt sztem eleg kiprintelni most - arnold
-		System.out.println("towers add SmallTower");
+		System.out.println("[IF] ha van eleg varazsero a torony megepitesere");
 		
+		String dtClass = dt.getClass().toString();
+		dtClass = dtClass.substring(5);	//TODO
 		
+		if(dt instanceof Tower)
+		{
+			Map.towers.add((Tower) dt);
+			System.out.println("towers add " + dtClass);
+		}
+		if(dt instanceof Barrier)
+		{
+			Map.barriers.add((Barrier) dt);
+			System.out.println("barriers add " + dtClass);
+		}
+		if(dt instanceof MagicStone)
+		{
+			Map.magicStones.add((MagicStone) dt);
+			System.out.println("magicstones add " + dtClass);
+		}
+
 		
 		//ez szvsz mar implementacio, egyelore szerintem eleg elenne ezeket kiprintelni - arnold
 		//meg abban sem vagyok biztos, hogy ezt eredetileg igy gondoltuk-e - arnold

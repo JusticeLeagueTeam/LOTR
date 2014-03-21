@@ -1,4 +1,7 @@
 package LOTR;
+
+import java.util.LinkedList;
+
 /**
  * ElfDwarfSpecializedStone - varazskovek egyike
  * kulonlegessege, hogy csak elfekre es torpekre hat
@@ -19,6 +22,9 @@ public class ElfDwarfSpecializedStone extends MagicStone {
 	 */
 	public void effectDefenseTool() {
 		System.out.println("ElfDwarfSpecializedStone effectDefenseTool() - modositja a vedelmi eszkoz tulajdonsagait");
+		LinkedList<Tower> towersLinkedList = Map.getTowers();		
+		Tower t = (Tower) Map.getTowers().get(0);
+		t.setElfOrDwarfFlag(true);
 	}
 
 	/**

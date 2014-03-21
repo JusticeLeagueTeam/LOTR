@@ -1,4 +1,7 @@
 package LOTR;
+
+import java.util.LinkedList;
+
 /**
  * A varazskovek egy fajtaja, a tornyok hatotavolsagat lehet vele valtoztatni.
  */
@@ -37,6 +40,11 @@ public class RangeExtenderStone extends MagicStone {
 	 */
 	public void effectTower() {
 		System.out.println("RangeExtenderStone effectTower() - az adott pozicion levo toronynak beallitja a modositott paramtereit");
+		LinkedList<Tower> towersLinkedList = Map.getTowers();
+		for(Tower t : towersLinkedList)
+		{
+			t.setFiringRange(15);
+		}
 	}
 
 }

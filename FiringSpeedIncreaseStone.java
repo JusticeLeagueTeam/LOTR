@@ -1,4 +1,7 @@
 package LOTR;
+
+import java.util.LinkedList;
+
 /**
  * torony tamadas gyakorisagat novelo ko
  */
@@ -37,6 +40,11 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 	 */
 	public void effectTower() {
 		System.out.println("FiringSpeedIncreaseStone effectTower() - modositja a tornyok tulajdonsagait");
+		LinkedList<Tower> towersLinkedList = Map.getTowers();
+		for(Tower t : towersLinkedList)
+		{
+			t.setFiringSpeed(15);
+		}
 	}
 
 }

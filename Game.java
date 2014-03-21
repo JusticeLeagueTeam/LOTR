@@ -9,10 +9,10 @@ package LOTR;
 public class Game {
 
 	/** (Map) Palya objektum */
-	Map map;
+	public static Map map;
 	
 	/** (Orajel) Jatek idoziteseert felelos objektum */
-	Timer timer;
+	public static Timer timer;
 	
 	
 	/**A Game osztaly konstruktora, amely egy Game objektum letrehozasakor hivodik meg.
@@ -29,7 +29,7 @@ public class Game {
 		
 		Timer timer = new Timer();
 		Map map = new Map();
-		this.startGame();
+		startGame();
 	}
 	
 	
@@ -37,14 +37,14 @@ public class Game {
 	 * A jatekos akkor veszit, ha akar egyetlen egy ellenfel is eljut a vegzet hegyehez,
 	 * tehat egy Enemy leszarmazott (Elf, Dwarf, Hobbit, Human) eljut a celba. 
 	 */
-	public void endGame() {
+	public static void endGame() {
 		System.out.println("Game endGame - A jatekos veszitett, jatek vege");
 	}
 	
 	
 	/**A jatek indulasakor letrehozza a szukseges objektumokat, beallitja az attributumokat. 
 	*/
-	public void startGame() {
+	public static void startGame() {
 		System.out.println("Game startGame - A jatek elindult");
 	}
 
@@ -54,7 +54,7 @@ public class Game {
 	 * sikerult elpusztitania, tehat az ellenfelek szama nulla (enemies.Count()==0).
 	 *  (a szamuk korlatozott, veges, igy idovel biztos elfogynak)
 	 */
-	public void winGame() {
+	public static void winGame() {
 		System.out.println("Game wingame - A jatekos nyert, jatek vege");
 		
 		if(Map.enemies.isEmpty())
@@ -68,7 +68,7 @@ public class Game {
 	 * Az orajel eltelte utan a metodus meghivasakor ellenorzi, hogy a jatekos nyert
 	 * vagy veszitett-e mar.
 	 */
-	public void tick() {
+	public static void tick() {
 		System.out.println("Game tick - Orajelre ellenorzi, hogy a jatekos nyert vagy veszitett");
 	}
 

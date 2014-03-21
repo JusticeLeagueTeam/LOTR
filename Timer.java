@@ -16,7 +16,7 @@ public class Timer {
 		System.out.println("Timer setPeriod - periodusio beallitasa");
 	}
 
-	public void tick() {
+	public static void tick() {
 		System.out.println("Timer tick - letelt egy orajel");
 	}
 	

@@ -60,7 +60,7 @@ public class Barrier extends DefenseTools implements Observer {
 	 * osszes ellenfelet ellenorzi, hogy van-e rajta ko, ha igen akkor beallitja a hatasat
 	 */
 	public void effectEnemy() {
-		System.out.println("Barrier effectEnemy - osszes ellenfelet ellenorzi, hogy van-e rajta ko, ha igen akkor beallitja a hatasat");
+		System.out.println("Barrier effectEnemy - osszes ellenfelet ellenorzi, hogy akadalyra lepett-e, ha igen akkor beallitja a hatasat");
 		//implementacional ez egy ciklus lesz - arnold
 	}
 
