@@ -7,22 +7,18 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to Justice League's sceleton!");
+		System.out.println("Udvozollek a Justice League szkeleton programjaban!");
+		System.out.println("---------------------------------------------------");
 		//A szekvenciaval konzisztens create() sorrendet tartsunk
 		//korabbi 4.4.1 Jatek inditasa
 		Game game=new Game();
-		//Timer timer=new Timer();
-		//Map map=new Map();
 		
 		BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 		String line = null;
-		
-		//ez majd ahhoz kell, amikor pl. beadta a user, hogy "enemy" es visszakerdezunk hogy milyen enemyt hozzon letre
-		BufferedReader buff2 = new BufferedReader(new InputStreamReader(System.in));
-		String line2;
+
 		
 		while(true){
-			System.out.println("\nLehetseges inputok: bigtower, smalltower, enemy, move, tower attack, shiftingsand, swamp, barrier slowdown, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, magicstone effect, endgame, exit");
+			System.out.println("\nLehetseges inputok: bigtower, smalltower, enemy, \nmove, tower attack, shiftingsand, \nswamp, barrier slowdown, firingspeedincreaserstone, \nrangeextenderstone, elfdwarfspecializedstone, \nmagicstone effect, endgame, exit");
 			System.out.println("input:");
 			try {
 				line = buff.readLine();
