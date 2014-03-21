@@ -1,4 +1,5 @@
 package LOTR;
+
 /**
  * Poziciot reprezentalo osztaly.
  */

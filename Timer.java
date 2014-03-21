@@ -1,4 +1,5 @@
 package LOTR;
+
 public class Timer {
 
 	private int period;

@@ -1,4 +1,5 @@
 package LOTR;
+
 /**
  * Varazskovek a vedelmi eszkozok egy fajtaja.
  * Varazskovekkel modosithatjuk tornyok alapertelmezett parametereit

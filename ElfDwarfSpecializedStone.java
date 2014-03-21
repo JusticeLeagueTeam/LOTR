@@ -1,5 +1,6 @@
 package LOTR;
 
+
 import java.util.LinkedList;
 
 /**

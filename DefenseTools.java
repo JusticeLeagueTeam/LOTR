@@ -1,4 +1,5 @@
 package LOTR;
+
 /**
  * DefenseTools - vedelmi eszkozok
  * ide tartoznak a tornyok es akadolyok osszes leszarmazottaival egyutt

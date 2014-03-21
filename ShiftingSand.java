@@ -1,4 +1,5 @@
 package LOTR;
+
 /**
  * ShiftingSand a futohomoknak felel meg
  * A konstruktorban beallitott erteket alapjan lassitja az ellenfelet.

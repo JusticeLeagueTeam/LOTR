@@ -1,4 +1,5 @@
 package LOTR;
+
 /**
  * Dwarf - ellenfelek egy tipusa
  * torpenek felel meg

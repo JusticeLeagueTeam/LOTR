@@ -1,5 +1,11 @@
 package LOTR;
 
+/**
+ * Player a jatekos osztalya
+ * a jatekos iranyitja a GUI-n keresztul az egysegeit
+ * @author justice_league
+ *
+ */
 public class Player {
 
 	private int magicPower;

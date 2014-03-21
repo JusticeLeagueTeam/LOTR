@@ -1,4 +1,5 @@
 package LOTR;
+
 /**
  * SmallTower a kisebb toronynak felel meg
  * A konstruktorban beallitott ertekek szerint tamadja az ellenfelet.
