@@ -7,23 +7,41 @@ package LOTR;
  *
  */
 public class Player {
-
+	/**
+	 * jatekos varazsereje
+	 */
 	private int magicPower;
-	
+	/**
+	 * Player a jatekos osztalya
+	 * a jatekos iranyitja a GUI-n keresztul az egysegeit
+	 */
 	public Player(){
 		System.out.println("Player konstruktor");
 	}
-
+	/**
+	 * visszaadja a jatekos eleterejet
+	 * @return visszaadja a jatekos eleterejet
+	 */
 	public int getMagicPower() {
 		System.out.println("Player getMagicPower - visszaadja a jatekos eleterejet");
 		return this.magicPower;
 	}
-
+	/**
+	 * beallitja a jatekos eleterejet
+	 * @param magicPower jatekos eletereje
+	 */
 	public void setMagicPower(int magicPower) {
 		System.out.println("Player setMagicPower - beallitja a jatekos eleterejet");
 		this.magicPower = this.magicPower + magicPower;
 	}
-
+	/**
+	 * uj vedelmi egyseg letrehozasa
+	 * ez a metodus gondoskodik uj tornyok, akadalyok, kovek letrehozasaert
+	 * paramterekent kapja meg a deklaralt valzotot
+	 * jatekos varazserejet ellenorzi 
+	 * tipus szerint hozzaadja a Map megfelelo listajahoz
+	 * @param dt paramterekent kapja meg a deklaralt valzotot
+	 */
 	public void createDefenseTool(DefenseTools dt) {
 		System.out.println("Player createDefenseTool - Player csinal egy defenseTool-t");
 		dt.getCost();
@@ -48,59 +66,5 @@ public class Player {
 			Map.magicStones.add((MagicStone) dt);
 			System.out.println("magicstones add " + dtClass);
 		}
-
-		
-		//ez szvsz mar implementacio, egyelore szerintem eleg elenne ezeket kiprintelni - arnold
-		//meg abban sem vagyok biztos, hogy ezt eredetileg igy gondoltuk-e - arnold
-		/*if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof SmallTower))
-		{
-			SmallTower smallTower = new SmallTower();
-			Map.towers.add(smallTower);
-			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}
-		
-		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof BigTower))
-		{
-			BigTower bigTower = new BigTower();
-			Map.towers.add(bigTower);
-			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}
-		
-		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof Swamp))
-		{
-			Swamp swamp = new Swamp();
-			Map.barriers.add(swamp);
-			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}
-		
-		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof ShiftingSand))
-		{
-			ShiftingSand shiftingSand = new ShiftingSand();
-			Map.barriers.add(shiftingSand);
-			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}
-		
-		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof FiringSpeedIncreaseStone))
-		{
-			FiringSpeedIncreaseStone firingSpeedIncreaseStone = new FiringSpeedIncreaseStone();
-			Map.magicStones.add(firingSpeedIncreaseStone);
-			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}
-		
-		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof RangeExtenderStone))
-		{
-			RangeExtenderStone rangeExtenderStone = new RangeExtenderStone();
-			Map.magicStones.add(rangeExtenderStone);
-			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}
-		
-		if((this.getMagicPower() >= DefenseTool.getCost()) && (DefenseTool instanceof ElfDwarfSpecializedStone))
-		{
-			ElfDwarfSpecializedStone elfDwarfSpecializedStone = new ElfDwarfSpecializedStone();
-			Map.magicStones.add(elfDwarfSpecializedStone);
-			this.magicPower = this.magicPower - DefenseTool.getCost();
-		}*/
-		
 	}
-
 }
