@@ -236,25 +236,25 @@ public class Main {
 		        		 * osszes varazskonel ellenorizzuk, hogy
 		        		 * a.) van-e a cellajan torony vagy tipustol fuggoen (ElfDwarfSpecializedStone) akadaly
 		        		 * b.) fel lett-e mar hasznalva (getWasItUsed)
-		        		 * utana a flag-et beallitjuk true-ra (setWasItUsed)
+		        		 * hasznalatkor a flag-et beallitjuk true-ra (setWasItUsed)
 		        		 */
 		        		for(MagicStone m : magicStoneLinkedList)
 		        		{
-		        			if(m instanceof FiringSpeedIncreaseStone)
+		        			if(m instanceof FiringSpeedIncreaseStone && m.getWasItUsed())
 		        			{
 		        				System.out.println("FiringSpeedIncreaserStone hasznalata a grafikus feluleten kivalasztott tornyon");
 		    		        	System.out.println("[IF] Ha egy cellaban vannak");
 		        				m.effectTower();
 		        				m.setWasItUsed(true);
 		        			}
-		        			if(m instanceof RangeExtenderStone)
+		        			if(m instanceof RangeExtenderStone && m.getWasItUsed())
 		        			{
 		        				System.out.println("FiringSpeedIncreaserStone hasznalata a grafikus feluleten kivalasztott tornyon");
 		        				System.out.println("[IF] Ha egy cellaban vannak");
 		        				m.effectTower();
 		        				m.setWasItUsed(true);		        				
 		        			}
-		        			if(m instanceof ElfDwarfSpecializedStone)
+		        			if(m instanceof ElfDwarfSpecializedStone && m.getWasItUsed())
 		        			{
 		        				System.out.println("FiringSpeedIncreaserStone hasznalata a grafikus feluleten kivalasztott tornyon vagy akadalyon");
 		        				System.out.println("[IF] Ha egy cellaban vannak");

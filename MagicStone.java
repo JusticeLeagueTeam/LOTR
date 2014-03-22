@@ -16,7 +16,7 @@ public abstract class MagicStone extends DefenseTools {
 	 * visszaadja a flag-et
 	 */
 	public boolean getWasItUsed() {
-		System.out.println("MagicStone getWasItUsed() - visszaadja a flag-et");
+		//System.out.println("MagicStone getWasItUsed() - visszaadja a flag-et");
 		return this.wasItUsed;
 	}
 
@@ -24,7 +24,7 @@ public abstract class MagicStone extends DefenseTools {
 	 * beallitja a flag-et
 	 */
 	public void setWasItUsed(boolean wasItUsed) {
-		System.out.println("MagicStone getWasItUsed(boolean wasItUsed) - beallitja a flag-et");
+		//System.out.println("MagicStone getWasItUsed(boolean wasItUsed) - beallitja a flag-et");
 		this.wasItUsed = wasItUsed;
 	}
 
