@@ -34,7 +34,8 @@ public class Main {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-			String[] command = line.split(" ");
+			String line2 = line.toLowerCase();
+			String[] command = line2.split(" ");
 			/**
 			 * kilepes
 			 */
