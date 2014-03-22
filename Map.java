@@ -209,6 +209,12 @@ public class Map {
 			if(line.equals("y")){
 				createEnemy();
 			}
+			else if(line.equals("n")){
+				System.out.println("Meg nem telt el eleg tick(orajel) uj ellenfel generalasahoz");
+			}
+			else{
+				System.out.println("Hibas bemenet - ez esetben nem generalodik uj ellenseg");
+			}
 			
 		}
 		if(tickFlag==2)
