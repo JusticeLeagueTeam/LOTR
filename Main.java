@@ -226,9 +226,9 @@ public class Main {
 		        	/**
 		        	 * ha nincs varazsko vagy nincs min alkalmazni akkor nincs ertelme hasznalni
 		        	 */
-		        	if(magicStoneLinkedList.size() == 0 && (barrierLinkedList.size()==0 || towersLinkedList.size()==0))
+		        	if(magicStoneLinkedList.size() == 0 || barrierLinkedList.size()==0 || towersLinkedList.size()==0)
 		        	{		 
-		        		System.out.println("Meg nem jott letre tower(torony) vagy barrier(akadaly)!");
+		        		System.out.println("Meg nem jott letre tower(torony) vagy barrier(akadaly) vagy magicstone(varazsko)!");
 		        	}
 		        	else
 		        	{
