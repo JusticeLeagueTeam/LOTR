@@ -19,11 +19,11 @@ public class Player {
 		System.out.println("Player konstruktor");
 	}
 	/**
-	 * visszaadja a jatekos eleterejet
-	 * @return visszaadja a jatekos eleterejet
+	 * visszaadja a jatekos varazserejet
+	 * @return visszaadja a jatekos varazserejet
 	 */
 	public int getMagicPower() {
-		System.out.println("Player getMagicPower - visszaadja a jatekos eleterejet");
+		System.out.println("Player getMagicPower - visszaadja a jatekos varazserejet");
 		return this.magicPower;
 	}
 	/**
