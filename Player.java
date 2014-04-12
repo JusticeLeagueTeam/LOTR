@@ -1,5 +1,6 @@
 package LOTR;
 
+
 /**
  * Player a jatekos osztalya
  * a jatekos iranyitja a GUI-n keresztul az egysegeit

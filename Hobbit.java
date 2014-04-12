@@ -1,5 +1,6 @@
 package LOTR;
 
+
 /**
  * Hobbit - Ellenfelek egy fajtaja
  * @author justice_league

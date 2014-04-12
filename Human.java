@@ -1,5 +1,6 @@
 package LOTR;
 
+
 /**
  *Human osztaly az Enemy leszarmazottja, ember fajt kepviseli.
  *Az ellenfel tipusoknal ot vehetjuk kiindulasi alapnak.

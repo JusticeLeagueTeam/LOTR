@@ -1,5 +1,6 @@
 package LOTR;
 
+
 /**
  * Swamp osztaly a mocsarnak felel meg
  * A konstrutorban beallitott ertek szerint lassitja az ellenfeleket

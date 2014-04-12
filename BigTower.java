@@ -1,5 +1,6 @@
 package LOTR;
 
+
 /**
  * BigTower - tornyok egy tipusa
  * nagyobb toronytipusnak felel meg

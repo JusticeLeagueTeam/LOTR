@@ -1,6 +1,7 @@
 package LOTR;
 
 
+
 /**Game osztaly, ososztalya nincsen, jatek "mozgasat" biztositja.
  * A jatek lefolyasaert felelos objektum, amelynek a program elindulasakor es a jatek
  * befejezesekor van szerepe. Legfontosabb dolga, hogy amikor a jatekos uj jatekot kezd,

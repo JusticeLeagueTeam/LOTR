@@ -1,5 +1,6 @@
 package LOTR;
 
+
 /**
  * DefenseTools - vedelmi eszkozok
  * ide tartoznak a tornyok es akadolyok osszes leszarmazottaival egyutt
@@ -21,17 +22,15 @@ public class DefenseTools {
 	 * @return visszater a poziciova
 	 */
 	public Position getPosition() {
-		System.out.println("DefenseTools getPosition - visszater a pozicioval");
-		return this.position;
+		return position;
 	}
 
 	/**
 	 * beallitja a poziciot
 	 * @param position beallitja a poziciot
 	 */
-	public void setPosition(Position position) {
-		System.out.println("DefenseTools setPosition - beallitja a poziciot");
-		this.position = position;
+	public void setPosition(Position p) {
+		position = p;
 	}
 
 	/**
@@ -39,17 +38,15 @@ public class DefenseTools {
 	 * @return visszater a koltseggel
 	 */
 	public int getCost() {
-		System.out.println("DefenseTools getCost - visszater a koltseggel");
-		return this.cost;
+		return cost;
 	}
 
 	/**
 	 * beallitja a koltseget
 	 * @param cost beallitja a koltseget
 	 */
-	public void setCost(int cost) {
-		System.out.println("DefenseTools setCost - beallitja a koltseget");
-		this.cost = cost;
+	public void setCost(int c) {
+		cost = c;
 	}
 
 }

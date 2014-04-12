@@ -1,5 +1,6 @@
 package LOTR;
 
+
 /**
  * Elf - ellenfelek egy tipusa
  * @author justice_league
