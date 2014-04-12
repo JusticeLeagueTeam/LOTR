@@ -11,11 +11,11 @@ public class DefenseTools {
 	/**
 	 * jelenlegi pozicio
 	 */
-	private Position position;
+	protected Position position;
 	/**
 	 * ennyi varazserobe kerul megepiteni
 	 */
-	private int cost;
+	protected int cost;
 
 	/**
 	 * visszater a poziciova

@@ -15,45 +15,41 @@ import java.util.Observable;
  *
  */
 public class Enemy extends Observable {
-
 	/**
 	 * eletero
 	 */
-	private int health;
+	protected int health;
 	/**
 	 * sebesseg (tick_counter%speed == 0-nal lep)
 	 */
-	private int speed;
+	protected int speed;
 	/**
 	 * jelenlegi pozicio a palyan
 	 */
-	private Position position;
+	protected Position position;
 	/**
 	 * ennyi varazserohoz jut a jatekos ha megoli
 	 */
-	private int magicPowerGain;
+	protected int magicPowerGain;
 	/**
 	 * orajelek szama a jatek kezdete ota
 	 */
-	private int tick_counter;
+	protected int tick_counter;
 
 	/**
 	 * visszater az eleterovel
 	 * @return visszater az eleterovel
 	 */
 	public int getHealth() {
-		System.out.println("Enemy getHealth - visszater az eleterovel");
-		return this.health;
+		return health;
 	}
 
 	/**
 	 * parameterrel csokkenti az eleterot
 	 * @param health parameterrel csokkenti az eleterot
 	 */
-	public void setHealth(int health) {
-		System.out.println("Enemy setHelath - parameterrel csokkenti az eleterot");
-		this.health = health;
-		
+	public void setHealth(int h) {
+		health = h;
 	}
 
 	/**
@@ -61,17 +57,15 @@ public class Enemy extends Observable {
 	 * @return visszater a sebesseggel
 	 */
 	public int getSpeed() {
-		System.out.println("Enemy getSpeed - visszater a sebesseggel");
-		return this.speed;
+		return speed;
 	}
 
 	/**
 	 * beallitja a sebesseget
 	 * @param speed beallitja a sebesseget
 	 */
-	public void setSpeed(int speed) {
-		System.out.println("Enemy setSpeed - beallitja a sebesseget");
-		this.speed = speed;
+	public void setSpeed(int s) {
+		speed = s;
 	}
 
 	/**
@@ -79,17 +73,15 @@ public class Enemy extends Observable {
 	 * @return visszater a pozicioval
 	 */
 	public Position getPosition() {
-		System.out.println("Enemy getPosition - visszater a pozicioval");
-		return this.position;
+		return position;
 	}
 
 	/**
 	 * beallitja a poziciot
 	 * @param position beallitja a poziciot
 	 */
-	public void setPosition(Position position) {
-		System.out.println("Enemy setPosition - beallitja a poziciot");
-		this.position = position;
+	public void setPosition(Position p) {
+		position = p;
 	}
 
 	/**
@@ -97,17 +89,15 @@ public class Enemy extends Observable {
 	 * @return beallitja a nyert varazsero erteket
 	 */
 	public int getMagicPowerGain() {
-		System.out.println("Enemy getMagicPowerGain - beallitja a nyert varazsero erteket");
-		return this.magicPowerGain;
+		return magicPowerGain;
 	}
 
 	/**
 	 * visszater a nyert varazsero ertekevel
 	 * @param magicPowerGain visszater a nyert varazsero ertekevel
 	 */
-	public void setMagicPowerGain(int magicPowerGain) {
-		System.out.println("Enemy setMagicPowerGain - visszater a nyert varazsero ertekevel");
-		this.magicPowerGain = magicPowerGain;
+	public void setMagicPowerGain(int mpg) {
+		magicPowerGain = mpg;
 	}
 
 	/**

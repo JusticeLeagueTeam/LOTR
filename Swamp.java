@@ -13,7 +13,22 @@ public class Swamp extends Barrier {
 	 * A konstrutorban beallitott ertek szerint lassitja az ellenfeleket
 	 */
 	public Swamp() {
-		System.out.println("Swamp konstruktor");
+		/**
+		 * alapbol nincs konkret pozicioja, azt a Map adja neki setPosition-nel
+		 */
+		position = new Position();
+		/**
+		 * 150 varazserobe kerul
+		 */
+		cost = 150;
+	 	/**
+	 	 * alapbol nincs rajta ko
+	 	 */
+		elfOrDwarfFlag = false;
+		/**
+		 * kicsit lassitja az ellenfelet
+		 */
+		retardingValue = 1;
 	}
 
 }

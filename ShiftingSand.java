@@ -8,13 +8,27 @@ package LOTR;
  *
  */
 public class ShiftingSand extends Barrier {
-
+	/**
+	 * ShiftingSand a futohomoknak felel meg
+	 * A konstruktorban beallitott erteket alapjan lassitja az ellenfelet.
+	 */
 	public ShiftingSand() {
 		/**
-		 * ShiftingSand a futohomoknak felel meg
-		 * A konstruktorban beallitott erteket alapjan lassitja az ellenfelet.
+		 * alapbol nincs konkret pozicioja, azt a Map adja neki setPosition-nel
 		 */
-		System.out.println("ShiftingSand konstruktor");
+		position = new Position();
+		/**
+		 * 200 varazserobe kerul
+		 */
+		cost = 200;
+	 	/**
+	 	 * alapbol nincs rajta ko
+	 	 */
+		elfOrDwarfFlag = false;
+		/**
+		 * jobban lassitja az ellenfelet
+		 */
+		retardingValue = 2;
 	}
 
 }

@@ -8,13 +8,39 @@ package LOTR;
  *
  */
 public class SmallTower extends Tower {
-
+	/**
+	 * SmallTower a kisebb toronynak felel meg
+	 * A konstruktorban beallitott ertekek szerint tamadja az ellenfelet.
+	 */
 	public SmallTower() {
 		/**
-		 * SmallTower a kisebb toronynak felel meg
-		 * A konstruktorban beallitott ertekek szerint tamadja az ellenfelet.
+		 * alapbol nincs konkret pozicioja, azt a Map adja neki setPosition-nel
 		 */
-		System.out.println("SmallTower konstruktor");
+		position = new Position();
+		/**
+		 * 400 varazserobe kerul
+		 */
+		cost = 400;
+		/**
+		 * 4 tick utan tuzel
+		 */
+		firingSpeed = 4;
+		/**
+		 * kisebb lotav
+		 */
+	 	firingRange = 1;
+		/**
+		 * kisebb tuzero
+		 */
+	 	firingPower = 30;
+	 	/**
+	 	 * alapbol nincs rajta ko
+	 	 */
+		elfOrDwarfFlag = false;
+		/**
+		 * nullarol indul az orajel termeszetesen
+		 */
+		tick_counter = 0;
 	}
 
 }

@@ -16,28 +16,26 @@ public class Barrier extends DefenseTools implements Observer {
 	/**
 	 * ennyivel lassitja az ellenfelet
 	 */
-	private int retardingValue;
+	protected int retardingValue;
 	/**
 	 * egyik varazsko miatt kell
 	 */
-	private boolean elfOrDwarfFlag;
+	protected boolean elfOrDwarfFlag;
 
 	/**
 	 * visszaadja a lassitasi tenyezot
 	 * @return visszaadja a lassitasi tenyezot
 	 */
 	public int getRetardingValue() {
-		System.out.println("Barrier getRetardingValue - visszaadja a lassitasi tenyezot");
-		return this.retardingValue;
+		return retardingValue;
 	}
 
 	/**
 	 * beallitja a lassitasi tenyezot
 	 * @param retardingValue beallitja a lassitasi tenyezot
 	 */
-	public void setRetardingValue(int retardingValue) {
-		System.out.println("Barrier setRetardingValue - beallitja a lassitasi tenyezot");
-		this.retardingValue = retardingValue;
+	public void setRetardingValue(int rv) {
+		retardingValue = rv;
 	}
 
 	/**
@@ -45,17 +43,15 @@ public class Barrier extends DefenseTools implements Observer {
 	 * @return visszaadja a flag allapotat
 	 */
 	public boolean getElfOrDwarfFlag() {
-		System.out.println("Barrier getElfOrDwarfFlag - visszaadja a flag allapotat");
-		return this.elfOrDwarfFlag;
+		return elfOrDwarfFlag;
 	}
 
 	/**
 	 * beallitja a flag-et
 	 * @param elfOrDwarfFlag beallitja a flag-et
 	 */
-	public void setElfOrDwarfFlag(boolean elfOrDwarfFlag) {
-		System.out.println("Barrier setElfOrDwarfFlag - beallitja a flag-et");
-		this.elfOrDwarfFlag = elfOrDwarfFlag;
+	public void setElfOrDwarfFlag(boolean eodf) {
+		elfOrDwarfFlag = eodf;
 	}
 
 	/**

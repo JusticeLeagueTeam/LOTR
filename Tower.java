@@ -14,79 +14,91 @@ import java.util.Observable;
  *
  */
 public class Tower extends DefenseTools {
-	/* tuzelesi gyakorisag */
-	private int firingSpeed;
-	/* tuzelesi hatotav */
-	private int firingRange;
-	/* flag az olyan varazskoveknek ami csak elfekre vagy torpekre hat */
-	private boolean elfOrDwarfFlag;
-	/* jatek kezdete ota eltelt orajelek szama */
-	private int tick_counter;
-	
+	/**
+	 *  tuzelesi gyakorisag 
+	 */
+	protected int firingSpeed;
+	/**
+	 *  tuzelesi hatotav 
+	 */
+	protected int firingRange;
+	/**
+	 *  tuzero
+	 */
+	protected int firingPower;
+	/**
+	 *  flag az olyan varazskoveknek ami csak elfekre vagy torpekre hat 
+	 */
+	protected boolean elfOrDwarfFlag;
+	/**
+	 *  jatek kezdete ota eltelt orajelek szama
+	 */
+	protected int tick_counter;
+	/**
+	 * Tower konstruktor
+	 */
 	public Tower(){
-		//a leszarmazottakba eleg print - arnold
-	}
 
+	}
+	/**
+	 * visszaadja a tamadas sebesseget
+	 */
 	public int getFiringSpeed() {
-		/*
-		 * visszaadja a tamadas sebesseget
-		 */
-		System.out.println("Tower getFiringSpeed - visszaadja a tamadas sebesseget");
-		return this.firingSpeed;
+		return firingSpeed;
 	}
-
-	public void setFiringSpeed(int firingSpeed) {
-		/*
-		 * beallitja a tamadas sebesseget
-		 */
-		System.out.println("Tower setFiringSpeed - beallitja a tamadas sebesseget");
-		this.firingSpeed = firingSpeed;
+	/**
+	 * beallitja a tamadas sebesseget
+	 */
+	public void setFiringSpeed(int fs) {
+		firingSpeed = fs;
 	}
-
+	/**
+	 * visszaadja a hatotavot
+	 */
 	public int getFiringRange() {
-		/*
-		 * visszaadja a hatotavot
-		 */
-		System.out.println("Tower getFiringRange - visszaadja a hatotavot");
-		return this.firingRange;
+		return firingRange;
 	}
-
-	public void setFiringRange(int firingRange) {
-		/*
-		 * beallitja a hatotavot
-		 */
-		System.out.println("Tower setFiringRange - beallitja a hatotavot");
-		this.firingRange = firingRange;
+	/**
+	 * beallitja a hatotavot
+	 */
+	public void setFiringRange(int fr) {
+		firingRange = fr;
 	}
-
+	/**
+	 * visszaadja a tuzerot
+	 */
+	public int getFiringPower() {
+		return firingPower;
+	}
+	/**
+	 * beallitja a tuzerot
+	 */
+	public void setFiringPower(int fp) {
+		firingPower = fp;
+	}
+	/**
+	 *visszaadja a flag-et 
+	 */
 	public boolean getElfOrDwarfFlag() {
-		/*
-		 *visszaadja a flag-et 
-		 */
-		System.out.println("Tower getElfOrDwarfFlag - visszaadja a flag-et");
-		return this.elfOrDwarfFlag;
+		return elfOrDwarfFlag;
 	}
-
-	public void setElfOrDwarfFlag(boolean elfOrDwarfFlag) {
-		/*
-		 * beallitja a flag-et
-		 */
-		System.out.println("Tower setElfOrDwarfFlag - beallitja a flag-et");
-		this.elfOrDwarfFlag = elfOrDwarfFlag;
+	/**
+	 * beallitja a flag-et
+	 */
+	public void setElfOrDwarfFlag(boolean eodf) {
+		elfOrDwarfFlag = eodf;
 	}
-
+	/**
+	 * ellenorzi, hogy van-e ellenseg a hatokoreben
+	 */
 	public void update(Observable observable) {
-		/*
-		 * ellenorzi, hogy van-e ellenseg a hatokoreben
-		 */
-		System.out.println("Tower update - ellenorzi, hogy van-e ellenseg a hatokoreben");		
+	//TODO	
 	}
-
+	/**
+	 * noveli a tick_counter-t eggyel
+	 */
 	public void tick() {
-		/*
-		 * noveli a tick_counter-t eggyel
-		 */
-		System.out.println("Tower tick - noveli a tick_counter-t eggyel");
+		tick_counter++;
 	}
 
 }
