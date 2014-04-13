@@ -45,7 +45,10 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 		LinkedList<Tower> towersLinkedList = Map.getTowers();
 		for(Tower t : towersLinkedList)
 		{
-			t.setFiringSpeed(15);
+			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())
+			{
+				t.setFiringSpeed(t.getFiringSpeed()- this.firingSpeedIncreaseValue);
+			}
 		}
 	}
 
