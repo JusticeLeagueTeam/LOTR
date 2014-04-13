@@ -16,6 +16,7 @@ public class ElfDwarfSpecializedStone extends MagicStone {
 	 * ElfDwarfSpecializedStone - varazskovek egyike
 	 */
 	public ElfDwarfSpecializedStone(){
+		this.cost=100;
 		System.out.println("ElfDwarfSpecializedStone konstruktor - letrehozza a varazskovet  kezdeti ertekekkel");
 	}
 
@@ -23,10 +24,10 @@ public class ElfDwarfSpecializedStone extends MagicStone {
 	 * A vedelmi eszkozok tulajdonsagait modositani kepes metodus.
 	 */
 	public void effectDefenseTool() {
-		System.out.println("ElfDwarfSpecializedStone effectDefenseTool() - modositja a vedelmi eszkoz tulajdonsagait");
-		LinkedList<Tower> towersLinkedList = Map.getTowers();		
-		Tower t = (Tower) Map.getTowers().get(0);
-		t.setElfOrDwarfFlag(true);
+		//System.out.println("ElfDwarfSpecializedStone effectDefenseTool() - modositja a vedelmi eszkoz tulajdonsagait");
+		//LinkedList<Tower> towersLinkedList = Map.getTowers();		
+		//Tower t = (Tower) Map.getTowers().get(0);
+		//t.setElfOrDwarfFlag(true);
 	}
 
 	/**
@@ -34,6 +35,15 @@ public class ElfDwarfSpecializedStone extends MagicStone {
 	 */
 	public void effectTower() {
 		System.out.println("ElfDwarfSpecializedStone effectTower() - modositja a tornyok tulajdonsagait");
+		LinkedList<Tower> towersLinkedList = Map.getTowers();		
+		for(Tower t : towersLinkedList)
+		{
+			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())
+			{
+				t.setElfOrDwarfFlag(true);
+			}
+
+		}
 	}
 
 	/**

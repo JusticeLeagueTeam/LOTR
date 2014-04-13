@@ -18,6 +18,8 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 	 * torony tamadas gyakorisagat novelo ko
 	 */
 	public FiringSpeedIncreaseStone(){
+		this.firingSpeedIncreaseValue=1;
+		this.cost=50;
 		System.out.println("FiringSpeedIncreaseStone konstruktor - letrehozza a varazskovet kezdeti ertekekkel");
 	}
 	
@@ -47,7 +49,7 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 		{
 			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())
 			{
-				t.setFiringSpeed(t.getFiringSpeed()- this.firingSpeedIncreaseValue);
+				t.setFiringSpeed(t.getFiringSpeed() - this.firingSpeedIncreaseValue);
 			}
 		}
 	}

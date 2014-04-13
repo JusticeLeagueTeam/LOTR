@@ -15,6 +15,8 @@ public class Position {
 	 * cellamatrixon beluli oszlopszam 
 	 */
 	private int columnValue;
+	
+	private boolean roadFlag;
 
 	/**
 	 *  visszaadja a sorszamot 
@@ -47,5 +49,14 @@ public class Position {
 		System.out.println("Position setColumnValue(int columnValue) - Oszlopszam beallitasa.");
 		this.columnValue = columnValue;
 	}
+	
+	public boolean getRoadFlag() {
+		return this.roadFlag;
+	}
+	
+	public void setColumnValue(boolean roadflag) {
+		this.roadFlag = roadflag;
+	}
+
 
 }

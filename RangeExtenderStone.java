@@ -18,6 +18,8 @@ public class RangeExtenderStone extends MagicStone {
 	 * RangeExtenderStone ko a torony hatotavolsagat noveli
 	 */
 	public RangeExtenderStone(){
+		this.rangeExtendingValue=1;
+		this.cost=50;
 		System.out.println("RangeExtenderStone konstruktor - letrehozza a varazskovet kezdeti ertekekkel");
 	}
 
@@ -45,7 +47,10 @@ public class RangeExtenderStone extends MagicStone {
 		LinkedList<Tower> towersLinkedList = Map.getTowers();
 		for(Tower t : towersLinkedList)
 		{
-			t.setFiringRange(15);
+			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())
+			{
+				t.setFiringRange(t.getFiringRange() + this.rangeExtendingValue);
+			}
 		}
 	}
 
