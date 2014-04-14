@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
+import java.util.Random;
 
 /**A palyara vonatkozo legfontosabb informaciokat tarolja, ellenfelek, vedelmi eszkozok, utvonalak, cel.
  * Tarolja a palya felepiteset, azon hol talalhatoak az utvonalak illetve
@@ -43,6 +44,14 @@ public class Map {
 	
 	public static int tickFlag;
 	
+	/** A letrehozhato ellenfelek maximalis szamat adja meg. */
+	public static int totalNumberOfEnemies;
+	
+	/** A tick_counter akkori erteke, amikor legutoljara
+	 * hoztunk letre ellenfelet.
+	 */
+	public static int lastTickValueWhenEnemyWasCreated;
+	
 	
 	/**A Map osztaly konstruktora, amely egy Map objektum letrehozasakor hivodik meg. 
 	 * A konstruktor hozza letre a Jatekost (Player) reprezentalo objektumot, amelyet a 
@@ -52,9 +61,7 @@ public class Map {
 	 * a DefenseTool (vedelmi eszkoz) leszarmazottakat mint tornyok, akadalyok, varazskovek.
 	 * Inicializalja az orajel szamlalot (tick_counter).
 	 */
-	public Map(){
-		System.out.println("Map konstruktor - Map objektum letrejott");
-		
+	public Map(){	
 		
 		player=new Player();
 		enemies=new LinkedList<Enemy>();
@@ -63,6 +70,8 @@ public class Map {
 		magicStones=new LinkedList<MagicStone>();		
 		tick_counter=0;
 		tickFlag=0;
+		totalNumberOfEnemies=20;
+		lastTickValueWhenEnemyWasCreated=0;
 		
 	}
 	
@@ -72,7 +81,7 @@ public class Map {
 	 * @return LinkedList Az ellenfeleket tarolo adatszerkezettel(enemies) ter vissza (adja vissza).
 	 */
 	public static  LinkedList getEnemies() { 
-		System.out.println("Map getEnemies - ellenfeleket tarolo adatszerkezet lekerdezese");
+		
 		return enemies;
 	}
 	
@@ -82,7 +91,7 @@ public class Map {
 	 * @param enemies Egy az ellenfeleket tarolo adatszerkezetet kap parameterkent.
 	 */
 	public static void setEnemies(LinkedList Enemies) {
-		System.out.println("Map - setEnemies - ellenfeleket tarolo adatszerkezet beallitasa");
+		
 		enemies = Enemies;
 		}
 	
@@ -94,9 +103,115 @@ public class Map {
 	 * A generalt ellenfelek osszetetele valtozhat.
 	 */
 	public static void createEnemy(){
-		System.out.println("Map createEnemy - Ellenfel letrehozasa");
 		
-		enemies.add(new Elf());	
+		//Ha a meg legyarthato ellenfelek szama nagyobb mint nulla
+		//akkor meg letrehozhatunk ujabbakat
+		if(totalNumberOfEnemies > 0)
+		{
+			//Random generatorral hozunk letre ellenfeleket
+			//Egy alkalommal mindig ketto darabot
+			Random rand = new Random();
+			int randomNumber1 = rand.nextInt(4);
+			int randomNumber2 = rand.nextInt(4);
+			
+			//0 - Human
+			//1 - Hobbit
+			//2 - Dwarf
+			//3 - Elf
+			
+			//Ha a jatek elejen jarunk, az elso tick_count intervallumban
+			if((tick_counter > 0) && (tick_counter <= 50))
+			{							
+				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
+				if(tick_counter - lastTickValueWhenEnemyWasCreated == 20)
+				{					
+					//Elso ellenfel tipusanak megallapitasa majd generalasa
+					if(randomNumber1 == 0)
+					{
+						enemies.add(new Human());
+					}
+					if(randomNumber1 == 1)
+					{
+						enemies.add(new Hobbit());
+					}
+					if(randomNumber1 == 2)
+					{
+						enemies.add(new Dwarf());
+					}
+					if(randomNumber1 == 3)
+					{
+						enemies.add(new Elf());
+					}
+					
+					//Masodik ellenfel tipusanak megallapitasa majd generalasa
+					if(randomNumber2 == 0)
+					{
+						enemies.add(new Human());
+					}
+					if(randomNumber2 == 1)
+					{
+						enemies.add(new Hobbit());
+					}
+					if(randomNumber2 == 2)
+					{
+						enemies.add(new Dwarf());
+					}
+					if(randomNumber2 == 3)
+					{
+						enemies.add(new Elf());
+					}
+				}
+			}
+			
+			//Ha a jatekban a masodik tick intervallumban jarunk
+			if((tick_counter > 50) && (tick_counter <= 100))
+			{							
+				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
+				if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
+				{					
+					//Elso ellenfel tipusanak megallapitasa majd generalasa
+					if(randomNumber1 == 0)
+					{
+						enemies.add(new Human());
+					}
+					if(randomNumber1 == 1)
+					{
+						enemies.add(new Hobbit());
+					}
+					if(randomNumber1 == 2)
+					{
+						enemies.add(new Dwarf());
+					}
+					if(randomNumber1 == 3)
+					{
+						enemies.add(new Elf());
+					}
+					
+					//Masodik ellenfel tipusanak megallapitasa majd generalasa
+					if(randomNumber2 == 0)
+					{
+						enemies.add(new Human());
+					}
+					if(randomNumber2 == 1)
+					{
+						enemies.add(new Hobbit());
+					}
+					if(randomNumber2 == 2)
+					{
+						enemies.add(new Dwarf());
+					}
+					if(randomNumber2 == 3)
+					{
+						enemies.add(new Elf());
+					}
+				}
+			}
+			
+			//TODO: tovabbi intervallumokat megcsinalni, de ehhez
+			//a tobbiekkel kell egyeztetni a konkret ertekekrol
+			//Tovabbi tick intervallumok definialhatoak
+		}
+		
 	}
 
 	
@@ -105,7 +220,7 @@ public class Map {
 	 * @return int A jatek kezdete ota eltelt orajelek szamat adja vissza.
 	 */
 	public static int getTickCount() {
-		System.out.println("Map getTickCount - Az orajelek szamat visszaadja");
+		
 		return tick_counter;
 	}
 	
@@ -115,7 +230,7 @@ public class Map {
 	 * @param tickCount Az ertek amelyre az orajel szamlalot bekivanjuk allitani.
 	 */
 	public static void setTickCount(int tickCount) {
-		System.out.println("Map setTickCount - A jatek kezdete ota eltelt orajel szamanak beallitasa (novelese)");
+		
 		tick_counter=tickCount;
 	}
 
@@ -124,7 +239,7 @@ public class Map {
 	 * @return A tornyokat tarolo adatszerkezetet adja vissza.
 	 */
 	public static LinkedList getTowers() {
-		System.out.println("Map getTowers - A tornyokat tarolo adatszerkezet lekerdezese");
+		
 		return towers;
 	}
 
@@ -133,7 +248,7 @@ public class Map {
 	 * @param towers A tornyokat tarolo adatszerkezet beallitasa(atadasa).
 	 */
 	public static void setTowers(LinkedList Towers) {
-		System.out.println("Map setTowers - A tornyokat tarolo adatszerkezet beallitasa");
+		
 		towers = Towers;
 	}
 
@@ -142,7 +257,7 @@ public class Map {
 	 * @return LinkedList Az akadalyokat tarolo adatszerkezetet adja vissza.
 	 */
 	public static LinkedList getBarriers() {
-		System.out.println("Map getBarriers - Az akadalyokat tarolo adatszerkezet lekerdezese");
+		
 		return barriers;
 	}
 
@@ -152,7 +267,7 @@ public class Map {
 	 * @param barriers Az akadalyokat tarolo adatszerkezet beallitasa(atadasa).
 	 */
 	public static void setBarriers(LinkedList Barriers) {
-		System.out.println("Map setBarriers - Az akadalyokat tarolo adatszerkezet beallitasa");
+		
 		barriers = Barriers;
 	}
 	
@@ -162,7 +277,7 @@ public class Map {
 	 * @return A varazskoveket tarolo adatszerkezetet adja vissza.
 	 */
 	public static LinkedList getMagicStones() { 
-		System.out.println("Map getMagicStones - A varazskoveket tarolo adatszerkezet lekerdezese");
+		
 		return magicStones;
 	}
 	
@@ -172,7 +287,7 @@ public class Map {
 	 * @param magicStones A varazskoveket tarolo adatszerkezet beallitasa(atadasa)
 	 */
 	public static void setMagicStones(LinkedList MagicStones) {
-		System.out.println("Map setMagicStones - A varazskoveket tarolo adatszerkezet beallitasa");
+		
 		magicStones = MagicStones;
 	}
 
@@ -184,7 +299,9 @@ public class Map {
 	 * @return Az uj cella helyzete, ahova az ellenfelek lepnie kell.
 	 */
 	public static Position enemyStep(Position position) {
-		System.out.println("Map enemyStep - Az ellenfel aktualis pozicioja alapjan kiszamitja az uj poziciojat ahova lephet");
+		
+		//TODO: amig nincs palya adatszerkezet, addig nem tudom a leptetest megcsinalni
+		
 		return new Position();
 	}
 
@@ -192,58 +309,8 @@ public class Map {
 	/**A Timer-tol erkezo orajelre ellenorzi, hogy szukseges-e uj ellenfel generalasa.
 	 */
 	public static void tick() {
-		System.out.println("Map tick - Beerkezo orajel hatasara ellenorzi, hogy szukseges-e ellenfelet generalni, leptetni");
-		System.out.println("Map tick (dokumentacio 5.3.2) - Meghivja az Enemy tick() metodusat, amely hatasara az Enemy tick() metodusa visszahivja a Map enemyStep() metodusat, hogy megtudja, hova lephet");
-		System.out.println("Map tick (dokumentacio 5.3.3) - Meghivja a Tower es Enemy tick() metodusat");
 		
-		if(tickFlag==1)
-		{
-			System.out.println("[IF]Letelt-e eleg tick(orajel) uj ellenseg generalasahoz? (y/n )");
-			System.out.println("input:");
-			BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
-			String line = null;
-			try {
-				line = buff.readLine();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-			if(line.equals("y")){
-				createEnemy();
-			}
-			else if(line.equals("n")){
-				System.out.println("Meg nem telt el eleg tick(orajel) uj ellenfel generalasahoz");
-			}
-			else{
-				System.out.println("Hibas bemenet - ez esetben nem generalodik uj ellenseg");
-			}
-			
-		}
-		if(tickFlag==2)
-		{
-        	LinkedList<Enemy> enemiesLinkedList= Map.getEnemies();
-        	if(enemiesLinkedList.size() == 0)
-        	{
-        		System.out.println("Meg nem jott letre enemy(ellenfel) igy nem tud lepni");
-        	}
-        	else
-        	{
-	        	Game.timer.tick();
-        		for(Enemy e : enemiesLinkedList)
-	        	{
-	        		e.tick();
-	        	}
-        	}
-		}
-		if(tickFlag==3)
-		{
-			
-		}
-		
-		
-
-		//System.out.println("Ha move-rol(lepes) van szo es nem szukseges uj enemy-t(ellenseg) letrehozni, akkor  n  karaktert gepeljen be, egyebkent  y -t!");
-		
-		
+		createEnemy();
 
 	}
 

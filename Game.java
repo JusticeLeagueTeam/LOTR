@@ -25,9 +25,7 @@ public class Game {
 	 * 
 	 * Az objektumok letrejotte utan elinditja a jatek futasat. 
 	 */	
-	public Game(){
-		System.out.println("Game konstruktor - Game objektum letrejott");
-		
+	public Game(){	
 		
 		Timer timer = new Timer();
 		Map map = new Map();
@@ -40,6 +38,10 @@ public class Game {
 	 * tehat egy Enemy leszarmazott (Elf, Dwarf, Hobbit, Human) eljut a celba. 
 	 */
 	public static void endGame() {
+		
+		//TODO: palya adatszerkezet kell ahhoz, hogy tudjam vizsgalni, hogy
+		//valamelyik ellenfel pozicioja egybe esik-e a célpoziciokkal
+		
 		System.out.println("Game endGame - A jatekos veszitett, jatek vege");
 	}
 	
@@ -47,7 +49,8 @@ public class Game {
 	/**A jatek indulasakor letrehozza a szukseges objektumokat, beallitja az attributumokat. 
 	*/
 	public static void startGame() {
-		System.out.println("Game startGame - A jatek elindult");
+		
+		
 	}
 
 	
@@ -57,11 +60,10 @@ public class Game {
 	 *  (a szamuk korlatozott, veges, igy idovel biztos elfogynak)
 	 */
 	public static void winGame() {
-		System.out.println("Game wingame - A jatekos nyert, jatek vege");
-		
+				
 		if(Map.enemies.isEmpty())
 		{
-			//WIN
+			System.out.println("Game wingame - A jatekos nyert, jatek vege");
 		}
 	}
 	
@@ -71,7 +73,14 @@ public class Game {
 	 * vagy veszitett-e mar.
 	 */
 	public static void tick() {
-		System.out.println("Game tick - Orajelre ellenorzi, hogy a jatekos nyert vagy veszitett");
+		
+		//Wingame-hez nem kéne visszatérési érték? vagy csak simán kiprintel es kesz?
+		//honnan fogja tudni az egesz rendszer, hogy ott lefutott az IF?
+		//Valamit bekene hozza allitani
+		winGame();
+		
+		endGame();
+		
 	}
 
 
