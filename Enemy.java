@@ -28,6 +28,10 @@ public class Enemy extends Observable {
 	 */
 	protected Position position;
 	/**
+	 * elozo pozicio a palyan
+	 */
+	protected Position lastPosition;
+	/**
 	 * ennyi varazserohoz jut a jatekos ha megoli
 	 */
 	protected int magicPowerGain;
@@ -82,6 +86,21 @@ public class Enemy extends Observable {
 	 */
 	public void setPosition(Position p) {
 		position = p;
+	}
+	/**
+	 * visszater az elozo pozicioval
+	 * @return visszater a pozicioval
+	 */
+	public Position getLastPosition() {
+		return lastPosition;
+	}
+
+	/**
+	 * beallitja az elozo poziciot
+	 * @param position beallitja a poziciot
+	 */
+	public void setLastPosition(Position p) {
+		lastPosition = p;
 	}
 
 	/**
