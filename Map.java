@@ -518,7 +518,51 @@ public class Map {
 	 */
 	public static Position enemyStep(Position position) {
 		
-		//TODO: amig nincs palya adatszerkezet, addig nem tudom a leptetest megcsinalni
+		LinkedList<Position> positionList = new LinkedList<Position>();
+		
+		//Az ellenfel pozicioja koruli cellak roadFlag attributumanak ellenorzese kereszt alakban		
+		//Ha az adott cella folotti sorban levo cella is ut
+		if(Map.mainMap[position.getRowValue()-1][position.getColumnValue()].getRoadFlag() == true)
+		{
+			Position tmp = new Position();
+			tmp.setRowValue(position.getRowValue()-1);
+			tmp.setColumnValue(position.getColumnValue());
+			tmp.setRoadFlag(true);
+			positionList.add(tmp);
+		}
+		
+		//Ha az adott cellatol balra levo cella is ut (egyel kisebb oszlopban)
+		if(Map.mainMap[position.getRowValue()][position.getColumnValue()-1].getRoadFlag() == true)
+		{
+			Position tmp = new Position();
+			tmp.setRowValue(position.getRowValue());
+			tmp.setColumnValue(position.getColumnValue()-1);
+			tmp.setRoadFlag(true);
+			positionList.add(tmp);
+		}
+		
+		//Ha az adott cellatol jobbra levo cella is ut
+		if(Map.mainMap[position.getRowValue()][position.getColumnValue()+1].getRoadFlag() == true)
+		{
+			Position tmp = new Position();
+			tmp.setRowValue(position.getRowValue());
+			tmp.setColumnValue(position.getColumnValue()+1);
+			tmp.setRoadFlag(true);
+			positionList.add(tmp);
+		}
+		
+		//Ha az adott cella alatti sorban levo cella is ut (egyel nagyobb oszlopban)
+		if(Map.mainMap[position.getRowValue()+1][position.getColumnValue()].getRoadFlag() == true)
+		{
+			Position tmp = new Position();
+			tmp.setRowValue(position.getRowValue()+1);
+			tmp.setColumnValue(position.getColumnValue());
+			tmp.setRoadFlag(true);
+			positionList.add(tmp);
+		}
+		
+		//A listaba bekerult ut cellak kozul melyiken jart mar korabban
+		//Amelyiken mar jart, abba az iranyba nem mehet, mert visszafele menne
 		
 		return new Position();
 	}
