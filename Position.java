@@ -54,7 +54,7 @@ public class Position {
 		return this.roadFlag;
 	}
 	
-	public void setColumnValue(boolean roadflag) {
+	public void setRoadFlag(boolean roadflag) {
 		this.roadFlag = roadflag;
 	}
 
