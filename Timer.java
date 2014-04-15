@@ -13,14 +13,14 @@ public class Timer {
 		System.out.println("Timer run - ");
 	}
 
-	/** Beállítja a periódusidőt */
+	/** Beallitja a periodusidot */
 	public void setPeriod(int intParameter) {
 		this.period = intParameter;
 		System.out.println("Timer setPeriod - periodusio beallitasa");
 	}
 
-	/** Az órajelért felelős metódus, minden periódusidő lejártakor meghívódik. 
-	 * Meghívja a Map és a Game tick metódusát.
+	/** Az orajelert felelos metodus, minden periodus letelte utan meghivodik 
+	 * Meghivja a Map es a Game tick metodusat
 	 */
 	public static void tick() {
 		Map.tick();
