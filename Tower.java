@@ -89,10 +89,31 @@ public class Tower extends DefenseTools {
 		elfOrDwarfFlag = eodf;
 	}
 	/**
-	 * ellenorzi, hogy van-e ellenseg a hatokoreben
+	 * ellenorzi, hogy van-e ellenseg a hatokoreben es megtamadja
 	 */
 	public void update(Observable observable) {
 	//TODO	
+		//minden ellenfelen vegigmegy a ciklus es ellenorzi a hatotavot
+		//ha benne van es tick%firingSpeed==0, akkor Attacked(int i)
+		for(Enemy e : Map.enemies){
+			boolean is_in_target=false;
+			if(firingRange == 1){
+				if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 1) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 1))
+					is_in_target = true;
+			}
+			if(firingRange == 2){
+				if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 2) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 2))
+					is_in_target = true;
+			}
+			if(is_in_target == true){
+				if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
+					e.Attacked(firingPower + 10);
+				else
+					e.Attacked(firingPower);
+			}
+		}
+		//player.setmagicpower, enemy.sethealth - ezeket az attacked végzi
+		//szintén atacked: ha életerõ 0 alá megy, remove
 	}
 	/**
 	 * noveli a tick_counter-t eggyel

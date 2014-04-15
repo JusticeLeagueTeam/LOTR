@@ -55,11 +55,10 @@ public class Barrier extends DefenseTools implements Observer {
 	}
 
 	/**
-	 * osszes ellenfelet ellenorzi, hogy van-e rajta ko, ha igen akkor beallitja a hatasat
+	 *
 	 */
 	public void effectEnemy() {
-		System.out.println("Barrier effectEnemy - osszes ellenfelet ellenorzi, hogy akadalyra lepett-e, ha igen akkor beallitja a hatasat");
-		//implementacional ez egy ciklus lesz - arnold
+		//-
 	}
 
 	/**
@@ -68,7 +67,15 @@ public class Barrier extends DefenseTools implements Observer {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("Barrier update - ellenorzi, hogy van-e ellenfel ezen a pozicion");
+		for(Enemy e : Map.enemies){
+			if((e.getPosition().getRowValue() == this.position.getRowValue()) && e.getPosition().getColumnValue() == this.position.getColumnValue()){
+				if(retardingValue == 1){
+					e.setSpeed(e.getSpeed() +1);
+				}
+				if(retardingValue == 2){
+					e.setSpeed(e.getSpeed() +2);
+				}
+			}
+		}
 	}
-
 }

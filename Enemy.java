@@ -103,15 +103,17 @@ public class Enemy extends Observable {
 	/**
 	 * orajel metodusa
 	 * Map sajat tick() metodusa hivja meg
-	 * ket dologert felelos:
+	 * harom dologert felelos:
 	 * - ha megfelelo szamu orajel eltelt akkor lep egyet
 	 * - ezt jelzi a ra feliratkozott tornyoknak, akadalyoknak
+	 * - tick_counter ereteket noveli eggyel 
 	 */
 	public void tick() {
-		System.out.println("Enemy tick ");
-		System.out.println("Ha tick_counter megfelel a faj haladasi sebessegenek pl oszthato 5-tel");
-		this.setPosition(Map.enemyStep(getPosition()));	
-		notifyObservers();
+		if(tick_counter % this.getSpeed() == 0){
+			this.setPosition(Map.enemyStep(getPosition()));	
+			notifyObservers();
+		}
+		tick_counter++;
 	}
 	
 	/**
@@ -119,9 +121,8 @@ public class Enemy extends Observable {
 	 * @param a parameter ertekevel csokkenti az eleterot es noveli a varazserot
 	 */
 	public void Attacked(int a){
-		System.out.println("Enemy Attacked - parameter ertekevel csokkent az eletero es a varazsero");
-		setHealth(a);
-		Map.player.setMagicPower(a);
+		setHealth(getHealth() - a);
+		Map.player.setMagicPower(Map.player.getMagicPower() + a);
 	}
 
 }
