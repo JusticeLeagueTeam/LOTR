@@ -12,12 +12,10 @@ public class Player {
 	 * jatekos varazsereje
 	 */
 	private int magicPower;
-	/**
-	 * Player a jatekos osztalya
-	 * a jatekos iranyitja a GUI-n keresztul az egysegeit
-	 */
+	
 	public Player(){
 		System.out.println("Player konstruktor");
+		this.magicPower = 1500;
 	}
 	/**
 	 * visszaadja a jatekos varazserejet
@@ -28,11 +26,11 @@ public class Player {
 		return this.magicPower;
 	}
 	/**
-	 * beallitja a jatekos eleterejet
-	 * @param magicPower jatekos eletereje
+	 * beallitja a jatekos varazserejet
+	 * @param magicPower jatekos varazsereje
 	 */
 	public void setMagicPower(int magicPower) {
-		System.out.println("Player setMagicPower - beallitja a jatekos eleterejet");
+		System.out.println("Player setMagicPower - beallitja a jatekos varazserejet");
 		this.magicPower = this.magicPower + magicPower;
 	}
 	/**
