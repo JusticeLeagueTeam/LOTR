@@ -53,6 +53,9 @@ public class Map {
 	public static int lastTickValueWhenEnemyWasCreated;
 	
 	
+	/** A palyat tarolo adatszerkezet, ket dimenzios Position matrix formaban */
+	public static Position[][] mainMap;
+	
 	/**A Map osztaly konstruktora, amely egy Map objektum letrehozasakor hivodik meg. 
 	 * A konstruktor hozza letre a Jatekost (Player) reprezentalo objektumot, amelyet a 
 	 * jatek soran vegig hasznalunk. 
@@ -73,6 +76,221 @@ public class Map {
 		totalNumberOfEnemies=20;
 		lastTickValueWhenEnemyWasCreated=0;
 		
+		//A palyat tarolo adatszerkezet letrehozasa, valamint
+		//mindegyik Position peldany sor es oszlop attributumanak feltoltese
+		mainMap = new Position[25][25];				
+		for(int i = 0; i < 25; i++)
+		{
+			for(int j = 0; j < 25; j++)
+			{
+				mainMap[i][j] = new Position();
+				mainMap[i][j].setRowValue(i);
+				mainMap[i][j].setColumnValue(j);
+				mainMap[i][j].setRoadFlag(false);
+			}
+		}
+		
+		//A palyan utnak jelolt cellak beallitasa
+		//0. sor
+		for(int k=21; k<25; k++)
+		{
+			mainMap[0][k].setRoadFlag(true);
+		}
+		
+		//1.sor
+		mainMap[0][21].setRoadFlag(true);
+		mainMap[0][23].setRoadFlag(true);
+		mainMap[0][24].setRoadFlag(true);
+		
+		//2.sor
+		for(int k=0; k<6; k++)
+		{
+			mainMap[2][k].setRoadFlag(true);
+		}
+		mainMap[2][21].setRoadFlag(true);
+		mainMap[2][24].setRoadFlag(true);
+		
+		//3.sor
+		mainMap[3][5].setRoadFlag(true);
+		for(int k=14; k<20; k++)
+		{
+			mainMap[3][k].setRoadFlag(true);
+		}
+		mainMap[3][21].setRoadFlag(true);
+		mainMap[3][24].setRoadFlag(true);
+		
+		//4.sor
+		mainMap[4][5].setRoadFlag(true);
+		mainMap[4][14].setRoadFlag(true);
+		mainMap[4][19].setRoadFlag(true);
+		mainMap[4][21].setRoadFlag(true);
+		mainMap[4][24].setRoadFlag(true);
+		
+		//5.sor
+		mainMap[5][5].setRoadFlag(true);
+		mainMap[5][14].setRoadFlag(true);
+		mainMap[5][19].setRoadFlag(true);
+		mainMap[5][21].setRoadFlag(true);
+		mainMap[5][24].setRoadFlag(true);
+		
+		//6.sor
+		for(int k=5; k<15; k++)
+		{
+			mainMap[6][k].setRoadFlag(true);
+		}
+		for(int k=16; k<20; k++)
+		{
+			mainMap[6][k].setRoadFlag(true);
+		}
+		for(int k=21; k<25; k++)
+		{
+			mainMap[6][k].setRoadFlag(true);
+		}
+		
+		//7.sor
+		mainMap[7][11].setRoadFlag(true);
+		mainMap[7][16].setRoadFlag(true);
+		for(int k=19; k<22; k++)
+		{
+			mainMap[7][k].setRoadFlag(true);
+		}
+		mainMap[7][23].setRoadFlag(true);
+		
+		//8.sor
+		mainMap[8][11].setRoadFlag(true);
+		mainMap[8][16].setRoadFlag(true);
+		mainMap[8][17].setRoadFlag(true);
+		mainMap[8][19].setRoadFlag(true);
+		mainMap[8][23].setRoadFlag(true);
+		
+		//9.sor
+		mainMap[9][11].setRoadFlag(true);
+		mainMap[9][17].setRoadFlag(true);
+		mainMap[9][19].setRoadFlag(true);
+		mainMap[9][23].setRoadFlag(true);
+		
+		//10.sor
+		for(int k=3; k<6; k++)
+		{
+			mainMap[10][k].setRoadFlag(true);
+		}
+		mainMap[10][11].setRoadFlag(true);
+		mainMap[10][17].setRoadFlag(true);
+		mainMap[10][19].setRoadFlag(true);
+		mainMap[10][23].setRoadFlag(true);
+		
+		//11.sor
+		mainMap[11][3].setRoadFlag(true);
+		mainMap[11][5].setRoadFlag(true);
+		for(int k=7; k<12; k++)
+		{
+			mainMap[11][k].setRoadFlag(true);
+		}
+		for(int k=17; k<19; k++)
+		{
+			mainMap[11][k].setRoadFlag(true);
+		}
+		mainMap[11][23].setRoadFlag(true);
+		
+		//12.sor
+		mainMap[12][3].setRoadFlag(true);
+		mainMap[12][5].setRoadFlag(true);
+		mainMap[12][7].setRoadFlag(true);
+		mainMap[12][18].setRoadFlag(true);
+		mainMap[12][23].setRoadFlag(true);
+		
+		//13.sor
+		for(int k=0; k<4; k++)
+		{
+			mainMap[13][k].setRoadFlag(true);
+		}
+		mainMap[13][5].setRoadFlag(true);
+		mainMap[13][7].setRoadFlag(true);
+		for(int k=10; k<14; k++)
+		{
+			mainMap[13][k].setRoadFlag(true);
+		}
+		for(int k=18; k<24; k++)
+		{
+			mainMap[13][k].setRoadFlag(true);
+		}
+		
+		//14.sor
+		mainMap[14][5].setRoadFlag(true);
+		mainMap[14][7].setRoadFlag(true);
+		mainMap[14][10].setRoadFlag(true);
+		mainMap[14][13].setRoadFlag(true);
+		mainMap[14][23].setRoadFlag(true);
+		
+		//15.sor
+		for(int k=5; k<8; k++)
+		{
+			mainMap[15][k].setRoadFlag(true);
+		}
+		mainMap[15][10].setRoadFlag(true);
+		for(int k=12; k<15; k++)
+		{
+			mainMap[15][k].setRoadFlag(true);
+		}
+		mainMap[15][23].setRoadFlag(true);
+		
+		//16.sor
+		mainMap[16][7].setRoadFlag(true);
+		mainMap[16][10].setRoadFlag(true);
+		mainMap[16][12].setRoadFlag(true);
+		for(int k=15; k<21; k++)
+		{
+			mainMap[16][k].setRoadFlag(true);
+		}
+		mainMap[16][23].setRoadFlag(true);
+		
+		//17.sor
+		mainMap[17][7].setRoadFlag(true);
+		mainMap[17][10].setRoadFlag(true);
+		mainMap[17][12].setRoadFlag(true);
+		for(int k=20; k<24; k++)
+		{
+			mainMap[17][k].setRoadFlag(true);
+		}
+		
+		//18.sor
+		for(int k=7; k<11; k++)
+		{
+			mainMap[18][k].setRoadFlag(true);
+		}
+		mainMap[18][12].setRoadFlag(true);
+		
+		//19.sor
+		mainMap[19][8].setRoadFlag(true);
+		for(int k=12; k<19; k++)
+		{
+			mainMap[19][k].setRoadFlag(true);
+		}
+		
+		//20.sor
+		mainMap[20][8].setRoadFlag(true);
+		mainMap[20][14].setRoadFlag(true);
+		mainMap[20][18].setRoadFlag(true);
+		
+		//21.sor
+		mainMap[21][8].setRoadFlag(true);
+		mainMap[21][14].setRoadFlag(true);
+		mainMap[21][18].setRoadFlag(true);
+		
+		//22.sor
+		mainMap[22][8].setRoadFlag(true);
+		mainMap[22][14].setRoadFlag(true);
+		mainMap[22][18].setRoadFlag(true);
+		
+		//23.sor
+		for(int k=8; k<15; k++)
+		{
+			mainMap[23][k].setRoadFlag(true);
+		}
+		mainMap[23][18].setRoadFlag(true);
+		
+		//24.sor
+		mainMap[24][18].setRoadFlag(true);
 	}
 	
 	
