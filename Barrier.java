@@ -67,8 +67,10 @@ public class Barrier extends DefenseTools implements Observer {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
+		//ciklus vegigmegy az ellenfeleken es ellenorzi, hogy rajta vannak-e az akadalyon
 		for(Enemy e : Map.enemies){
 			if((e.getPosition().getRowValue() == this.position.getRowValue()) && e.getPosition().getColumnValue() == this.position.getColumnValue()){
+				//akadaly tipusatol fuggoen kicsit vagy jobban lassitja az ellenfelet
 				if(retardingValue == 1){
 					e.setSpeed(e.getSpeed() +1);
 				}
