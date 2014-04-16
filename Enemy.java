@@ -39,6 +39,14 @@ public class Enemy extends Observable {
 	 * orajelek szama a jatek kezdete ota
 	 */
 	protected int tick_counter;
+	/**konstruktor - poziciot inicializal
+	 * 
+	 */
+	public Enemy(){
+		this.lastPosition=new Position();
+		this.lastPosition.setColumnValue(0);
+		this.lastPosition.setRowValue(0);
+	}
 
 	/**
 	 * visszater az eleterovel
@@ -128,11 +136,14 @@ public class Enemy extends Observable {
 	 * - tick_counter ereteket noveli eggyel 
 	 */
 	public void tick() {
-		if(tick_counter % this.getSpeed() == 0){
-			this.setPosition(Map.enemyStep(this.position, this.lastPosition));	
-			notifyObservers();
-		}
 		tick_counter++;
+		if(tick_counter % this.getSpeed() == 0 && tick_counter > 2){
+			this.setPosition(Map.enemyStep(this.position, this.lastPosition));
+			setChanged();
+			notifyObservers();
+			
+		}
+		
 	}
 	
 	/**
@@ -143,5 +154,63 @@ public class Enemy extends Observable {
 		setHealth(getHealth() - a);
 		Map.player.setMagicPower(Map.player.getMagicPower() + a);
 	}
-
+	/**
+	 * specialis lovedekkel lett megtamadva az ellenfel
+	 * kettehasad, tehat letrejon egy uj ugyanilyen tipusu ellenfel es mindkettonek csokken az erteke
+	 */
+	public void splitAttacked(int a){
+		setHealth(getHealth() - a);
+		setHealth(getHealth()/2);
+		if(this instanceof Elf == true){
+			Elf enemy = new Elf();
+			enemy.position.setRowValue(this.position.getRowValue());
+	       	enemy.position.setColumnValue(this.position.getColumnValue());
+	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
+	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
+	       	enemy.setHealth(this.health);
+	       	Map.enemies.add(enemy);
+	       	for(Tower t : Map.towers){
+	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+	       	}
+		}
+		else if(this instanceof Dwarf == true){
+			Dwarf enemy = new Dwarf();
+			enemy.position.setRowValue(this.position.getRowValue());
+	       	enemy.position.setColumnValue(this.position.getColumnValue());
+	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
+	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
+	       	enemy.setHealth(this.health);
+	       	Map.enemies.add(enemy);
+	       	for(Tower t : Map.towers){
+	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+	       	}
+		}
+		else if(this instanceof Hobbit == true){
+			Hobbit enemy = new Hobbit();
+			enemy.position.setRowValue(this.position.getRowValue());
+	       	enemy.position.setColumnValue(this.position.getColumnValue());
+	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
+	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
+	       	enemy.setHealth(this.health);
+	       	Map.enemies.add(enemy);
+	       	for(Tower t : Map.towers){
+	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+	       	}
+		}
+		else if(this instanceof Human == true){
+			Human enemy = new Human();
+			enemy.position.setRowValue(this.position.getRowValue());
+	       	enemy.position.setColumnValue(this.position.getColumnValue());
+	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
+	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
+	       	enemy.setHealth(this.health);
+	       	Map.enemies.add(enemy);
+	       	for(Tower t : Map.towers){
+	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+	       	}
+		}
+		
+		Map.player.setMagicPower(Map.player.getMagicPower() + a);
+	}
+	
 }
