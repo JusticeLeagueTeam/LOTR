@@ -13,7 +13,7 @@ import java.util.Observable;
  * @author justice_league
  *
  */
-public class Tower extends DefenseTools {
+public class Tower extends DefenseTools implements Observer{
 	/**
 	 *  tuzelesi gyakorisag 
 	 */
@@ -88,43 +88,80 @@ public class Tower extends DefenseTools {
 	public void setElfOrDwarfFlag(boolean eodf) {
 		elfOrDwarfFlag = eodf;
 	}
-	/**
-	 * ellenorzi, hogy van-e ellenseg a hatokoreben es megtamadja
-	 */
-	public void update(Observable observable) {
-	//TODO	
-		//minden ellenfelen vegigmegy a ciklus es ellenorzi a hatotavot
-		//ha benne van es eljott a tamadas ideje, akkor megtamadja
-		for(Enemy e : Map.enemies){
-			boolean is_in_target=false;
-			//torony tipusatol fuggoen ellenorzi a hatotavot
-			if(firingRange == 1){
-				if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 1) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 1))
-					is_in_target = true;
-			}
-			if(firingRange == 2){
-				if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 2) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 2))
-					is_in_target = true;
-			}
-			//ha hatotavon belul van akkor tamad
-			if(is_in_target == true){
-				//elotte ellenorzi, hogy van-e a tornyon specialis ko
-				//illetve ahhoz tartozo ellenfelrol van-e szo
-				if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
-					e.Attacked(firingPower + 10);
-				else
-					e.Attacked(firingPower);
-				//ha az ellenfel eletereje 0 ala ment, akkor toroljuk
-				if(e.getHealth() <= 0)
-					Map.enemies.remove(Map.enemies.indexOf(e)); // ebbol remelem nem lesz crash
-			}
-		}
-	}
+	
 	/**
 	 * noveli a tick_counter-t eggyel
 	 */
 	public void tick() {
 		tick_counter++;
+	}
+	/**
+	 * ellenorzi, hogy van-e ellenseg a hatokoreben es megtamadja
+	 */
+	@Override
+	public void update(Observable o, Object arg) {
+		// segedvaltozo
+		int temp=0;
+		//minden ellenfelen vegigmegy a ciklus es ellenorzi a hatotavot
+		//ha benne van es eljott a tamadas ideje, akkor megtamadja
+		for(Enemy e : Map.enemies){
+			boolean is_in_target=false;
+			if(Game.isFog == true){
+				//torony tipusatol fuggoen ellenorzi a hatotavot
+				if(firingRange == 2){
+					if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 1) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 1))
+						is_in_target = true;
+				}
+				if(firingRange == 3){
+					if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 2) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 2))
+						is_in_target = true;
+				}
+			}
+			else{
+				//torony tipusatol fuggoen ellenorzi a hatotavot
+				if(firingRange == 1){
+					if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 1) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 1))
+						is_in_target = true;
+				}
+				if(firingRange == 2){
+					if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 2) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 2))
+						is_in_target = true;
+				}
+				if(firingRange == 3){
+					if((Math.abs(e.getPosition().getRowValue() - this.position.getRowValue()) <= 3) && (Math.abs(e.getPosition().getColumnValue() - this.position.getColumnValue()) <= 3))
+						is_in_target = true;
+				}
+			}
+			
+			//ha hatotavon belul van akkor tamad
+			if(is_in_target == true){
+				if(Game.isSpecial == true){
+					Game.isSpecial=false;
+					//elotte ellenorzi, hogy van-e a tornyon specialis ko
+					//illetve ahhoz tartozo ellenfelrol van-e szo
+					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
+						e.splitAttacked(firingPower + 10);
+					else
+						e.splitAttacked(firingPower);
+					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+				}
+				else{
+					//elotte ellenorzi, hogy van-e a tornyon specialis ko
+					//illetve ahhoz tartozo ellenfelrol van-e szo
+					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
+						e.Attacked(firingPower + 10);
+					else
+						e.Attacked(firingPower);
+					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+				}
+				//ha az ellenfel eletereje 0 ala ment, akkor toroljuk
+				if(e.getHealth() <= 0)
+					temp=Map.enemies.indexOf(e); // ebbol remelem nem lesz crash
+			}
+			if(temp != -1)
+				Map.enemies.get(temp).deleteObservers();
+				Map.enemies.remove(temp);
+		}
 	}
 
 }
