@@ -14,7 +14,6 @@ public class Player {
 	private int magicPower;
 	
 	public Player(){
-		System.out.println("Player konstruktor");
 		this.magicPower = 1500;
 	}
 	/**
@@ -22,16 +21,14 @@ public class Player {
 	 * @return visszaadja a jatekos varazserejet
 	 */
 	public int getMagicPower() {
-		System.out.println("Player getMagicPower - visszaadja a jatekos varazserejet");
 		return this.magicPower;
 	}
 	/**
 	 * beallitja a jatekos varazserejet
 	 * @param magicPower jatekos varazsereje
 	 */
-	public void setMagicPower(int magicPower) {
-		System.out.println("Player setMagicPower - beallitja a jatekos varazserejet");
-		this.magicPower = this.magicPower + magicPower;
+	public void setMagicPower(int mP) {
+		this.magicPower = mP;
 	}
 	/**
 	 * uj vedelmi egyseg letrehozasa
@@ -42,28 +39,28 @@ public class Player {
 	 * @param dt paramterekent kapja meg a deklaralt valzotot
 	 */
 	public void createDefenseTool(DefenseTools dt) {
-		System.out.println("Player createDefenseTool - Player csinal egy defenseTool-t");
-		dt.getCost();
-		getMagicPower();
-		System.out.println("[IF] ha van eleg varazsero a torony megepitesere");
 		
-		String dtClass = dt.getClass().toString();
-		dtClass = dtClass.substring(5);	//TODO
-		
-		if(dt instanceof Tower)
-		{
-			Map.towers.add((Tower) dt);
-			System.out.println("towers add " + dtClass);
+		if(dt.getCost() <= getMagicPower()){
+			boolean isRoad=Map.mainMap[dt.getPosition().getRowValue()][dt.getPosition().getColumnValue()].getRoadFlag();
+				String dtClass = dt.getClass().toString();
+				dtClass = dtClass.substring(5);	//TODO
+				
+				if(dt instanceof Tower && isRoad == false)
+				{
+					Map.towers.add((Tower) dt);
+				}
+				if(dt instanceof Barrier && isRoad)
+				{
+					Map.barriers.add((Barrier) dt);
+				}
+				if(dt instanceof MagicStone  && isRoad == false)
+				{
+					Map.magicStones.add((MagicStone) dt);
+					//TODO:effectTower-t itt hivjuk meg; effectTower megnezi, h van-e torony a magicstone poziciojan, ha igen, akkor modositja a parametereit
+				}
+				this.setMagicPower(this.getMagicPower() - dt.getCost());
 		}
-		if(dt instanceof Barrier)
-		{
-			Map.barriers.add((Barrier) dt);
-			System.out.println("barriers add " + dtClass);
-		}
-		if(dt instanceof MagicStone)
-		{
-			Map.magicStones.add((MagicStone) dt);
-			System.out.println("magicstones add " + dtClass);
-		}
+		else
+			System.out.println("Nincs eleg varazsero.");
 	}
 }
