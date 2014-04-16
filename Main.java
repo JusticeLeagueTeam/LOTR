@@ -43,6 +43,7 @@ public class Main {
 			if(command.length == 1 && command[0].equals("gamestart")){
 				System.out.println("A jatekmenet elindult.");
 				System.out.println();
+				//TODO: GameFlag felkapcsolasa
 			}
 			/**
 			 * nagy torony epitese
@@ -180,7 +181,7 @@ public class Main {
 	        		System.out.println("A megadott koordinata nem helyes");
 	        }
 			/**
-			 * a védelmi eszkozok kiiratasa
+			 * a vedelmi eszkozok kiiratasa
 			 */
 			else if(command.length == 1 && command[0].equals("printdefensetools")){
 				System.out.println("tick "+Map.getTickCount());
@@ -215,7 +216,10 @@ public class Main {
 				else{
 					LinkedList<MagicStone> magicStones = Map.getMagicStones();
 					for(MagicStone element : magicStones){
-						System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+						if(element instanceof FiringSpeedIncreaseStone == false)
+							System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+						else
+							System.out.println("FiringSpeedIncreaserStone"+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 					}
 				}
 				System.out.println();
@@ -337,21 +341,21 @@ public class Main {
 	        		System.out.println("A megadott koordinata nem helyes");
 	        }
 			/**
-			 * tick, órajel kiadása
+			 * tick, orajel kiadasa
 			 */
 	        else if((command.length == 1 || command.length == 2) && command[0].equals("tick")){
 	        	if(command.length == 1){
 	        		Timer.tick();
 	        	}
 	        	if(command.length == 2){
-		        	int tickCount = -1;
+		        	int tickPar = -1;
 		        	try{
-		        	tickCount = Integer.parseInt(command[1]);
+		        	tickPar = Integer.parseInt(command[1]);
 		        	} catch(NumberFormatException e) { 
-		        		System.out.println("Helytelen tick paraméter");
+		        		System.out.println("Helytelen tick parameter");
 		            }
-		        	if(tickCount > 0){
-		        		for(int i = 0;i < tickCount; i++){
+		        	if(tickPar > 0){
+		        		for(int i = 0;i < tickPar; i++){
 		        			Timer.tick();
 		        		}
 		        	}
@@ -366,14 +370,7 @@ public class Main {
 	         * b.) ellenseg elerte a vegzet hegyet - jatekos vesztett
 	         */
 	        else if(command.length == 1 && command[0].equals("endgame")){
-	        	/**
-	        	Game.timer.tick();
-	        	game.tick();
-	        	System.out.println("[IF] Ha elpusztult minden ellenseg:");
-	        	game.winGame();
-	        	System.out.println("[IF] Ha az ellenseg elert a Vegzet Hegyehez:");
-	        	game.endGame();
-	        	*/
+	        	//TODO: GameFlag atallitas
 	        }
 		    /**
 		     * itt kezeljuk ha a jatekos hibas inputot gepel be
@@ -384,6 +381,3 @@ public class Main {
 		}
 	}
 }
-
-
-
