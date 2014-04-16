@@ -146,11 +146,6 @@ public class Enemy extends Observable {
 			temp_pos.setRowValue(this.position.getRowValue());
 			//lekerjuk a poziciot es a jelenlegit frissitjuk
 			this.setPosition(Map.enemyStep(this.position, this.lastPosition));
-			//ha lelepett a palyarol, akkor meghalt
-			if(this.position.getColumnValue() == 0 && this.position.getRowValue() == 0){
-				Map.enemies.get(Map.enemies.indexOf(this)).deleteObservers();
-				Map.enemies.remove(Map.enemies.indexOf(this));
-			}
 			//az elozo pozicio a korabban masolt erteket kapja meg
 			this.lastPosition.setColumnValue(temp_pos.getColumnValue());
 			this.lastPosition.setRowValue(temp_pos.getRowValue());
