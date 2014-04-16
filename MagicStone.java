@@ -10,37 +10,31 @@ public abstract class MagicStone extends DefenseTools {
 
 	/**
 	 * wasItUsed boolean tipusu valtozoban (flag) taroljuk, hogy volt-e mar hasznalva a ko
+	 * GUI-nal kellhet
 	 */
 	private boolean wasItUsed;
 
 	/**
 	 * visszaadja a flag-et
+	 * GUI-nal kellhet
 	 */
 	public boolean getWasItUsed() {
-		//System.out.println("MagicStone getWasItUsed() - visszaadja a flag-et");
 		return this.wasItUsed;
 	}
 
 	/**
 	 * beallitja a flag-et
+	 * GUI-nal kellhet
 	 */
-	public void setWasItUsed(boolean wasItUsed) {
-		//System.out.println("MagicStone getWasItUsed(boolean wasItUsed) - beallitja a flag-et");
-		this.wasItUsed = wasItUsed;
-	}
-
-	/**
-	 * beallitja a pozicion levo akadaly parametereit
-	 */
-	public void effectBarrier() {
-		System.out.println("MagicStone effectBarrier() - beallitja a pozicion levo akadaly parametereit");
+	public void setWasItUsed(boolean wIU) {
+		this.wasItUsed = wIU;
 	}
 
 	/**
 	 * beallitja a pozicion levo torony parametereit
 	 */
 	public void effectTower() {
-		System.out.println("MagicStone effectTower() - beallitja a pozicion levo torony parametereit");
+		//leszarmazottakban van implementalva
 	}
 
 }
