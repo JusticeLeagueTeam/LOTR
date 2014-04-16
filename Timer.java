@@ -26,6 +26,13 @@ public class Timer {
 	public static void tick() {
 		Map.tick();
 		Game.tick();
-		System.out.println("tick - letelt egy orajel");
+		if(Game.isSpecial)
+			System.out.println("tick - letelt egy orajel, specialis lovedek aktivalva");
+		else if(Game.fogPrint){
+			Game.fogPrint=false;
+			System.out.println("tick - letelt egy orajel, köd aktivalva");
+		}
+		else
+			System.out.println("tick - letelt egy orajel");
 	}
 }
