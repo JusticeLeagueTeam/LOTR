@@ -63,7 +63,7 @@ public class Main {
 		        	} catch(NumberFormatException e) { 
 		        		System.out.println("A koordinatakat szam formatumban kell megadni");
 		            }
-		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
+		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
 			        	defenseTool.position.setRowValue(y);
 			        	defenseTool.position.setColumnValue(x);
 			        	Map.player.createDefenseTool(defenseTool);
@@ -85,7 +85,7 @@ public class Main {
 		        	} catch(NumberFormatException e) { 
 		        		System.out.println("A koordinatakat szam formatumban kell megadni");
 		            }
-		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
+		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
 		        		defenseTool.position.setRowValue(y);
 		        		defenseTool.position.setColumnValue(x);
 			        	Map.player.createDefenseTool(defenseTool);
@@ -106,8 +106,9 @@ public class Main {
 		        	} catch(NumberFormatException e) { 
 		        		System.out.println("A koordinatakat szam formatumban kell megadni");
 		            }
-		        	if(!(x >= 0 && x <= 24 && y >= 0 && y <= 24))
+		        	if((!(x >= 0 && x <= 24 && y >= 0 && y <= 24))  || (Map.mainMap[y][x].getRoadFlag() == false)){
 		        		System.out.println("A megadott koordinata nem helyes");
+		        	}
 			    	/**
 			    	 * Hobbit letrehozasa
 			    	 */
@@ -182,7 +183,7 @@ public class Main {
 		        	} catch(NumberFormatException e) { 
 		        		System.out.println("A koordinatakat szam formatumban kell megadni");
 		            }
-		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
+		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
 		        		defenseTool.position.setRowValue(y);
 		        		defenseTool.position.setColumnValue(x);
 			        	Map.player.createDefenseTool(defenseTool);
@@ -204,7 +205,7 @@ public class Main {
 		        	} catch(NumberFormatException e) { 
 		        		System.out.println("A koordinatakat szam formatumban kell megadni");
 		            }
-		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
+		        	if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
 		        		defenseTool.position.setRowValue(y);
 		        		defenseTool.position.setColumnValue(x);
 			        	Map.player.createDefenseTool(defenseTool);
