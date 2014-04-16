@@ -46,8 +46,10 @@ public class Main {
 				System.out.println();
 				Game.gameStatus=1;
 			}
-			
-			if(Game.gameStatus>=1){
+			/**
+			 * ha mar elindult a jatek akkor fogadjuk az inputokat
+			 */
+			else if(Game.gameStatus>=1){
 				/**
 				 * nagy torony epitese
 				 */
@@ -420,6 +422,9 @@ public class Main {
 		        else if(command.length == 1 && command[0].equals("endgame")){
 		        	Game.gameStatus = 2;
 		        }
+				/**
+				 * ha nem a megadott inputok kozul valasztott a felhasznalo
+				 */
 		        else{
 					System.out.println("Hibas parancs!");
 				}
