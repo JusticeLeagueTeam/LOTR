@@ -60,7 +60,6 @@ public class Game {
 			{
 				//A jatekos veszitett, flag beallitasa.
 				gameStatus = 2;
-				System.out.println("Game endGame - A jatekos veszitett, jatek vege");
 			}
 			else
 			{
@@ -69,7 +68,6 @@ public class Game {
 			}
 		}	
 	}
-	
 	
 	/**A jatek indulasakor letrehozza a szukseges objektumokat, beallitja az attributumokat. 
 	*/
@@ -87,11 +85,10 @@ public class Game {
 	 */
 	public static void winGame() {
 				
-		if(Map.enemies.isEmpty())
+		if(Map.enemies.isEmpty() && Map.getTickCount() >= 500)
 		{
 			//A jatekos nyert, flag beallitasa.
 			gameStatus = 3;
-			System.out.println("Game wingame - A jatekos nyert, jatek vege");			
 		}
 	}
 	
@@ -102,7 +99,7 @@ public class Game {
 	 */
 	public static void tick() {
 		
-		//Wingame-hez nem kÈne visszatÈrÈsi ÈrtÈk? vagy csak sim·n kiprintel es kesz?
+		//Wingame-hez nem k√©ne visszat√©r√©si √©rt√©k? vagy csak sim√°n kiprintel es kesz?
 		//honnan fogja tudni az egesz rendszer, hogy ott lefutott az IF?
 		//Valamit bekene hozza allitani
 		winGame();
@@ -110,6 +107,4 @@ public class Game {
 		endGame();
 		
 	}
-
-
 }
