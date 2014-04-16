@@ -422,6 +422,9 @@ public class Main {
 		        else if(command.length == 1 && command[0].equals("endgame")){
 		        	Game.gameStatus = 2;
 		        }
+		        else if(command.length == 1 && command[0].equals("exit")){
+		        	break;
+		        }
 				/**
 				 * ha nem a megadott inputok kozul valasztott a felhasznalo
 				 */
