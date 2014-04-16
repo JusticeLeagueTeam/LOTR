@@ -102,7 +102,6 @@ public class Tower extends DefenseTools implements Observer{
 	@Override
 	public void update(Observable o, Object arg) {
 		// segedvaltozo
-		int temp=0;
 		//minden ellenfelen vegigmegy a ciklus es ellenorzi a hatotavot
 		//ha benne van es eljott a tamadas ideje, akkor megtamadja
 		for(Enemy e : Map.enemies){
@@ -155,13 +154,8 @@ public class Tower extends DefenseTools implements Observer{
 						e.Attacked(firingPower);
 					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
 				}
-				//ha az ellenfel eletereje 0 ala ment, akkor toroljuk
-				if(e.getHealth() <= 0)
-					temp=Map.enemies.indexOf(e); // ebbol remelem nem lesz crash
+
 			}
-			if(temp != -1)
-				Map.enemies.get(temp).deleteObservers();
-				Map.enemies.remove(temp);
 		}
 	}
 

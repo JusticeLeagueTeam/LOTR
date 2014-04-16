@@ -699,9 +699,8 @@ public class Map {
 	public static void tick() {
 		int temp = -1;
 		/**ha az ellenfel lelepett a palyarol toroljuk
-		 * amugy meghivjuk a tick
+		 * amugy lefut a tick metodusa
 		 */
-		
 		for(Enemy e : enemies){
 			if((e.getPosition().getRowValue() == 0) && (e.getPosition().getColumnValue() == 0))
 			{
@@ -715,6 +714,21 @@ public class Map {
 		if(temp >= 0){
 			Map.enemies.remove(temp);
 		}
+		/**
+		 * osszes ellenfelet ellenorizzuk, hogy meghalt-e
+		 */
+		temp = -1;
+		for(Enemy e : enemies){
+			if(e.getHealth() <= 0){
+				temp=Map.enemies.indexOf(e);
+			}
+		}
+		if(temp >= 0){
+			Map.enemies.remove(temp);
+		}
+		/**
+		 * osszes torony tick() metodusa lefut
+		 */
 		for(Tower t : towers){
 			t.tick();
 		}
