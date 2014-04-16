@@ -136,11 +136,20 @@ public class Enemy extends Observable {
 	 * - tick_counter ereteket noveli eggyel 
 	 */
 	public void tick() {
+		//az orajel erteke minden tick()-nel no
 		tick_counter++;
+		//megfelelo orajel letelte utan lep egyet
 		if(tick_counter % this.getSpeed() == 0 && tick_counter > 2){
+			Position temp_pos = new Position();
+			//jelenlegi poziciot egy atmeneti valtozoba masoljuk
+			temp_pos.setColumnValue(this.position.getColumnValue());
+			temp_pos.setRowValue(this.position.getRowValue());
+			//lekerjuk a poziciot es a jelenlegit frissitjuk
 			this.setPosition(Map.enemyStep(this.position, this.lastPosition));
-			this.lastPosition.setColumnValue(this.position.getColumnValue());
-			this.lastPosition.setRowValue(this.position.getRowValue());
+			//az elozo pozicio a korabban masolt erteket kapja meg
+			this.lastPosition.setColumnValue(temp_pos.getColumnValue());
+			this.lastPosition.setRowValue(temp_pos.getRowValue());
+			//a lepesrol ertesitjuk a tornyokat, akadalyokat
 			setChanged();
 			notifyObservers();
 			
