@@ -511,7 +511,7 @@ public class Map {
 
 	
 	/**A generalt ellenfelek lepteteseert felelo metodus.
-	 * Paraméterként megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
+	 * ParamĂ©terkĂ©nt megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
 	 * a kovetkezo, ahova lepnie kell a kovetkezo orajel ciklusban.
 	 * @param position Az ellenfel aktualis pozicioja a palyan (cella, mezo)
 	 * @return Az uj cella helyzete, ahova az ellenfelek lepnie kell.
@@ -670,7 +670,12 @@ public class Map {
 	/**A Timer-tol erkezo orajelre ellenorzi, hogy szukseges-e uj ellenfel generalasa.
 	 */
 	public static void tick() {
-		
+		for(Enemy e : enemies){
+			e.tick();
+		}
+		for(Tower t : towers){
+			t.tick();
+		}
 		//Protohoz kikommenteltem a megbeszeltek szerint, GUI-hoz visszakerul
 		//createEnemy();
 		tick_counter++;
