@@ -48,10 +48,16 @@ public class Player {
 				if(dt instanceof Tower && isRoad == false)
 				{
 					Map.towers.add((Tower) dt);
+					for(Enemy e : Map.enemies){
+						e.addObserver(Map.towers.get(Map.towers.indexOf(dt)));
+					}
 				}
 				if(dt instanceof Barrier && isRoad)
 				{
 					Map.barriers.add((Barrier) dt);
+					for(Enemy e : Map.enemies){
+						e.addObserver(Map.barriers.get(Map.barriers.indexOf(dt)));
+					}
 				}
 				if(dt instanceof MagicStone  && isRoad == false)
 				{
