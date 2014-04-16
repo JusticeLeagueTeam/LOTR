@@ -6,17 +6,18 @@ public class Timer {
 	private int period;
 	
 	public Timer(){
-		System.out.println("Timer konstruktor");
+		
 	}
-
+	/**
+	 * Elinditja az idozitot
+	 * Csak a GUI-s megodasban lesz implementalva
+	 */
 	public void run() {
-		System.out.println("Timer run - ");
 	}
 
 	/** Beallitja a periodusidot */
 	public void setPeriod(int intParameter) {
 		this.period = intParameter;
-		System.out.println("Timer setPeriod - periodusio beallitasa");
 	}
 
 	/** Az orajelert felelos metodus, minden periodus letelte utan meghivodik 
@@ -25,7 +26,6 @@ public class Timer {
 	public static void tick() {
 		Map.tick();
 		Game.tick();
-		System.out.println("Timer tick - letelt egy orajel");
+		System.out.println("tick - letelt egy orajel");
 	}
-	
 }
