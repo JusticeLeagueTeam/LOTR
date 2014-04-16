@@ -7,7 +7,7 @@ package LOTR;
  * @author justice_league
  *
  */
-public class DefenseTools {
+public class DefenseTools{
 	/**
 	 * jelenlegi pozicio
 	 */
