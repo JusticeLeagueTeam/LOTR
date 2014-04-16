@@ -139,6 +139,8 @@ public class Enemy extends Observable {
 		tick_counter++;
 		if(tick_counter % this.getSpeed() == 0 && tick_counter > 2){
 			this.setPosition(Map.enemyStep(this.position, this.lastPosition));
+			this.lastPosition.setColumnValue(this.position.getColumnValue());
+			this.lastPosition.setRowValue(this.position.getRowValue());
 			setChanged();
 			notifyObservers();
 			
