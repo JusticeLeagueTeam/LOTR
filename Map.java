@@ -516,55 +516,127 @@ public class Map {
 	 * @param position Az ellenfel aktualis pozicioja a palyan (cella, mezo)
 	 * @return Az uj cella helyzete, ahova az ellenfelek lepnie kell.
 	 */
-	public static Position enemyStep(Position position) {
+	public static Position enemyStep(Position actualPosition, Position lastPosition) {
 		
 		LinkedList<Position> positionList = new LinkedList<Position>();
 		
-		//Az ellenfel pozicioja koruli cellak roadFlag attributumanak ellenorzese kereszt alakban		
+		//Az ellenfel pozicioja koruli cellak roadFlag attributumanak ellenorzese kereszt alakban
+		//		| |
+		//	  == X ==
+		//		| |
+		
+		//A keresztiranyu mozgas miatt, maximum 4 ut lehet egy keresztezodesben
+		//A 4 ut kozul az egyik iranybol erkezett, tehat maximum 3 elem kerulhet a listaba
+		//az egyik ut, biztosan az egyik korabbi utvonal volt
+		
+		//Ha nem keresztezodesben van, es csak elore mehet egy iranyban
+		//akkor csak az egyik ag fog vegrehajtodni, es egy elemu lesz a lista
+		
 		//Ha az adott cella folotti sorban levo cella is ut
-		if(Map.mainMap[position.getRowValue()-1][position.getColumnValue()].getRoadFlag() == true)
+		if(Map.mainMap[actualPosition.getRowValue()-1][actualPosition.getColumnValue()].getRoadFlag() == true)
 		{
-			Position tmp = new Position();
-			tmp.setRowValue(position.getRowValue()-1);
-			tmp.setColumnValue(position.getColumnValue());
-			tmp.setRoadFlag(true);
-			positionList.add(tmp);
+			//Ha az utolso cella pozicioja megegyezik az aktualis pozicioja
+			//folotti cellaval, akkor oda mar nem lephet
+			if((lastPosition.getRowValue() == actualPosition.getRowValue()-1) && (lastPosition.getColumnValue() == actualPosition.getColumnValue()))
+			{
+				//DO NOTHING
+			}
+			//Ha nem egyezik meg, akkor ez egy lehetseges irany ahova lephet
+			else
+			{
+				Position tmp = new Position();
+				tmp.setRowValue(actualPosition.getRowValue()-1);
+				tmp.setColumnValue(actualPosition.getColumnValue());
+				tmp.setRoadFlag(true);
+				positionList.add(tmp);
+			}
 		}
 		
-		//Ha az adott cellatol balra levo cella is ut (egyel kisebb oszlopban)
-		if(Map.mainMap[position.getRowValue()][position.getColumnValue()-1].getRoadFlag() == true)
+		//Ha az adott cellatol balra levo cella is ut (egyel kisebb oszlopban de azonos sorban)
+		if(Map.mainMap[actualPosition.getRowValue()][actualPosition.getColumnValue()-1].getRoadFlag() == true)
 		{
-			Position tmp = new Position();
-			tmp.setRowValue(position.getRowValue());
-			tmp.setColumnValue(position.getColumnValue()-1);
-			tmp.setRoadFlag(true);
-			positionList.add(tmp);
+			//Ha az utolso cella pozicioja megegyezik az aktualis pozicioja
+			//melletti baloldali cellaval, akkor oda mar nem lephet
+			if((lastPosition.getRowValue() == actualPosition.getRowValue()) && (lastPosition.getColumnValue() == actualPosition.getColumnValue()-1))
+			{
+				//DO NOTHING
+			}
+			//Ha nem egyezik meg, akkor ez egy lehetseges irany ahova lephet
+			else
+			{
+				Position tmp = new Position();
+				tmp.setRowValue(actualPosition.getRowValue());
+				tmp.setColumnValue(actualPosition.getColumnValue()-1);
+				tmp.setRoadFlag(true);
+				positionList.add(tmp);
+			}
 		}
 		
 		//Ha az adott cellatol jobbra levo cella is ut
-		if(Map.mainMap[position.getRowValue()][position.getColumnValue()+1].getRoadFlag() == true)
+		if(Map.mainMap[actualPosition.getRowValue()][actualPosition.getColumnValue()+1].getRoadFlag() == true)
 		{
-			Position tmp = new Position();
-			tmp.setRowValue(position.getRowValue());
-			tmp.setColumnValue(position.getColumnValue()+1);
-			tmp.setRoadFlag(true);
-			positionList.add(tmp);
+			//Ha az utolso cella pozicioja megegyezik az aktualis pozicioja
+			//melletti jobboldali cellaval, akkor oda mar nem lephet
+			if((lastPosition.getRowValue() == actualPosition.getRowValue()) && (lastPosition.getColumnValue() == actualPosition.getColumnValue()+1))
+			{
+				//DO NOTHING
+			}
+			//Ha nem egyezik meg, akkor ez egy lehetseges irany ahova lephet
+			else
+			{
+				Position tmp = new Position();
+				tmp.setRowValue(actualPosition.getRowValue());
+				tmp.setColumnValue(actualPosition.getColumnValue()+1);
+				tmp.setRoadFlag(true);
+				positionList.add(tmp);
+			}
 		}
 		
 		//Ha az adott cella alatti sorban levo cella is ut (egyel nagyobb oszlopban)
-		if(Map.mainMap[position.getRowValue()+1][position.getColumnValue()].getRoadFlag() == true)
+		if(Map.mainMap[actualPosition.getRowValue()+1][actualPosition.getColumnValue()].getRoadFlag() == true)
 		{
-			Position tmp = new Position();
-			tmp.setRowValue(position.getRowValue()+1);
-			tmp.setColumnValue(position.getColumnValue());
-			tmp.setRoadFlag(true);
-			positionList.add(tmp);
+			//Ha az utolso cella pozicioja megegyezik az aktualis pozicioja
+			//alatti cellaval, akkor oda mar nem lephet
+			if((lastPosition.getRowValue() == actualPosition.getRowValue()+1) && (lastPosition.getColumnValue() == actualPosition.getColumnValue()))
+			{
+				//DO NOTHING
+			}
+			else
+			{
+				Position tmp = new Position();
+				tmp.setRowValue(actualPosition.getRowValue()+1);
+				tmp.setColumnValue(actualPosition.getColumnValue());
+				tmp.setRoadFlag(true);
+				positionList.add(tmp);
+			}
 		}
 		
-		//A listaba bekerult ut cellak kozul melyiken jart mar korabban
-		//Amelyiken mar jart, abba az iranyba nem mehet, mert visszafele menne
+		//Random szam generalas az ut kivalasztasahoz
+		//a listaban levo elemek szamatol fuggoen
 		
-		return new Position();
+		Random rand = new Random();
+		int elementIndex = 0;
+		
+		//Ha csak egy uj pozicio van a listaban, akkor csak arra mehet
+		if(positionList.size() == 1)
+		{
+			//Ekkor rand==0 lesz
+			elementIndex = rand.nextInt(1);
+		}
+		
+		if(positionList.size() == 2)
+		{
+			//Ekkor rand 0 vagy 1 lesz
+			elementIndex = rand.nextInt(2);
+		}
+		
+		if(positionList.size() == 3)
+		{
+			//Ekkor rand 0,1,2 lehet
+			elementIndex = rand.nextInt(3);
+		}						
+		
+		return positionList.get(elementIndex);
 	}
 
 	
