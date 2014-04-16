@@ -511,7 +511,7 @@ public class Map {
 
 	
 	/**A generalt ellenfelek lepteteseert felelo metodus.
-	 * Paraméterként megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
+	 * ParamÃ©terkÃ©nt megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
 	 * a kovetkezo, ahova lepnie kell a kovetkezo orajel ciklusban.
 	 * @param position Az ellenfel aktualis pozicioja a palyan (cella, mezo)
 	 * @return Az uj cella helyzete, ahova az ellenfelek lepnie kell.
@@ -673,7 +673,7 @@ public class Map {
 		
 		//Protohoz kikommenteltem a megbeszeltek szerint, GUI-hoz visszakerul
 		//createEnemy();
+		tick_counter++;
 
 	}
-
 }
