@@ -20,32 +20,27 @@ public class RangeExtenderStone extends MagicStone {
 	public RangeExtenderStone(){
 		this.rangeExtendingValue=1;
 		this.cost=50;
-		System.out.println("RangeExtenderStone konstruktor - letrehozza a varazskovet kezdeti ertekekkel");
 	}
 
 	/**
 	 *  visszaadja hatokor novelesenek erteket
 	 */
 	public int getRangeExtendingValue() {
-		System.out.println("RangeExtenderStone getRangeExtendingValue() - visszaadja hatokor novelesenek erteket");
 		return rangeExtendingValue;
 	}
 
 	/**
 	 * beallitja hatokor novelesenek erteket
 	 */
-	public void setRangeExtendingValue(int rangeExtendingValue) {
-		System.out.println("RangeExtenderStone setRangeExtendingValue(int rangeExtendingValue) - beallitja hatokor novelesenek erteket");
-		this.rangeExtendingValue = rangeExtendingValue;
+	public void setRangeExtendingValue(int rEV) {
+		this.rangeExtendingValue = rEV;
 	}
 
 	/**
 	 * az adott pozicion levo toronynak beallitja a modositott paramtereit
 	 */
 	public void effectTower() {
-		System.out.println("RangeExtenderStone effectTower() - az adott pozicion levo toronynak beallitja a modositott paramtereit");
-		LinkedList<Tower> towersLinkedList = Map.getTowers();
-		for(Tower t : towersLinkedList)
+		for(Tower t : Map.towers)
 		{
 			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())
 			{
@@ -53,5 +48,4 @@ public class RangeExtenderStone extends MagicStone {
 			}
 		}
 	}
-
 }
