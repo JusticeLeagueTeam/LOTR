@@ -659,19 +659,10 @@ public class Map {
 		
 		if(positionList.size() == 0)
 		{
-			//Vegig iteralunk az ellenfeleket tarolo adatszerkezeten
-			//hogy megkeressuk ezt az ellenfelet pozicio alapjan
-			for(Enemy e : Map.enemies)
-			{
-				Position tmp = e.getPosition();
-				
-				//Ahol az ellenfel pozicioja megegyezik a parameterkent kapott
-				//aktualis cella pozicioval, azt az ellenfelet toroljuk a listabol
-				if((tmp.getRowValue() == actualPosition.getRowValue()) && (tmp.getColumnValue() == actualPosition.getColumnValue()))
-				{
-					Map.enemies.remove(e);
-				}
-			}
+			Position dedicatedRemovingPosition = new Position();
+			dedicatedRemovingPosition.setColumnValue(0);
+			dedicatedRemovingPosition.setColumnValue(0);
+			return dedicatedRemovingPosition;
 		}
 		else
 		{
@@ -697,10 +688,9 @@ public class Map {
 				//Ekkor rand 0,1,2 lehet
 				elementIndex = rand.nextInt(3);
 			}
+			return positionList.get(elementIndex);
 		}
-		
-		
-		return positionList.get(elementIndex);
+				
 	}
 
 	
@@ -708,7 +698,14 @@ public class Map {
 	 */
 	public static void tick() {
 		for(Enemy e : enemies){
-			e.tick();
+			if((e.getPosition().getRowValue() == 0) && (e.getPosition().getColumnValue() == 0))
+			{
+				Map.enemies.remove(e);
+			}
+			else
+			{
+				e.tick();
+			}
 		}
 		for(Tower t : towers){
 			t.tick();
