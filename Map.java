@@ -671,7 +671,8 @@ public class Map {
 	 */
 	public static void tick() {
 		
-		createEnemy();
+		//Protohoz kikommenteltem a megbeszeltek szerint, GUI-hoz visszakerul
+		//createEnemy();
 
 	}
 

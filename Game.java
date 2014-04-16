@@ -16,6 +16,14 @@ public class Game {
 	/** (Orajel) Jatek idoziteseert felelos objektum */
 	public static Timer timer;
 	
+	/** A jatek allapotat jelzo flag, 4 allapotot tud jelezni.
+	 *  0 = A jatek all, meg nem indult el.
+	 *  1 = A jatek elindult, startGame() metodus allitja be, a jatek fut.
+	 *  2 = A jatekos veszitett, endGame() metodus allitja be, a jatek megallt.
+	 *  3 = A jatekos nyert, winGame() metodus allitja be, a jatek megallt.
+	 */
+	public static int gameStatus;
+	
 	
 	/**A Game osztaly konstruktora, amely egy Game objektum letrehozasakor hivodik meg.
 	 * A konstruktor hozza letre a jatek szamara az egyetlen Timer objektumot, amely a
@@ -30,6 +38,7 @@ public class Game {
 		Timer timer = new Timer();
 		Map map = new Map();
 		startGame();
+		gameStatus = 0;
 	}
 	
 	
@@ -39,10 +48,26 @@ public class Game {
 	 */
 	public static void endGame() {
 		
-		//TODO: palya adatszerkezet kell ahhoz, hogy tudjam vizsgalni, hogy
-		//valamelyik ellenfel pozicioja egybe esik-e a célpoziciokkal
-		
-		System.out.println("Game endGame - A jatekos veszitett, jatek vege");
+		//Ellenorzom az osszes ellenfelre, hogy barmelyik aktualis
+		//pozicioja egybe esik e a cel pozicioval (0,23 ; 0,24; 1,23; 1,24)
+		for(Enemy e : Map.enemies)
+		{
+			//Ha csak egy cellara is ralepett a celt reprezentali 4 kozul akkor vege
+			if((e.position.getRowValue() == 0 && e.position.getColumnValue() == 23) ||
+			   (e.position.getRowValue() == 0 && e.position.getColumnValue() == 24) ||	
+			   (e.position.getRowValue() == 1 && e.position.getColumnValue() == 23) ||
+			   (e.position.getRowValue() == 1 && e.position.getColumnValue() == 24))
+			{
+				//A jatekos veszitett, flag beallitasa.
+				gameStatus = 2;
+				System.out.println("Game endGame - A jatekos veszitett, jatek vege");
+			}
+			else
+			{
+				//DO NOTHING
+				//Meg nem erte el egyetlen ellenfel sem a celt
+			}
+		}	
 	}
 	
 	
@@ -50,7 +75,8 @@ public class Game {
 	*/
 	public static void startGame() {
 		
-		
+		//A jatek elindult, flag beallitasa
+		gameStatus = 1;
 	}
 
 	
@@ -63,7 +89,9 @@ public class Game {
 				
 		if(Map.enemies.isEmpty())
 		{
-			System.out.println("Game wingame - A jatekos nyert, jatek vege");
+			//A jatekos nyert, flag beallitasa.
+			gameStatus = 3;
+			System.out.println("Game wingame - A jatekos nyert, jatek vege");			
 		}
 	}
 	
