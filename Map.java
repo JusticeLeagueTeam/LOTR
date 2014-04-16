@@ -611,30 +611,57 @@ public class Map {
 			}
 		}
 		
-		//Random szam generalas az ut kivalasztasahoz
-		//a listaban levo elemek szamatol fuggoen
+		//Ha valamelyik keresztezodesnel egy masik ellenfel utjan visszafele
+		//megy tovabb, es eler a palya szelehez, tehat az aktualis pozicioja 
+		//a palya bal oldalso oszlopaban vmelyik cella vagy a legalso sorban
+		//akkor az egyik fenti IF ag sem tud lefutni, tehat a listaban 0 elem lesz
+		//Ha a listaban 0 elem van, akkor a palya szelen van az ellenfel, igy
+		//a kovetkezo lepesben lelepne a palyarol, tehat az ellenfel torolheto
 		
-		Random rand = new Random();
+		//Ez fogja az uj cella sorszamat megadni a listaban Random alapjan
 		int elementIndex = 0;
 		
-		//Ha csak egy uj pozicio van a listaban, akkor csak arra mehet
-		if(positionList.size() == 1)
+		if(positionList.size() == 0)
 		{
-			//Ekkor rand==0 lesz
-			elementIndex = rand.nextInt(1);
+			//Vegig iteralunk az ellenfeleket tarolo adatszerkezeten
+			//hogy megkeressuk ezt az ellenfelet pozicio alapjan
+			for(Enemy e : Map.enemies)
+			{
+				Position tmp = e.getPosition();
+				
+				//Ahol az ellenfel pozicioja megegyezik a parameterkent kapott
+				//aktualis cella pozicioval, azt az ellenfelet toroljuk a listabol
+				if((tmp.getRowValue() == actualPosition.getRowValue()) && (tmp.getColumnValue() == actualPosition.getColumnValue()))
+				{
+					Map.enemies.remove(e);
+				}
+			}
 		}
-		
-		if(positionList.size() == 2)
+		else
 		{
-			//Ekkor rand 0 vagy 1 lesz
-			elementIndex = rand.nextInt(2);
+			//Random szam generalas az ut kivalasztasahoz
+			//a listaban levo elemek szamatol fuggoen			
+			Random rand = new Random();
+			
+			//Ha csak egy uj pozicio van a listaban, akkor csak arra mehet
+			if(positionList.size() == 1)
+			{
+				//Ekkor az egyetlen, 0-as indexu elemet kell kivenni
+				elementIndex = 0;
+			}
+			
+			if(positionList.size() == 2)
+			{
+				//Ekkor rand 0 vagy 1 lesz
+				elementIndex = rand.nextInt(2);
+			}
+			
+			if(positionList.size() == 3)
+			{
+				//Ekkor rand 0,1,2 lehet
+				elementIndex = rand.nextInt(3);
+			}
 		}
-		
-		if(positionList.size() == 3)
-		{
-			//Ekkor rand 0,1,2 lehet
-			elementIndex = rand.nextInt(3);
-		}						
 		
 		return positionList.get(elementIndex);
 	}
