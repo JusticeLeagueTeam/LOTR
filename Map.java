@@ -98,9 +98,9 @@ public class Map {
 		}
 		
 		//1.sor
-		mainMap[0][21].setRoadFlag(true);
-		mainMap[0][23].setRoadFlag(true);
-		mainMap[0][24].setRoadFlag(true);
+		mainMap[1][21].setRoadFlag(true);
+		mainMap[1][23].setRoadFlag(true);
+		mainMap[1][24].setRoadFlag(true);
 		
 		//2.sor
 		for(int k=0; k<6; k++)
@@ -223,7 +223,7 @@ public class Map {
 		mainMap[14][23].setRoadFlag(true);
 		
 		//15.sor
-		for(int k=5; k<8; k++)
+		for(int k=5; k<16; k++)
 		{
 			mainMap[15][k].setRoadFlag(true);
 		}
@@ -697,15 +697,23 @@ public class Map {
 	/**A Timer-tol erkezo orajelre ellenorzi, hogy szukseges-e uj ellenfel generalasa.
 	 */
 	public static void tick() {
+		int temp = -1;
+		/**ha az ellenfel lelepett a palyarol toroljuk
+		 * amugy meghivjuk a tick
+		 */
+		
 		for(Enemy e : enemies){
 			if((e.getPosition().getRowValue() == 0) && (e.getPosition().getColumnValue() == 0))
 			{
-				Map.enemies.remove(e);
+				temp = Map.enemies.indexOf(e);
 			}
 			else
 			{
 				e.tick();
 			}
+		}
+		if(temp >= 0){
+			Map.enemies.remove(temp);
 		}
 		for(Tower t : towers){
 			t.tick();
