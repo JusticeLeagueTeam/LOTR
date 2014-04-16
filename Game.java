@@ -23,6 +23,18 @@ public class Game {
 	 *  3 = A jatekos nyert, winGame() metodus allitja be, a jatek megallt.
 	 */
 	public static int gameStatus;
+	/**
+	 * Kodot jelzo flag.
+	 */
+	public static boolean isFog=false;
+	/**
+	 * Kod print uzenete miatt szukseges flag
+	 */
+	public static boolean fogPrint=false;
+	/**
+	 * Specialis lovedeket jelzo flag.
+	 */
+	public static boolean isSpecial=false;
 	
 	
 	/**A Game osztaly konstruktora, amely egy Game objektum letrehozasakor hivodik meg.
@@ -99,7 +111,7 @@ public class Game {
 	 */
 	public static void tick() {
 		
-		//Wingame-hez nem kéne visszatérési érték? vagy csak simán kiprintel es kesz?
+		//Wingame-hez nem kĂ©ne visszatĂ©rĂ©si Ă©rtĂ©k? vagy csak simĂˇn kiprintel es kesz?
 		//honnan fogja tudni az egesz rendszer, hogy ott lefutott az IF?
 		//Valamit bekene hozza allitani
 		winGame();
