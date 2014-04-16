@@ -20,32 +20,27 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 	public FiringSpeedIncreaseStone(){
 		this.firingSpeedIncreaseValue=1;
 		this.cost=50;
-		System.out.println("FiringSpeedIncreaseStone konstruktor - letrehozza a varazskovet kezdeti ertekekkel");
 	}
 	
 	/**
 	 * A torony tuzelesi sebesseget valtoztato ertek lekerdezesere hasznalhato metodus
 	 */
 	public int getFiringSpeedIncreaseValue() {
-		System.out.println("FiringSpeedIncreaseStone getFiringSpeedIncreaseValue() - A torony tuzelesi sebesseget valtoztato ertek lekerdezese.");
 		return this.firingSpeedIncreaseValue;
 	}
 
 	/**
 	 *  A torony tuzelesi sebesseget valtoztato ertek beallitasara hasznalhato metodus.
 	 */
-	public void setFiringSpeedIncreaseValue(int firingSpeedIncreaseValue) {
-		System.out.println("FiringSpeedIncreaseStone setFiringSpeedIncreaseValue(int firingSpeedIncreaseValue) - A torony tuzelesi sebesseget valtoztato ertek beallitasa.");
-		this.firingSpeedIncreaseValue = firingSpeedIncreaseValue;
+	public void setFiringSpeedIncreaseValue(int fSI) {
+		this.firingSpeedIncreaseValue = fSI;
 	}
 
 	/**
 	 *  A tornyok tulajdonsagait modositani kepes metodus.
 	 */
 	public void effectTower() {
-		System.out.println("FiringSpeedIncreaseStone effectTower() - modositja a tornyok tulajdonsagait");
-		LinkedList<Tower> towersLinkedList = Map.getTowers();
-		for(Tower t : towersLinkedList)
+		for(Tower t : Map.towers)
 		{
 			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())
 			{
@@ -53,5 +48,4 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 			}
 		}
 	}
-
 }
