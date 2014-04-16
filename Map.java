@@ -228,7 +228,7 @@ public class Map {
 			mainMap[15][k].setRoadFlag(true);
 		}
 		mainMap[15][10].setRoadFlag(true);
-		for(int k=12; k<15; k++)
+		for(int k=12; k<16; k++)
 		{
 			mainMap[15][k].setRoadFlag(true);
 		}
