@@ -130,7 +130,7 @@ public class Main {
 					/**
 					 * beolvassuk a sort a fajlbol, illetve break ha a vegere ertunk
 					 */
-					if((input_line = bufferedReader.readLine()) == null)
+					if((line = bufferedReader.readLine()) == null)
 						break;
 				}
 				catch(FileNotFoundException ex) {
