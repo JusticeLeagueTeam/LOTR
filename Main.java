@@ -26,8 +26,6 @@ public class Main {
 		/**
 		 * fajlmuveletekhez szukseges valtozok
 		 */
-		String input_line;
-		String output_line;
 		/**
 		 * FileReader es BufferedReader
 		 */
@@ -95,6 +93,9 @@ public class Main {
 		 * ebbe olvassuk majd az inputot (konzol)
 		 */
 		BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
+		/**
+		 * ebbe a valtozoba generalunk string-et konzolrol es fajlbol is (input)
+		 */
 		String line = null;
 
 		/**
