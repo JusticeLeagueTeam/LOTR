@@ -53,17 +53,17 @@ public class Main {
 			}
 		}
 		/**
-		 * FileWriter es BufferedWriter
+		 * FileWriter es Game.bufferedWriter
 		 */
 		FileWriter fileWriter = null;
-		BufferedWriter bufferedWriter = null;
+		//Game.bufferedWriter Game.bufferedWriter = null;
 		if(Game.fileMode){
 			try {
 				// Assume default encoding.
 				fileWriter = new FileWriter(args[1]);
 
-				// Always wrap FileWriter in BufferedWriter.
-				bufferedWriter = new BufferedWriter(fileWriter);
+				// Always wrap FileWriter in Game.bufferedWriter.
+				Game.bufferedWriter = new BufferedWriter(fileWriter);
 			}
 			catch(IOException ex) {
 				System.out.println("Hibas output fajl.");
@@ -74,10 +74,10 @@ public class Main {
 		 */
 		if(Game.fileMode){
 			try{
-				bufferedWriter.write("Udvozollek a Justice League prototipus programjaban!");
-				bufferedWriter.newLine();
-				bufferedWriter.write("---------------------------------------------------");
-				bufferedWriter.newLine();
+				Game.bufferedWriter.write("Udvozollek a Justice League prototipus programjaban!");
+				Game.bufferedWriter.newLine();
+				Game.bufferedWriter.write("---------------------------------------------------");
+				Game.bufferedWriter.newLine();
 			}
 			catch(IOException ex) {
 				System.out.println("Hibas output fajl.");
@@ -106,10 +106,10 @@ public class Main {
 			 */
 			if(Game.fileMode){
 				try{
-					bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, \nswamp, printdefensetools, printall, firingspeedincreaserstone, \nrangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
-					bufferedWriter.newLine();
-					bufferedWriter.write("input:");
-					bufferedWriter.newLine();
+					Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, \nswamp, printdefensetools, printall, firingspeedincreaserstone, \nrangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
+					Game.bufferedWriter.newLine();
+					Game.bufferedWriter.write("input:");
+					Game.bufferedWriter.newLine();
 				}
 				catch(IOException ex) {
 					System.out.println("Hibas output fajl.");
@@ -161,9 +161,9 @@ public class Main {
 			if(command.length == 1 && command[0].equals("gamestart")){
 				if(Game.fileMode){
 					try{
-						bufferedWriter.write("A jatekmenet elindult.");
-						bufferedWriter.newLine();
-						bufferedWriter.newLine();
+						Game.bufferedWriter.write("A jatekmenet elindult.");
+						Game.bufferedWriter.newLine();
+						Game.bufferedWriter.newLine();
 					}
 					catch(IOException ex) {
 						System.out.println("Hibas output fajl.");
@@ -192,9 +192,9 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -210,9 +210,9 @@ public class Main {
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy bigtower az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy bigtower az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -225,9 +225,9 @@ public class Main {
 					else{
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A megadott koordinata nem helyes");
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -251,9 +251,9 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -269,9 +269,9 @@ public class Main {
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy smalltower az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy smalltower az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -284,9 +284,9 @@ public class Main {
 					else{
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A megadott koordinata nem helyes");
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -309,9 +309,9 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -324,9 +324,9 @@ public class Main {
 					if((!(x >= 0 && x <= 24 && y >= 0 && y <= 24))  || (Map.mainMap[y][x].getRoadFlag() == false)){
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A megadott koordinata nem helyes");
-								bufferedWriter.newLine();
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -351,8 +351,8 @@ public class Main {
 						}
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy hobbit az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy hobbit az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -377,8 +377,8 @@ public class Main {
 						}
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy human az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy human az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -403,8 +403,8 @@ public class Main {
 						}
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy dwarf az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy dwarf az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -429,8 +429,8 @@ public class Main {
 						}
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy elf az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy elf az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -454,8 +454,8 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -471,8 +471,8 @@ public class Main {
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy shiftingsand az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy shiftingsand az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -485,8 +485,8 @@ public class Main {
 					else{
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A megadott koordinata nem helyes");
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -510,8 +510,8 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -527,8 +527,8 @@ public class Main {
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("Letrejott egy swamp az alabbi cellan: "+y+" "+x);
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy swamp az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -541,8 +541,8 @@ public class Main {
 					else{
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("A megadott koordinata nem helyes");
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -559,8 +559,8 @@ public class Main {
 				else if(command.length == 1 && command[0].equals("printdefensetools")){
 					if(Game.fileMode){
 						try{
-							bufferedWriter.write("tick "+Map.getTickCount());
-							bufferedWriter.newLine();
+							Game.bufferedWriter.write("tick "+Map.getTickCount());
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
 							System.out.println("Hibas output fajl.");
@@ -571,8 +571,8 @@ public class Main {
 					}
 					if(Game.fileMode){
 						try{
-							bufferedWriter.write("player varazsereje "+Map.player.getMagicPower());
-							bufferedWriter.newLine();
+							Game.bufferedWriter.write("player varazsereje "+Map.player.getMagicPower());
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
 							System.out.println("Hibas output fajl.");
@@ -584,8 +584,8 @@ public class Main {
 					//Tornyok kiiratasa
 					if(Game.fileMode){
 						try{
-							bufferedWriter.write("tornyok listaja:");
-							bufferedWriter.newLine();
+							Game.bufferedWriter.write("tornyok listaja:");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
 							System.out.println("Hibas output fajl.");
@@ -597,8 +597,8 @@ public class Main {
 					if(Map.towers.isEmpty()){
 						if(Game.fileMode){
 							try{
-								bufferedWriter.write("nincs torony");
-								bufferedWriter.newLine();
+								Game.bufferedWriter.write("nincs torony");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -613,8 +613,8 @@ public class Main {
 						for(Tower element : towers){
 							if(Game.fileMode){
 								try{
-									bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-									bufferedWriter.newLine();
+									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
 									System.out.println("Hibas output fajl.");
@@ -627,11 +627,11 @@ public class Main {
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println();
@@ -639,12 +639,12 @@ public class Main {
 					//Akadalyok kiiratasa
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("akadalyok listaja:");
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("akadalyok listaja:");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("akadalyok listaja:");
@@ -652,12 +652,12 @@ public class Main {
 					if(Map.barriers.isEmpty()){
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("nincs akadaly");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("nincs akadaly");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("nincs akadaly");
@@ -668,25 +668,25 @@ public class Main {
 						for(Barrier element : barriers){
 							if(Game.fileMode){
 								try{
-						            bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-						            bufferedWriter.newLine();
+									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
-						            System.out.println("Hibas output fajl.");
-						        }
+									System.out.println("Hibas output fajl.");
+								}
 							}
 							else{
 								System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 							}
-							}
+						}
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println();
@@ -694,12 +694,12 @@ public class Main {
 					//Varazskovek kiiratasa
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("varazskovek listaja:");
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("varazskovek listaja:");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("varazskovek listaja:");
@@ -707,12 +707,12 @@ public class Main {
 					if(Map.magicStones.isEmpty()){
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("nincs varazsko");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("nincs varazsko");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("nincs varazsko");
@@ -724,12 +724,12 @@ public class Main {
 							if(element instanceof FiringSpeedIncreaseStone == false){
 								if(Game.fileMode){
 									try{
-							            bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-							            bufferedWriter.newLine();
+										Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+										Game.bufferedWriter.newLine();
 									}
 									catch(IOException ex) {
-							            System.out.println("Hibas output fajl.");
-							        }
+										System.out.println("Hibas output fajl.");
+									}
 								}
 								else{
 									System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
@@ -738,12 +738,12 @@ public class Main {
 							else{
 								if(Game.fileMode){
 									try{
-							            bufferedWriter.write("FiringSpeedIncreaserStone"+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-							            bufferedWriter.newLine();
+										Game.bufferedWriter.write("FiringSpeedIncreaserStone"+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+										Game.bufferedWriter.newLine();
 									}
 									catch(IOException ex) {
-							            System.out.println("Hibas output fajl.");
-							        }
+										System.out.println("Hibas output fajl.");
+									}
 								}
 								else{
 									System.out.println("FiringSpeedIncreaserStone"+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
@@ -753,11 +753,11 @@ public class Main {
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println();
@@ -769,24 +769,24 @@ public class Main {
 				else if(command.length == 1 && command[0].equals("printall")){
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("tick "+Map.getTickCount());
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("tick "+Map.getTickCount());
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("tick "+Map.getTickCount());
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("player varazsereje "+Map.player.getMagicPower());
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("player varazsereje "+Map.player.getMagicPower());
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("player varazsereje "+Map.player.getMagicPower());
@@ -794,12 +794,12 @@ public class Main {
 					//Tornyok kiiratasa
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("tornyok listaja:");
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("tornyok listaja:");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("tornyok listaja:");
@@ -807,12 +807,12 @@ public class Main {
 					if(Map.towers.isEmpty()){
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("nincs torony");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("nincs torony");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("nincs torony");
@@ -823,25 +823,25 @@ public class Main {
 						for(Tower element : towers){
 							if(Game.fileMode){
 								try{
-						            bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-						            bufferedWriter.newLine();
+									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
-						            System.out.println("Hibas output fajl.");
-						        }
+									System.out.println("Hibas output fajl.");
+								}
 							}
 							else{
 								System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 							}
-							}
+						}
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println();
@@ -849,12 +849,12 @@ public class Main {
 					//Akadalyok kiiratasa
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("akadalyok listaja:");
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("akadalyok listaja:");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("akadalyok listaja:");
@@ -862,12 +862,12 @@ public class Main {
 					if(Map.barriers.isEmpty()){
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("nincs akadaly");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("nincs akadaly");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("nincs akadaly");
@@ -878,25 +878,25 @@ public class Main {
 						for(Barrier element : barriers){
 							if(Game.fileMode){
 								try{
-						            bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-						            bufferedWriter.newLine();
+									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
-						            System.out.println("Hibas output fajl.");
-						        }
+									System.out.println("Hibas output fajl.");
+								}
 							}
 							else{
 								System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 							}
-							}
+						}
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println();
@@ -904,12 +904,12 @@ public class Main {
 					//Varazskovek kiiratasa
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("varazskovek listaja:");
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("varazskovek listaja:");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("varazskovek listaja:");
@@ -917,12 +917,12 @@ public class Main {
 					if(Map.magicStones.isEmpty()){
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("nincs varazsko");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("nincs varazsko");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("nincs varazsko");
@@ -933,12 +933,12 @@ public class Main {
 						for(MagicStone element : magicStones){
 							if(Game.fileMode){
 								try{
-						            bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-						            bufferedWriter.newLine();
+									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
-						            System.out.println("Hibas output fajl.");
-						        }
+									System.out.println("Hibas output fajl.");
+								}
 							}
 							else{
 								System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
@@ -947,11 +947,11 @@ public class Main {
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println();
@@ -959,12 +959,12 @@ public class Main {
 					//Ellenfelek kiiaratasa
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("ellenfelek:");
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("ellenfelek:");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("ellenfelek:");
@@ -972,12 +972,12 @@ public class Main {
 					if(Map.enemies.isEmpty()){
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("nincs ellenfel");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("nincs ellenfel");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("nincs ellenfel");
@@ -988,12 +988,12 @@ public class Main {
 						for(Enemy element : enemies){
 							if(Game.fileMode){
 								try{
-						            bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue()+" "+element.getHealth());
-						            bufferedWriter.newLine();
+									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue()+" "+element.getHealth());
+									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
-						            System.out.println("Hibas output fajl.");
-						        }
+									System.out.println("Hibas output fajl.");
+								}
 							}
 							else{
 								System.out.println(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue()+" "+element.getHealth());
@@ -1002,11 +1002,11 @@ public class Main {
 					}
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println();
@@ -1025,12 +1025,12 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("A koordinatakat szam formatumban kell megadni");
@@ -1042,12 +1042,12 @@ public class Main {
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
@@ -1056,12 +1056,12 @@ public class Main {
 					else{
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("A megadott koordinata nem helyes");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("A megadott koordinata nem helyes");
@@ -1081,12 +1081,12 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("A koordinatakat szam formatumban kell megadni");
@@ -1098,12 +1098,12 @@ public class Main {
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
@@ -1112,12 +1112,12 @@ public class Main {
 					else{
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("A megadott koordinata nem helyes");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("A megadott koordinata nem helyes");
@@ -1137,12 +1137,12 @@ public class Main {
 					} catch(NumberFormatException e) { 
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("A koordinatakat szam formatumban kell megadni");
@@ -1154,12 +1154,12 @@ public class Main {
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
@@ -1168,12 +1168,12 @@ public class Main {
 					else{
 						if(Game.fileMode){
 							try{
-					            bufferedWriter.write("A megadott koordinata nem helyes");
-					            bufferedWriter.newLine();
+								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
-					            System.out.println("Hibas output fajl.");
-					        }
+								System.out.println("Hibas output fajl.");
+							}
 						}
 						else{
 							System.out.println("A megadott koordinata nem helyes");
@@ -1205,12 +1205,12 @@ public class Main {
 							} catch(NumberFormatException e) {
 								if(Game.fileMode){
 									try{
-							            bufferedWriter.write("Helytelen tick parameter");
-							            bufferedWriter.newLine();
+										Game.bufferedWriter.write("Helytelen tick parameter");
+										Game.bufferedWriter.newLine();
 									}
 									catch(IOException ex) {
-							            System.out.println("Hibas output fajl.");
-							        }
+										System.out.println("Hibas output fajl.");
+									}
 								}
 								else{
 									System.out.println("Helytelen tick parameter");
@@ -1224,12 +1224,12 @@ public class Main {
 							else{
 								if(Game.fileMode){
 									try{
-							            bufferedWriter.write("A ticknek egy pozitiv egesz szamot kell megadni");
-							            bufferedWriter.newLine();
+										Game.bufferedWriter.write("A ticknek egy pozitiv egesz szamot kell megadni");
+										Game.bufferedWriter.newLine();
 									}
 									catch(IOException ex) {
-							            System.out.println("Hibas output fajl.");
-							        }
+										System.out.println("Hibas output fajl.");
+									}
 								}
 								else{
 									System.out.println("A ticknek egy pozitiv egesz szamot kell megadni");
@@ -1248,6 +1248,16 @@ public class Main {
 					Game.gameStatus = 2;
 				}
 				else if(command.length == 1 && command[0].equals("exit")){
+					/**
+					 * BufferedReader/Writer lezarasa
+					 */
+					try {
+						bufferedReader.close();
+						Game.bufferedWriter.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					break;
 				}
 				/**
@@ -1256,12 +1266,12 @@ public class Main {
 				else{
 					if(Game.fileMode){
 						try{
-				            bufferedWriter.write("Hibas parancs!");
-				            bufferedWriter.newLine();
+							Game.bufferedWriter.write("Hibas parancs!");
+							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
-				            System.out.println("Hibas output fajl.");
-				        }
+							System.out.println("Hibas output fajl.");
+						}
 					}
 					else{
 						System.out.println("Hibas parancs!");
@@ -1271,12 +1281,12 @@ public class Main {
 			else{
 				if(Game.fileMode){
 					try{
-			            bufferedWriter.write("Elobb el kell inditani a jatekmenetet (gamestart)");
-			            bufferedWriter.newLine();
+						Game.bufferedWriter.write("Elobb el kell inditani a jatekmenetet (gamestart)");
+						Game.bufferedWriter.newLine();
 					}
 					catch(IOException ex) {
-			            System.out.println("Hibas output fajl.");
-			        }
+						System.out.println("Hibas output fajl.");
+					}
 				}
 				else{
 					System.out.println("Elobb el kell inditani a jatekmenetet (gamestart)");

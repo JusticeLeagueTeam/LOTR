@@ -1,5 +1,6 @@
 package LOTR;
 
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -89,7 +90,7 @@ public class Tower extends DefenseTools implements Observer{
 	public void setElfOrDwarfFlag(boolean eodf) {
 		elfOrDwarfFlag = eodf;
 	}
-	
+
 	/**
 	 * noveli a tick_counter-t eggyel
 	 */
@@ -132,7 +133,7 @@ public class Tower extends DefenseTools implements Observer{
 						is_in_target = true;
 				}
 			}
-			
+
 			//ha hatotavon belul van akkor tamad
 			if(is_in_target == true){
 				if(Game.isSpecial == true){
@@ -143,7 +144,18 @@ public class Tower extends DefenseTools implements Observer{
 						e.splitAttacked(firingPower + 10);
 					else
 						e.splitAttacked(firingPower);
-					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+					if(Game.fileMode){
+						try{
+							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+							Game.bufferedWriter.newLine();
+						}
+						catch(IOException ex) {
+							System.out.println("Hibas output fajl.");
+						}
+					}
+					else{
+						System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+					}
 				}
 				else{
 					//elotte ellenorzi, hogy van-e a tornyon specialis ko
@@ -152,11 +164,20 @@ public class Tower extends DefenseTools implements Observer{
 						e.Attacked(firingPower + 10);
 					else
 						e.Attacked(firingPower);
-					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+					if(Game.fileMode){
+						try{
+							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+							Game.bufferedWriter.newLine();
+						}
+						catch(IOException ex) {
+							System.out.println("Hibas output fajl.");
+						}
+					}
+					else{
+						System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+					}
 				}
-
 			}
 		}
 	}
-
 }

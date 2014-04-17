@@ -1,12 +1,16 @@
 package LOTR;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class Timer {
 
 	private int period;
-	
+
 	public Timer(){
-		
+
 	}
 	/**
 	 * Elinditja az idozitot
@@ -24,15 +28,76 @@ public class Timer {
 	 * Meghivja a Map es a Game tick metodusat
 	 */
 	public static void tick() {
+		/**
+		 * tick metodusok hivasa
+		 */
 		Map.tick();
 		Game.tick();
-		if(Game.isSpecial)
-			System.out.println("tick - letelt egy orajel, specialis lovedek aktivalva");
-		else if(Game.fogPrint){
-			Game.fogPrint=false;
-			System.out.println("tick - letelt egy orajel, köd aktivalva");
+		/**
+		 * kulonbozo tick paramterekhez kulonbozo kimenet
+		 */
+		if(Game.isSpecial){
+			/**
+			 * specialis lovedek
+			 */
+			if(Game.fileMode){
+				try{
+					Game.bufferedWriter.write("tick - letelt egy orajel, specialis lovedek aktivalva");
+					Game.bufferedWriter.newLine();
+				}
+				catch(IOException ex) {
+					System.out.println("Hibas output fajl.");
+				}
+			}
+			else{
+				System.out.println("tick - letelt egy orajel, specialis lovedek aktivalva");
+			}
 		}
-		else
-			System.out.println("tick - letelt egy orajel");
+		else if(Game.fogPrint){
+			/**
+			 * kod szallt a palyara
+			 */
+			Game.fogPrint=false;
+			if(Game.fileMode){
+				try{
+					Game.bufferedWriter.write("tick - letelt egy orajel, kod aktivalva");
+					Game.bufferedWriter.newLine();
+				}
+				catch(IOException ex) {
+					System.out.println("Hibas output fajl.");
+				}
+			}
+			else{
+				System.out.println("tick - letelt egy orajel, kod aktivalva");
+			}
+		}
+		else{
+			/**
+			 * sima tick
+			 */
+			if(Game.fileMode){
+				try{
+					Game.bufferedWriter.write("tick - letelt egy orajel");
+					Game.bufferedWriter.newLine();
+				}
+				catch(IOException ex) {
+					System.out.println("Hibas output fajl.");
+				}
+			}
+			else{
+				if(Game.fileMode){
+					try{
+						Game.bufferedWriter.write("tick - letelt egy orajel");
+						Game.bufferedWriter.newLine();
+					}
+					catch(IOException ex) {
+						System.out.println("Hibas output fajl.");
+					}
+				}
+				else{
+					System.out.println("tick - letelt egy orajel");
+				}
+			}
+		}
 	}
 }
