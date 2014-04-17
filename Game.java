@@ -24,6 +24,12 @@ public class Game {
 	 */
 	public static int gameStatus;
 	/**
+	 * fileMode flag
+	 * ha fajlbol vesszuk az input-kat es fajlba irjuk az output-okat akkor true lesz
+	 * program indulasakor a Main arugmentumkent kapja meg a fajlneveket
+	 */
+	public static boolean fileMode=false;
+	/**
 	 * Kodot jelzo flag.
 	 */
 	public static boolean isFog=false;
