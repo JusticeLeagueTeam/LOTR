@@ -1248,15 +1248,17 @@ public class Main {
 					Game.gameStatus = 2;
 				}
 				else if(command.length == 1 && command[0].equals("exit")){
-					/**
-					 * BufferedReader/Writer lezarasa
-					 */
-					try {
-						bufferedReader.close();
-						Game.bufferedWriter.close();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					if(Game.fileMode){
+						/**
+						 * BufferedReader/Writer lezarasa
+						 */
+						try {
+							bufferedReader.close();
+							Game.bufferedWriter.close();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}	
 					}
 					break;
 				}
