@@ -470,7 +470,7 @@ public class Main {
 							System.out.println("A koordinatakat szam formatumban kell megadni");
 						}
 					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
+					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag()){
 						defenseTool.position.setRowValue(y);
 						defenseTool.position.setColumnValue(x);
 						Map.player.createDefenseTool(defenseTool);
@@ -527,7 +527,7 @@ public class Main {
 							System.out.println("A koordinatakat szam formatumban kell megadni");
 						}
 					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
+					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag()){
 						defenseTool.position.setRowValue(y);
 						defenseTool.position.setColumnValue(x);
 						Map.player.createDefenseTool(defenseTool);
