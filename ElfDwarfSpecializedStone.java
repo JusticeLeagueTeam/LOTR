@@ -16,6 +16,7 @@ public class ElfDwarfSpecializedStone extends MagicStone {
 	 * ElfDwarfSpecializedStone - varazskovek egyike
 	 */
 	public ElfDwarfSpecializedStone(){
+		this.position=new Position();
 		this.cost=100;
 	}
 

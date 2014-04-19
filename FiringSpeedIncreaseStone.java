@@ -18,6 +18,7 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 	 * torony tamadas gyakorisagat novelo ko
 	 */
 	public FiringSpeedIncreaseStone(){
+		this.position=new Position();
 		this.firingSpeedIncreaseValue=1;
 		this.cost=50;
 	}

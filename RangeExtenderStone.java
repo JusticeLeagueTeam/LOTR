@@ -18,6 +18,7 @@ public class RangeExtenderStone extends MagicStone {
 	 * RangeExtenderStone ko a torony hatotavolsagat noveli
 	 */
 	public RangeExtenderStone(){
+		this.position=new Position();
 		this.rangeExtendingValue=1;
 		this.cost=50;
 	}
