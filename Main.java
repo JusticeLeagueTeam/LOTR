@@ -1272,7 +1272,7 @@ public class Main {
 					/**
 					 * lehetseges input-ok
 					 */
-					if(Game.fileMode && Game.gameStatus != 2){
+					if(Game.fileMode){
 						try{
 							Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, swamp, printdefensetools, printall, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
 							Game.bufferedWriter.newLine();
@@ -1286,7 +1286,7 @@ public class Main {
 					/**
 					 * vereseg kiirasa
 					 */
-					if(Game.fileMode && Game.gameStatus != 2){
+					if(Game.fileMode){
 						try{
 							Game.bufferedWriter.write("Game endGame - A jatekos veszitett, jatek vege");
 							Game.bufferedWriter.newLine();
@@ -1300,7 +1300,7 @@ public class Main {
 					/**
 					 * lehetseges input-ok
 					 */
-					if(Game.fileMode && Game.gameStatus != 2){
+					if(Game.fileMode){
 						try{
 							Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, swamp, printdefensetools, printall, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
 							Game.bufferedWriter.newLine();
@@ -1508,7 +1508,7 @@ public class Main {
 					/**
 					 * lehetseges input-ok
 					 */
-					if(Game.fileMode && Game.gameStatus != 2){
+					if(Game.fileMode){
 						try{
 							Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, swamp, printdefensetools, printall, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
 							Game.bufferedWriter.newLine();
