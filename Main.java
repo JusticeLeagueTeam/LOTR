@@ -113,7 +113,7 @@ public class Main {
 			 */
 			if(Game.fileMode && Game.gameStatus != 2){
 				try{
-					Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, \nswamp, printdefensetools, printall, firingspeedincreaserstone, \nrangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
+					Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, swamp, printdefensetools, printall, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
 					Game.bufferedWriter.newLine();
 					if(command != null && command[0].equals("printall") == false)
 						Game.bufferedWriter.newLine();
