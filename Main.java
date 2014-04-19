@@ -168,6 +168,7 @@ public class Main {
 			if(command.length == 1 && command[0].equals("gamestart")){
 				if(Game.fileMode){
 					try{
+						Game.bufferedWriter.newLine();
 						Game.bufferedWriter.write("A jatekmenet elindult.");
 						Game.bufferedWriter.newLine();
 						Game.bufferedWriter.newLine();
