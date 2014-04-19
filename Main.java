@@ -98,6 +98,11 @@ public class Main {
 		 * ebbe a valtozoba generalunk string-et konzolrol es fajlbol is (input)
 		 */
 		String line = null;
+		
+		/**
+		 * parancs szavainak tombje
+		 */
+		String[] command=null;
 
 		/**
 		 * vegtelen ciklus folyamatosan input-ot var es az alapjan indit el szekv diagramok szerint metodusokat
@@ -110,7 +115,8 @@ public class Main {
 				try{
 					Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, \nswamp, printdefensetools, printall, firingspeedincreaserstone, \nrangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
 					Game.bufferedWriter.newLine();
-					Game.bufferedWriter.newLine();
+					if(command != null && command[0].equals("printall") == false)
+						Game.bufferedWriter.newLine();
 				}
 				catch(IOException ex) {
 					System.out.println("Hibas output fajl.");
@@ -155,7 +161,7 @@ public class Main {
 			 * szokozoknel tagolas
 			 */
 			String line2 = line.toLowerCase();
-			String[] command = line2.split(" ");
+			command = line2.split(" ");
 			/**
 			 * jatek kezdese
 			 */
