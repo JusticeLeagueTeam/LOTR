@@ -57,6 +57,7 @@ public class Timer {
 				try{
 					Game.bufferedWriter.write("tick - letelt egy orajel, kod aktivalva");
 					Game.bufferedWriter.newLine();
+					Game.bufferedWriter.newLine();
 				}
 				catch(IOException ex) {
 					System.out.println("Hibas output fajl.");

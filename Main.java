@@ -1203,6 +1203,15 @@ public class Main {
 				else if((command.length == 1 || command.length == 2) && command[0].equals("tick")){
 					if(command.length == 1){
 						Timer.tick();
+						
+						if(Game.fileMode){
+							try{
+								Game.bufferedWriter.newLine();
+							}
+							catch(IOException ex) {
+								System.out.println("Hibas output fajl.");
+							}
+						}
 					}
 					if(command.length == 2){
 						if(command[1].equals("fog")){
