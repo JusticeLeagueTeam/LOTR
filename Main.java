@@ -620,7 +620,7 @@ public class Main {
 						for(Tower element : towers){
 							if(Game.fileMode){
 								try{
-									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
@@ -675,7 +675,7 @@ public class Main {
 						for(Barrier element : barriers){
 							if(Game.fileMode){
 								try{
-									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
@@ -731,7 +731,7 @@ public class Main {
 							if(element instanceof FiringSpeedIncreaseStone == false){
 								if(Game.fileMode){
 									try{
-										Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+										Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 										Game.bufferedWriter.newLine();
 									}
 									catch(IOException ex) {
@@ -830,7 +830,7 @@ public class Main {
 						for(Tower element : towers){
 							if(Game.fileMode){
 								try{
-									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
@@ -885,7 +885,7 @@ public class Main {
 						for(Barrier element : barriers){
 							if(Game.fileMode){
 								try{
-									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
@@ -940,7 +940,7 @@ public class Main {
 						for(MagicStone element : magicStones){
 							if(Game.fileMode){
 								try{
-									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
+									Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
 									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
@@ -995,7 +995,7 @@ public class Main {
 						for(Enemy element : enemies){
 							if(Game.fileMode){
 								try{
-									Game.bufferedWriter.write(element.getClass().toString().substring(11).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue()+" "+element.getHealth());
+									Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue()+" "+element.getHealth());
 									Game.bufferedWriter.newLine();
 								}
 								catch(IOException ex) {
