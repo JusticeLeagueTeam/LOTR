@@ -29,10 +29,6 @@ public class Timer {
 	 */
 	public static void tick() {
 		/**
-		 * Map tick metodus hivasa
-		 */
-		Map.tick();
-		/**
 		 * kulonbozo tick paramterekhez kulonbozo kimenet
 		 */
 		if(Game.isSpecial){
@@ -99,8 +95,13 @@ public class Timer {
 			}
 		}
 		/**
+		 * Map tick metodus hivasa
+		 */
+		Map.tick();
+		/**
 		 * Game tick metodus hivasa
 		 */
 		Game.tick();
+		
 	}
 }

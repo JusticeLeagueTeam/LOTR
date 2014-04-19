@@ -149,7 +149,7 @@ public class Tower extends DefenseTools implements Observer{
 							Game.bufferedWriter.newLine();
 							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
 							Game.bufferedWriter.newLine();
-							Game.bufferedWriter.newLine();
+							//Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
 							System.out.println("Hibas output fajl.");
@@ -171,7 +171,7 @@ public class Tower extends DefenseTools implements Observer{
 							Game.bufferedWriter.newLine();
 							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
 							Game.bufferedWriter.newLine();
-							Game.bufferedWriter.newLine();
+							//Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
 							System.out.println("Hibas output fajl.");

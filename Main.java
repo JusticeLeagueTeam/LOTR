@@ -1058,6 +1058,7 @@ public class Main {
 							try{
 								Game.bufferedWriter.write("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
 								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -1106,13 +1107,14 @@ public class Main {
 							System.out.println("A koordinatakat szam formatumban kell megadni");
 						}
 					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
+					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 ){
 						defenseTool.position.setRowValue(y);
 						defenseTool.position.setColumnValue(x);
 						Map.player.createDefenseTool(defenseTool);
 						if(Game.fileMode){
 							try{
 								Game.bufferedWriter.write("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -1169,6 +1171,7 @@ public class Main {
 						if(Game.fileMode){
 							try{
 								Game.bufferedWriter.write("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {

@@ -49,4 +49,9 @@ public class DefenseTools{
 		cost = c;
 	}
 
+	public void effectTower() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

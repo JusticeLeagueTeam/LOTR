@@ -12,7 +12,7 @@ public class Player {
 	 * jatekos varazsereje
 	 */
 	private int magicPower;
-	
+
 	public Player(){
 		this.magicPower = 1500;
 	}
@@ -39,32 +39,36 @@ public class Player {
 	 * @param dt paramterekent kapja meg a deklaralt valzotot
 	 */
 	public void createDefenseTool(DefenseTools dt) {
-		
+
 		if(dt.getCost() <= getMagicPower()){
 			boolean isRoad=Map.mainMap[dt.getPosition().getRowValue()][dt.getPosition().getColumnValue()].getRoadFlag();
-				String dtClass = dt.getClass().toString();
-				dtClass = dtClass.substring(5);	//TODO
-				
-				if(dt instanceof Tower && isRoad == false)
-				{
-					Map.towers.add((Tower) dt);
-					for(Enemy e : Map.enemies){
-						e.addObserver(Map.towers.get(Map.towers.indexOf(dt)));
-					}
+			String dtClass = dt.getClass().toString();
+			dtClass = dtClass.substring(11);	//TODO
+
+			if(dt instanceof Tower && isRoad == false)
+			{
+				Map.towers.add((Tower) dt);
+				for(Enemy e : Map.enemies){
+					e.addObserver(Map.towers.get(Map.towers.indexOf(dt)));
 				}
-				if(dt instanceof Barrier && isRoad)
-				{
-					Map.barriers.add((Barrier) dt);
-					for(Enemy e : Map.enemies){
-						e.addObserver(Map.barriers.get(Map.barriers.indexOf(dt)));
-					}
+			}
+			if(dt instanceof Barrier && isRoad)
+			{
+				Map.barriers.add((Barrier) dt);
+				for(Enemy e : Map.enemies){
+					e.addObserver(Map.barriers.get(Map.barriers.indexOf(dt)));
 				}
-				if(dt instanceof MagicStone  && isRoad == false)
-				{
-					Map.magicStones.add((MagicStone) dt);
-					//TODO:effectTower-t itt hivjuk meg; effectTower megnezi, h van-e torony a magicstone poziciojan, ha igen, akkor modositja a parametereit
-				}
-				this.setMagicPower(this.getMagicPower() - dt.getCost());
+			}
+			if(dt instanceof MagicStone && isRoad == false)
+			{
+				Map.magicStones.add((MagicStone) dt);
+				//TODO:effectTower-t itt hivjuk meg; effectTower megnezi, h van-e torony a magicstone poziciojan, ha igen, akkor modositja a parametereit
+				dt.effectTower();
+			}
+			/**
+			 * vedelmi eszkoz koltsegenek levonasa a varazserobol
+			 */
+			this.magicPower -= dt.getCost();
 		}
 		else
 			System.out.println("Nincs eleg varazsero.");
