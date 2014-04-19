@@ -564,23 +564,22 @@ public class Map {
 		}
 		
 		/**
-		 * fontossagi sorrendben (folotte, jobbra, alatta, balra) vegignezzuk a cellakat
+		 * fontossagi sorrendben (jobbra,folotte, alatta, balra) vegignezzuk a cellakat
 		 * ha valamelyik ut, de nem oda lepett elozoleg, akkor oda lep
 		 */
-		if(folotte && (lastPosition.getRowValue() != actualPosition.getRowValue() -1 || lastPosition.getColumnValue() != actualPosition.getColumnValue())){
-			/**
-			 * folotte levo cella
-			 */
-			nextPosition.setRowValue(actualPosition.getRowValue() -1);
-			nextPosition.setColumnValue(actualPosition.getColumnValue());
-		}
-		else if(jobbra && (lastPosition.getRowValue() != actualPosition.getRowValue() || lastPosition.getColumnValue() != actualPosition.getColumnValue() +1 )){
+		if(jobbra && (lastPosition.getRowValue() != actualPosition.getRowValue() || lastPosition.getColumnValue() != actualPosition.getColumnValue() +1 )){
 			/**
 			 * jobbra levo cella
 			 */
 			nextPosition.setRowValue(actualPosition.getRowValue());
 			nextPosition.setColumnValue(actualPosition.getColumnValue() +1);
-			
+			}
+		else if(folotte && (lastPosition.getRowValue() != actualPosition.getRowValue() -1 || lastPosition.getColumnValue() != actualPosition.getColumnValue())){
+			/**
+			 * folotte levo cella
+			 */
+			nextPosition.setRowValue(actualPosition.getRowValue() -1);
+			nextPosition.setColumnValue(actualPosition.getColumnValue());
 		}
 		else if(alatta && (lastPosition.getRowValue() != actualPosition.getRowValue() +1 || lastPosition.getColumnValue() != actualPosition.getColumnValue())){
 			/**
