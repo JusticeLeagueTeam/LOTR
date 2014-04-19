@@ -76,6 +76,7 @@ public class Main {
 				Game.bufferedWriter.newLine();
 				Game.bufferedWriter.write("---------------------------------------------------");
 				Game.bufferedWriter.newLine();
+				Game.bufferedWriter.newLine();
 			}
 			catch(IOException ex) {
 				System.out.println("Hibas output fajl.");
@@ -105,11 +106,10 @@ public class Main {
 			/**
 			 * lehetseges inputok kiiratasa
 			 */
-			if(Game.fileMode){
+			if(Game.fileMode && Game.gameStatus != 2){
 				try{
 					Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, \nswamp, printdefensetools, printall, firingspeedincreaserstone, \nrangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
 					Game.bufferedWriter.newLine();
-					Game.bufferedWriter.write("input:");
 					Game.bufferedWriter.newLine();
 				}
 				catch(IOException ex) {
@@ -354,6 +354,7 @@ public class Main {
 							try{
 								Game.bufferedWriter.write("Letrejott egy hobbit az alabbi cellan: "+y+" "+x);
 								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -379,6 +380,7 @@ public class Main {
 						if(Game.fileMode){
 							try{
 								Game.bufferedWriter.write("Letrejott egy human az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -406,6 +408,7 @@ public class Main {
 							try{
 								Game.bufferedWriter.write("Letrejott egy dwarf az alabbi cellan: "+y+" "+x);
 								Game.bufferedWriter.newLine();
+								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
 								System.out.println("Hibas output fajl.");
@@ -431,6 +434,7 @@ public class Main {
 						if(Game.fileMode){
 							try{
 								Game.bufferedWriter.write("Letrejott egy elf az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -473,6 +477,7 @@ public class Main {
 						if(Game.fileMode){
 							try{
 								Game.bufferedWriter.write("Letrejott egy shiftingsand az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -529,6 +534,7 @@ public class Main {
 						if(Game.fileMode){
 							try{
 								Game.bufferedWriter.write("Letrejott egy swamp az alabbi cellan: "+y+" "+x);
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -1221,6 +1227,17 @@ public class Main {
 								for(int i = 0;i < tickPar; i++){
 									Timer.tick();
 								}
+								/**
+								 * tick sorozat utan a fajl outputban legyen kihagyott sor
+								 */
+								if(Game.fileMode){
+									try{
+										Game.bufferedWriter.newLine();
+									}
+									catch(IOException ex) {
+										System.out.println("Hibas output fajl.");
+									}
+								}
 							}
 							else{
 								if(Game.fileMode){
@@ -1261,7 +1278,10 @@ public class Main {
 							e.printStackTrace();
 						}	
 					}
-					break;
+					/**
+					 * break-rol atirtam return-re, hogy ne legyen dupla inputlista az output vegen
+					 */
+					return;
 				}
 				/**
 				 * ha nem a megadott inputok kozul valasztott a felhasznalo

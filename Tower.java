@@ -146,7 +146,9 @@ public class Tower extends DefenseTools implements Observer{
 						e.splitAttacked(firingPower);
 					if(Game.fileMode){
 						try{
+							Game.bufferedWriter.newLine();
 							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+							Game.bufferedWriter.newLine();
 							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
@@ -166,7 +168,9 @@ public class Tower extends DefenseTools implements Observer{
 						e.Attacked(firingPower);
 					if(Game.fileMode){
 						try{
+							Game.bufferedWriter.newLine();
 							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+							Game.bufferedWriter.newLine();
 							Game.bufferedWriter.newLine();
 						}
 						catch(IOException ex) {
