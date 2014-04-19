@@ -1269,7 +1269,6 @@ public class Main {
 				 * b.) ellenseg elerte a vegzet hegyet - jatekos vesztett
 				 */
 				else if(command.length == 1 && command[0].equals("endgame")){
-					Game.gameStatus = 2;
 					/**
 					 * lehetseges input-ok
 					 */
@@ -1520,6 +1519,10 @@ public class Main {
 							System.out.println("Hibas output fajl.");
 						}
 					}
+					/**
+					 * flag beallitasa
+					 */
+					Game.gameStatus = 2;
 				}
 				else if(command.length == 1 && command[0].equals("exit")){
 					if(Game.fileMode){
