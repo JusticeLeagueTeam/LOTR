@@ -145,7 +145,7 @@ public class Enemy extends Observable {
 			 * a lenyeg az oszthatosag ugyis
 			 */
 			tick_counter=0;
-			
+
 			Position temp_pos = new Position();
 			//jelenlegi poziciot egy atmeneti valtozoba masoljuk
 			temp_pos.setColumnValue(this.position.getColumnValue());
@@ -158,11 +158,10 @@ public class Enemy extends Observable {
 			//a lepesrol ertesitjuk a tornyokat, akadalyokat
 			setChanged();
 			notifyObservers();
-			
+
 		}
-		
 	}
-	
+
 	/**
 	 * parameter ertekevel csokkenti az eleterot es noveli a varazserot
 	 * @param a parameter ertekevel csokkenti az eleterot es noveli a varazserot
@@ -178,8 +177,8 @@ public class Enemy extends Observable {
 	public void splitAttacked(int a){
 		setHealth(getHealth() - a);
 		setHealth(getHealth()/2);
-		
+
 		Map.player.setMagicPower(Map.player.getMagicPower() + a);
 	}
-	
+
 }
