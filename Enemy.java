@@ -140,6 +140,12 @@ public class Enemy extends Observable {
 		tick_counter++;
 		//megfelelo orajel letelte utan lep egyet
 		if(tick_counter % this.getSpeed() == 0 && tick_counter > 2){
+			/**
+			 * tick nullazasa a lassitas aktivalasa miatt kell
+			 * a lenyeg az oszthatosag ugyis
+			 */
+			tick_counter=0;
+			
 			Position temp_pos = new Position();
 			//jelenlegi poziciot egy atmeneti valtozoba masoljuk
 			temp_pos.setColumnValue(this.position.getColumnValue());
