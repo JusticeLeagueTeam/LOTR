@@ -172,54 +172,6 @@ public class Enemy extends Observable {
 	public void splitAttacked(int a){
 		setHealth(getHealth() - a);
 		setHealth(getHealth()/2);
-		if(this instanceof Elf == true){
-			Elf enemy = new Elf();
-			enemy.position.setRowValue(this.position.getRowValue());
-	       	enemy.position.setColumnValue(this.position.getColumnValue());
-	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
-	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
-	       	enemy.setHealth(this.health);
-	       	Map.enemies.add(enemy);
-	       	for(Tower t : Map.towers){
-	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
-	       	}
-		}
-		else if(this instanceof Dwarf == true){
-			Dwarf enemy = new Dwarf();
-			enemy.position.setRowValue(this.position.getRowValue());
-	       	enemy.position.setColumnValue(this.position.getColumnValue());
-	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
-	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
-	       	enemy.setHealth(this.health);
-	       	Map.enemies.add(enemy);
-	       	for(Tower t : Map.towers){
-	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
-	       	}
-		}
-		else if(this instanceof Hobbit == true){
-			Hobbit enemy = new Hobbit();
-			enemy.position.setRowValue(this.position.getRowValue());
-	       	enemy.position.setColumnValue(this.position.getColumnValue());
-	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
-	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
-	       	enemy.setHealth(this.health);
-	       	Map.enemies.add(enemy);
-	       	for(Tower t : Map.towers){
-	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
-	       	}
-		}
-		else if(this instanceof Human == true){
-			Human enemy = new Human();
-			enemy.position.setRowValue(this.position.getRowValue());
-	       	enemy.position.setColumnValue(this.position.getColumnValue());
-	       	enemy.lastPosition.setRowValue(this.lastPosition.getRowValue());
-	       	enemy.lastPosition.setColumnValue(this.lastPosition.getColumnValue());
-	       	enemy.setHealth(this.health);
-	       	Map.enemies.add(enemy);
-	       	for(Tower t : Map.towers){
-	       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
-	       	}
-		}
 		
 		Map.player.setMagicPower(Map.player.getMagicPower() + a);
 	}

@@ -56,6 +56,11 @@ public class Map {
 	/** A palyat tarolo adatszerkezet, ket dimenzios Position matrix formaban */
 	public static Position[][] mainMap;
 	
+	/**
+	 * specialis lovedekhez tartozo index tarolo
+	 */
+	public static int indexOfSplitAttacked = -1;
+	
 	/**A Map osztaly konstruktora, amely egy Map objektum letrehozasakor hivodik meg. 
 	 * A konstruktor hozza letre a Jatekost (Player) reprezentalo objektumot, amelyet a 
 	 * jatek soran vegig hasznalunk. 
@@ -75,6 +80,7 @@ public class Map {
 		tickFlag=0;
 		totalNumberOfEnemies=20;
 		lastTickValueWhenEnemyWasCreated=0;
+		
 		
 		//A palyat tarolo adatszerkezet letrehozasa, valamint
 		//mindegyik Position peldany sor es oszlop attributumanak feltoltese
@@ -639,6 +645,67 @@ public class Map {
 		 */
 		for(Tower t : towers){
 			t.tick();
+		}
+		
+		/**
+		 * specialis lovedek ellenorzese
+		 * ha azzal lottunk akkor uj enemy letrehozasa
+		 */
+		if(indexOfSplitAttacked != -1){
+			//elotte ellenorzi, hogy van-e a tornyon specialis ko
+			//illetve ahhoz tartozo ellenfelrol van-e szo
+			if(Map.enemies.get(indexOfSplitAttacked) instanceof Elf == true){
+				Elf enemy = new Elf();
+				enemy.position.setRowValue(Map.enemies.get(indexOfSplitAttacked).position.getRowValue());
+		       	enemy.position.setColumnValue(Map.enemies.get(indexOfSplitAttacked).position.getColumnValue());
+		       	enemy.lastPosition.setRowValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getRowValue());
+		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
+		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
+		       	Map.enemies.add(enemy);
+		       	for(Tower t : Map.towers){
+		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+		       	}
+			}
+			else if(Map.enemies.get(indexOfSplitAttacked) instanceof Dwarf == true){
+				Dwarf enemy = new Dwarf();
+				enemy.position.setRowValue(Map.enemies.get(indexOfSplitAttacked).position.getRowValue());
+		       	enemy.position.setColumnValue(Map.enemies.get(indexOfSplitAttacked).position.getColumnValue());
+		       	enemy.lastPosition.setRowValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getRowValue());
+		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
+		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
+		       	Map.enemies.add(enemy);
+		       	for(Tower t : Map.towers){
+		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+		       	}
+			}
+			else if(Map.enemies.get(indexOfSplitAttacked) instanceof Hobbit == true){
+				Hobbit enemy = new Hobbit();
+				enemy.position.setRowValue(Map.enemies.get(indexOfSplitAttacked).position.getRowValue());
+		       	enemy.position.setColumnValue(Map.enemies.get(indexOfSplitAttacked).position.getColumnValue());
+		       	enemy.lastPosition.setRowValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getRowValue());
+		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
+		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
+		       	Map.enemies.add(enemy);
+		       	for(Tower t : Map.towers){
+		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+		       	}
+			}
+			else if(Map.enemies.get(indexOfSplitAttacked) instanceof Human == true){
+				Human enemy = new Human();
+				enemy.position.setRowValue(Map.enemies.get(indexOfSplitAttacked).position.getRowValue());
+		       	enemy.position.setColumnValue(Map.enemies.get(indexOfSplitAttacked).position.getColumnValue());
+		       	enemy.lastPosition.setRowValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getRowValue());
+		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
+		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
+		       	Map.enemies.add(enemy);
+		       	for(Tower t : Map.towers){
+		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
+		       	}
+			}
+			/**
+			 * visszaallitjuk a public static index tarolot
+			 */
+			indexOfSplitAttacked=-1;
 		}
 		//Protohoz kikommenteltem a megbeszeltek szerint, GUI-hoz visszakerul
 		//createEnemy();

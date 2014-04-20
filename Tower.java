@@ -102,6 +102,7 @@ public class Tower extends DefenseTools implements Observer{
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
+		
 		// segedvaltozo
 		//minden ellenfelen vegigmegy a ciklus es ellenorzi a hatotavot
 		//ha benne van es eljott a tamadas ideje, akkor megtamadja
@@ -136,14 +137,18 @@ public class Tower extends DefenseTools implements Observer{
 
 			//ha hatotavon belul van akkor tamad
 			if(is_in_target == true){
+				//ha specialis a lovedek
 				if(Game.isSpecial == true){
-					Game.isSpecial=false;
-					//elotte ellenorzi, hogy van-e a tornyon specialis ko
-					//illetve ahhoz tartozo ellenfelrol van-e szo
+					Game.isSpecial=false;//TODO:tobb torony eseten ez rossz helyen van
 					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
 						e.splitAttacked(firingPower + 10);
 					else
 						e.splitAttacked(firingPower);
+					/**
+					 * publci static flag beallitasa, hogy a minden enemies-en vegigmeno cikluson kivul jojjon letre az uj enemy
+					 */
+					Map.indexOfSplitAttacked=Map.enemies.indexOf(e);
+							
 					if(Game.fileMode){
 						try{
 							Game.bufferedWriter.newLine();
@@ -156,10 +161,12 @@ public class Tower extends DefenseTools implements Observer{
 						}
 					}
 					else{
-						System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+						//System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
+						System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja 0XXXX. sorszamu ellenfelet");
 					}
 				}
 				else{
+					//normal lovedek
 					//elotte ellenorzi, hogy van-e a tornyon specialis ko
 					//illetve ahhoz tartozo ellenfelrol van-e szo
 					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
