@@ -39,7 +39,6 @@ public class Player {
 	 * @param dt paramterekent kapja meg a deklaralt valzotot
 	 */
 	public void createDefenseTool(DefenseTools dt) {
-
 		if(dt.getCost() <= getMagicPower()){
 			boolean isRoad=Map.mainMap[dt.getPosition().getRowValue()][dt.getPosition().getColumnValue()].getRoadFlag();
 			String dtClass = dt.getClass().toString();
@@ -59,7 +58,7 @@ public class Player {
 					e.addObserver(Map.barriers.get(Map.barriers.indexOf(dt)));
 				}
 			}
-			if(dt instanceof MagicStone && isRoad == false)
+			if(dt instanceof MagicStone)
 			{
 				Map.magicStones.add((MagicStone) dt);
 				//TODO:effectTower-t itt hivjuk meg; effectTower megnezi, h van-e torony a magicstone poziciojan, ha igen, akkor modositja a parametereit

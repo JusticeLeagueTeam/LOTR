@@ -98,7 +98,7 @@ public class Main {
 		 * ebbe a valtozoba generalunk string-et konzolrol es fajlbol is (input)
 		 */
 		String line = null;
-		
+
 		/**
 		 * parancs szavainak tombje
 		 */
@@ -192,48 +192,68 @@ public class Main {
 				 */
 				if(command.length == 3 && command[0].equals("bigtower")){
 					BigTower defenseTool = new BigTower();
-					int y = -1;
-					int x = -1;
-					try{
-						y = Integer.parseInt(command[1]);
-						x = Integer.parseInt(command[2]);
-					} catch(NumberFormatException e) { 
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+					/**
+					 * ha van eleg varazsero
+					 */
+					if(Map.player.getMagicPower() >= defenseTool.cost){
+						int y = -1;
+						int x = -1;
+						try{
+							y = Integer.parseInt(command[1]);
+							x = Integer.parseInt(command[2]);
+						} catch(NumberFormatException e) { 
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A koordinatakat szam formatumban kell megadni");				
+							}
+						}
+						if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
+							defenseTool.position.setRowValue(y);
+							defenseTool.position.setColumnValue(x);
+							Map.player.createDefenseTool(defenseTool);
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("Letrejott egy bigtower az alabbi cellan: "+y+" "+x);
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
+							}
+							else{
+								System.out.println("Letrejott egy bigtower az alabbi cellan: "+y+" "+x);
 							}
 						}
 						else{
-							System.out.println("A koordinatakat szam formatumban kell megadni");				
-						}
-					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
-						defenseTool.position.setRowValue(y);
-						defenseTool.position.setColumnValue(x);
-						Map.player.createDefenseTool(defenseTool);
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("Letrejott egy bigtower az alabbi cellan: "+y+" "+x);
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A megadott koordinata nem helyes");
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A megadott koordinata nem helyes");			
 							}
-						}
-						else{
-							System.out.println("Letrejott egy bigtower az alabbi cellan: "+y+" "+x);
 						}
 					}
 					else{
 						if(Game.fileMode){
 							try{
-								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.write("Nincs elegendo varazsero");
 								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
@@ -242,57 +262,79 @@ public class Main {
 							}
 						}
 						else{
-							System.out.println("A megadott koordinata nem helyes");			
+							System.out.println("Nincs elegendo varazsero");			
 						}
 					}
+
+
 				}
 				/**
 				 * kis torony epitese
 				 */
 				else if(command.length == 3 && command[0].equals("smalltower")){
 					SmallTower defenseTool = new SmallTower();
-					int y = -1;
-					int x = -1;
-					try{
-						y = Integer.parseInt(command[1]);
-						x = Integer.parseInt(command[2]);
-					} catch(NumberFormatException e) { 
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+					/**
+					 * ha van eleg varazsero
+					 */
+					if(Map.player.getMagicPower() >= defenseTool.cost){
+						int y = -1;
+						int x = -1;
+						try{
+							y = Integer.parseInt(command[1]);
+							x = Integer.parseInt(command[2]);
+						} catch(NumberFormatException e) { 
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A koordinatakat szam formatumban kell megadni");				
+							}
+						}
+						if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
+							defenseTool.position.setRowValue(y);
+							defenseTool.position.setColumnValue(x);
+							Map.player.createDefenseTool(defenseTool);
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("Letrejott egy smalltower az alabbi cellan: "+y+" "+x);
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
+							}
+							else{
+								System.out.println("Letrejott egy smalltower az alabbi cellan: "+y+" "+x);
 							}
 						}
 						else{
-							System.out.println("A koordinatakat szam formatumban kell megadni");				
-						}
-					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag() == false){
-						defenseTool.position.setRowValue(y);
-						defenseTool.position.setColumnValue(x);
-						Map.player.createDefenseTool(defenseTool);
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("Letrejott egy smalltower az alabbi cellan: "+y+" "+x);
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A megadott koordinata nem helyes");
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A megadott koordinata nem helyes");			
 							}
-						}
-						else{
-							System.out.println("Letrejott egy smalltower az alabbi cellan: "+y+" "+x);
 						}
 					}
 					else{
 						if(Game.fileMode){
 							try{
-								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.write("Nincs elegendo varazsero");
 								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
@@ -301,9 +343,10 @@ public class Main {
 							}
 						}
 						else{
-							System.out.println("A megadott koordinata nem helyes");			
+							System.out.println("Nincs elegendo varazsero");			
 						}
 					}
+
 				}
 				/**
 				 * ellenfel generalasa
@@ -458,47 +501,67 @@ public class Main {
 				 */
 				else if(command.length == 3 && command[0].equals("shiftingsand")){
 					ShiftingSand defenseTool = new ShiftingSand();
-					int y = -1;
-					int x = -1;
-					try{
-						y = Integer.parseInt(command[1]);
-						x = Integer.parseInt(command[2]);
-					} catch(NumberFormatException e) { 
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								Game.bufferedWriter.newLine();
+					/**
+					 * ha van eleg varazsero
+					 */
+					if(Map.player.getMagicPower() >= defenseTool.cost){
+						int y = -1;
+						int x = -1;
+						try{
+							y = Integer.parseInt(command[1]);
+							x = Integer.parseInt(command[2]);
+						} catch(NumberFormatException e) { 
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A koordinatakat szam formatumban kell megadni");
+							}
+						}
+						if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag()){
+							defenseTool.position.setRowValue(y);
+							defenseTool.position.setColumnValue(x);
+							Map.player.createDefenseTool(defenseTool);
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("Letrejott egy shiftingsand az alabbi cellan: "+y+" "+x);
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
+							}
+							else{
+								System.out.println("Letrejott egy shiftingsand az alabbi cellan: "+y+" "+x);
 							}
 						}
 						else{
-							System.out.println("A koordinatakat szam formatumban kell megadni");
-						}
-					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag()){
-						defenseTool.position.setRowValue(y);
-						defenseTool.position.setColumnValue(x);
-						Map.player.createDefenseTool(defenseTool);
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("Letrejott egy shiftingsand az alabbi cellan: "+y+" "+x);
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A megadott koordinata nem helyes");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A megadott koordinata nem helyes");
 							}
-						}
-						else{
-							System.out.println("Letrejott egy shiftingsand az alabbi cellan: "+y+" "+x);
 						}
 					}
 					else{
 						if(Game.fileMode){
 							try{
-								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.write("Nincs elegendo varazsero");
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -506,56 +569,77 @@ public class Main {
 							}
 						}
 						else{
-							System.out.println("A megadott koordinata nem helyes");
+							System.out.println("Nincs elegendo varazsero");
 						}
 					}
+					
 				}
 				/**
 				 * mocsar letrehozasa
 				 */
 				else if(command.length == 3 && command[0].equals("swamp")){
 					Swamp defenseTool = new Swamp();
-					int y = -1;
-					int x = -1;
-					try{
-						y = Integer.parseInt(command[1]);
-						x = Integer.parseInt(command[2]);
-					} catch(NumberFormatException e) { 
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								Game.bufferedWriter.newLine();
+					/**
+					 * ha van eleg varazsero
+					 */
+					if(Map.player.getMagicPower() >= defenseTool.cost){
+						int y = -1;
+						int x = -1;
+						try{
+							y = Integer.parseInt(command[1]);
+							x = Integer.parseInt(command[2]);
+						} catch(NumberFormatException e) { 
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A koordinatakat szam formatumban kell megadni");
+							}
+						}
+						if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag()){
+							defenseTool.position.setRowValue(y);
+							defenseTool.position.setColumnValue(x);
+							Map.player.createDefenseTool(defenseTool);
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("Letrejott egy swamp az alabbi cellan: "+y+" "+x);
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
+							}
+							else{
+								System.out.println("Letrejott egy swamp az alabbi cellan: "+y+" "+x);
 							}
 						}
 						else{
-							System.out.println("A koordinatakat szam formatumban kell megadni");
-						}
-					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 && Map.mainMap[y][x].getRoadFlag()){
-						defenseTool.position.setRowValue(y);
-						defenseTool.position.setColumnValue(x);
-						Map.player.createDefenseTool(defenseTool);
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("Letrejott egy swamp az alabbi cellan: "+y+" "+x);
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A megadott koordinata nem helyes");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A megadott koordinata nem helyes");
 							}
-						}
-						else{
-							System.out.println("Letrejott egy swamp az alabbi cellan: "+y+" "+x);
 						}
 					}
 					else{
 						if(Game.fileMode){
 							try{
-								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.write("Nincs elegendo varazsero");
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -563,7 +647,7 @@ public class Main {
 							}
 						}
 						else{
-							System.out.println("A megadott koordinata nem helyes");
+							System.out.println("Nincs elegendo varazsero");
 						}
 					}
 				}
@@ -1031,47 +1115,64 @@ public class Main {
 				 */
 				else if(command.length == 3 && command[0].equals("firingspeedincreaserstone")){
 					FiringSpeedIncreaseStone defenseTool = new FiringSpeedIncreaseStone();
-					int y = -1;
-					int x = -1;
-					try{
-						y = Integer.parseInt(command[1]);
-						x = Integer.parseInt(command[2]);
-					} catch(NumberFormatException e) { 
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								Game.bufferedWriter.newLine();
+					if(Map.player.getMagicPower() >= defenseTool.cost){
+						int y = -1;
+						int x = -1;
+						try{
+							y = Integer.parseInt(command[1]);
+							x = Integer.parseInt(command[2]);
+						} catch(NumberFormatException e) { 
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A koordinatakat szam formatumban kell megadni");
+							}
+						}
+						if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
+							defenseTool.position.setRowValue(y);
+							defenseTool.position.setColumnValue(x);
+							Map.player.createDefenseTool(defenseTool);
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
+							}
+							else{
+								System.out.println("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
 							}
 						}
 						else{
-							System.out.println("A koordinatakat szam formatumban kell megadni");
-						}
-					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
-						defenseTool.position.setRowValue(y);
-						defenseTool.position.setColumnValue(x);
-						Map.player.createDefenseTool(defenseTool);
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A megadott koordinata nem helyes");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A megadott koordinata nem helyes");
 							}
-						}
-						else{
-							System.out.println("Letrejott egy firingspeedincreaserstone az alabbi cellan: "+y+" "+x);
 						}
 					}
 					else{
 						if(Game.fileMode){
 							try{
-								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.write("Nincs elegendo varazsero");
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -1079,56 +1180,77 @@ public class Main {
 							}
 						}
 						else{
-							System.out.println("A megadott koordinata nem helyes");
+							System.out.println("Nincs elegendo varazsero");
 						}
 					}
+					
 				}
 				/**
 				 * hatotavot novelo ko letrehozasa
 				 */
 				else if(command.length == 3 && command[0].equals("rangeextenderstone")){
 					RangeExtenderStone defenseTool = new RangeExtenderStone();
-					int y = -1;
-					int x = -1;
-					try{
-						y = Integer.parseInt(command[1]);
-						x = Integer.parseInt(command[2]);
-					} catch(NumberFormatException e) { 
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								Game.bufferedWriter.newLine();
+					/**
+					 * ha van eleg varazsero
+					 */
+					if(Map.player.getMagicPower() >= defenseTool.cost){
+						int y = -1;
+						int x = -1;
+						try{
+							y = Integer.parseInt(command[1]);
+							x = Integer.parseInt(command[2]);
+						} catch(NumberFormatException e) { 
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A koordinatakat szam formatumban kell megadni");
+							}
+						}
+						if(x >= 0 && x <= 24 && y >= 0 && y <= 24 ){
+							defenseTool.position.setRowValue(y);
+							defenseTool.position.setColumnValue(x);
+							Map.player.createDefenseTool(defenseTool);
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
+							}
+							else{
+								System.out.println("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
 							}
 						}
 						else{
-							System.out.println("A koordinatakat szam formatumban kell megadni");
-						}
-					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24 ){
-						defenseTool.position.setRowValue(y);
-						defenseTool.position.setColumnValue(x);
-						Map.player.createDefenseTool(defenseTool);
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A megadott koordinata nem helyes");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A megadott koordinata nem helyes");
 							}
-						}
-						else{
-							System.out.println("Letrejott egy rangeextenderstone az alabbi cellan: "+y+" "+x);
 						}
 					}
 					else{
 						if(Game.fileMode){
 							try{
-								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.write("Nincs elegendo varazsero");
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -1136,56 +1258,77 @@ public class Main {
 							}
 						}
 						else{
-							System.out.println("A megadott koordinata nem helyes");
+							System.out.println("Nincs elegendo varazsero");
 						}
 					}
+					
 				}
 				/**
 				 * specialis ko letrehozasa
 				 */
 				else if(command.length == 3 && command[0].equals("elfdwarfspecializedstone")){
 					ElfDwarfSpecializedStone defenseTool = new ElfDwarfSpecializedStone();
-					int y = -1;
-					int x = -1;
-					try{
-						y = Integer.parseInt(command[1]);
-						x = Integer.parseInt(command[2]);
-					} catch(NumberFormatException e) { 
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
-								Game.bufferedWriter.newLine();
+					/**
+					 * ha van eleg varazsero
+					 */
+					if(Map.player.getMagicPower() >= defenseTool.cost){
+						int y = -1;
+						int x = -1;
+						try{
+							y = Integer.parseInt(command[1]);
+							x = Integer.parseInt(command[2]);
+						} catch(NumberFormatException e) { 
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A koordinatakat szam formatumban kell megadni");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A koordinatakat szam formatumban kell megadni");
+							}
+						}
+						if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
+							defenseTool.position.setRowValue(y);
+							defenseTool.position.setColumnValue(x);
+							Map.player.createDefenseTool(defenseTool);
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
+									Game.bufferedWriter.newLine();
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
+							}
+							else{
+								System.out.println("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
 							}
 						}
 						else{
-							System.out.println("A koordinatakat szam formatumban kell megadni");
-						}
-					}
-					if(x >= 0 && x <= 24 && y >= 0 && y <= 24){
-						defenseTool.position.setRowValue(y);
-						defenseTool.position.setColumnValue(x);
-						Map.player.createDefenseTool(defenseTool);
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
-								Game.bufferedWriter.newLine();
-								Game.bufferedWriter.newLine();
+							if(Game.fileMode){
+								try{
+									Game.bufferedWriter.write("A megadott koordinata nem helyes");
+									Game.bufferedWriter.newLine();
+								}
+								catch(IOException ex) {
+									System.out.println("Hibas output fajl.");
+								}
 							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
+							else{
+								System.out.println("A megadott koordinata nem helyes");
 							}
-						}
-						else{
-							System.out.println("Letrejott egy elfdwarfspecializedstone az alabbi cellan: "+y+" "+x);
 						}
 					}
 					else{
 						if(Game.fileMode){
 							try{
-								Game.bufferedWriter.write("A megadott koordinata nem helyes");
+								Game.bufferedWriter.write("Nincs elegendo varazsero");
+								Game.bufferedWriter.newLine();
 								Game.bufferedWriter.newLine();
 							}
 							catch(IOException ex) {
@@ -1193,9 +1336,10 @@ public class Main {
 							}
 						}
 						else{
-							System.out.println("A megadott koordinata nem helyes");
+							System.out.println("Nincs elegendo varazsero");
 						}
 					}
+					
 				}
 				/**
 				 * tick, orajel kiadasa
@@ -1203,7 +1347,7 @@ public class Main {
 				else if((command.length == 1 || command.length == 2) && command[0].equals("tick")){
 					if(command.length == 1){
 						Timer.tick();
-						
+
 						if(Game.fileMode){
 							try{
 								Game.bufferedWriter.newLine();
