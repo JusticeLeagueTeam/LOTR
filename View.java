@@ -34,8 +34,14 @@ public class View extends JPanel{
 		/**
 		 * egy teszt enemy
 		 */
-		EnemyView evteszt=new EnemyView(new Enemy());
-		evteszt.Paint(g);
+		//EnemyView evteszt=new EnemyView(new Enemy());
+		//evteszt.Paint(g);
+		/**
+		 * megegy teszt enemy
+		 */
+		//enemyviews.add(new EnemyView(new Enemy()));
+		//EnemyView evteszt2=enemyviews.get(0);
+		//evteszt2.Paint(g);
 		
 	}
 	/**
