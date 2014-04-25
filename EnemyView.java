@@ -17,6 +17,9 @@ public class EnemyView extends JPanel{
 	 * konstruktor
 	 */
 	public EnemyView(Enemy enemy){
+		/**
+		 * hala a jo egnek referencia szerint adodik at, igy a position is mindig frissul
+		 */
 		e=enemy;
 	}
 	
@@ -31,7 +34,14 @@ public class EnemyView extends JPanel{
 		 */
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("elf_legolas_sm.jpg"));
+        	if(e instanceof Elf)
+        		img = ImageIO.read(new File("elf_legolas_sm.jpg"));
+        	if(e instanceof Dwarf)
+        		img = ImageIO.read(new File("dwarf_gimli_sm.jpg"));
+        	if(e instanceof Human)
+        		img = ImageIO.read(new File("human_aragorn_sm.jpg"));
+        	if(e instanceof Hobbit)
+        		img = ImageIO.read(new File("hobbit_frodo_sm.jpg"));
         } catch (IOException e) {
         }
         /**

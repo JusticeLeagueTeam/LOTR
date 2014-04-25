@@ -48,6 +48,19 @@ public class Enemy extends Observable {
 		this.lastPosition.setColumnValue(0);
 		this.lastPosition.setRowValue(0);
 	}
+	/**
+	 * konstruktor - pozicio paramterrel
+	 * @param row
+	 * @param col
+	 */
+	public Enemy(int row, int col){
+		position=new Position();
+		lastPosition=new Position();
+		lastPosition.setColumnValue(row);
+		lastPosition.setRowValue(col);
+		position.setColumnValue(row);
+		position.setRowValue(col);
+	}
 
 	/**
 	 * visszater az eleterovel

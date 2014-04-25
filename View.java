@@ -29,30 +29,9 @@ public class View extends JPanel{
 		/**
 		 * enemy-k megjelenitese
 		 */
-		
-		//teszt enemy kirajzolashoz
-		Enemy e = new Enemy();
-		Position p = new Position();
-		p.setColumnValue(3);
-		p.setRowValue(2);
-		e.setPosition(p);
-		EnemyView evteszt=new EnemyView(e);
-		enemyviews.add(evteszt);
-		
-		//enemy megjelenitese
 		for(EnemyView ev : enemyviews){
-			ev.Paint(g);	
+			ev.Paint(g);
 		}
-				
-		System.out.println("\n" + cnt + "\n");
-		cnt++;
-		/**
-		 * megegy teszt enemy
-		 */
-		//enemyviews.add(new EnemyView(new Enemy()));
-		//EnemyView evteszt2=enemyviews.get(0);
-		//evteszt2.Paint(g);
-		
 	}
 	/**
 	 * frissites

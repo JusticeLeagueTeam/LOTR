@@ -27,23 +27,22 @@ public class Main extends JPanel{
 		 */
 		Map.view=new View();
 		
-		JFrame frame = new JFrame("Lord of the Rings - by justice_league");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Map.frame = new JFrame("Lord of the Rings - by justice_league");
+		Map.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         View mv = new View();
-        frame.add(mv);
+        Map.frame.add(mv);
         
-        //EnemyView ev = new EnemyView();
-        //frame.add(ev);
-        
-        frame.setSize(850, 840);
-        frame.setVisible(true);
+        Map.frame.setSize(850, 840);
+        Map.frame.setVisible(true);
         
       
 		/**
 		 * gameStatus flag inicializalasa
+		 * protonal 0-an volt
+		 * amig nincs start gomb, addig gui-nal 1
 		 */
-		Game.gameStatus=0;
+		Game.gameStatus=1;
 		/**
 		 * fileMode flag inicializalasa
 		 */
@@ -1377,7 +1376,7 @@ public class Main extends JPanel{
 				 */
 				else if((command.length == 1 || command.length == 2) && command[0].equals("tick")){
 					if(command.length == 1){
-						Timer.tick();
+						MyTimer.tick();
 
 						if(Game.fileMode){
 							try{
@@ -1393,11 +1392,11 @@ public class Main extends JPanel{
 							if(Game.isFog == false)
 								Game.fogPrint=true;
 							Game.isFog= !Game.isFog;
-							Timer.tick();
+							MyTimer.tick();
 						}
 						else if(command[1].equals("special")){
 							Game.isSpecial=true;
-							Timer.tick();
+							MyTimer.tick();
 						}
 						else{
 							int tickPar = -1;
@@ -1419,7 +1418,7 @@ public class Main extends JPanel{
 							}
 							if(tickPar > 0){
 								for(int i = 0;i < tickPar; i++){
-									Timer.tick();
+									MyTimer.tick();
 								}
 								/**
 								 * tick sorozat utan a fajl outputban legyen kihagyott sor

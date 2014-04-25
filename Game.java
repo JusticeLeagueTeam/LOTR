@@ -18,7 +18,7 @@ public class Game {
 	public static Map map;
 
 	/** (Orajel) Jatek idoziteseert felelos objektum */
-	public static Timer timer;
+	public static MyTimer timer;
 
 	/** A jatek allapotat jelzo flag, 4 allapotot tud jelezni.
 	 *  0 = A jatek all, meg nem indult el.
@@ -61,7 +61,7 @@ public class Game {
 	 */	
 	public Game(){	
 
-		Timer timer = new Timer();
+		MyTimer timer = new MyTimer();
 		Map map = new Map();
 		startGame();
 		gameStatus = 0;

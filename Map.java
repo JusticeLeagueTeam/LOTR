@@ -8,6 +8,8 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Random;
 
+import javax.swing.JFrame;
+
 /**A palyara vonatkozo legfontosabb informaciokat tarolja, ellenfelek, vedelmi eszkozok, utvonalak, cel.
  * Tarolja a palya felepiteset, azon hol talalhatoak az utvonalak illetve
  * hova epithetoek vedelmi egysegek (SmallTower, BigTower) illetve helyezhetoek
@@ -23,6 +25,10 @@ public class Map {
 	 * View
 	 */
 	public static View view;
+	/**
+	 * JFrame
+	 */
+	public static JFrame frame;
 	
 	/** A Timer altal a jatek kezdete ota kiadott orajelek szamat tarolja */
 	private static int tick_counter;
@@ -331,7 +337,6 @@ public class Map {
 	 * A generalt ellenfelek osszetetele valtozhat.
 	 */
 	public static void createEnemy(){
-		
 		//Ha a meg legyarthato ellenfelek szama nagyobb mint nulla
 		//akkor meg letrehozhatunk ujabbakat
 		if(totalNumberOfEnemies > 0)
@@ -348,89 +353,161 @@ public class Map {
 			//3 - Elf
 			
 			//Ha a jatek elejen jarunk, az elso tick_count intervallumban
-			if((tick_counter > 0) && (tick_counter <= 50))
+			if((tick_counter > 0) && (tick_counter <= 100))
 			{							
 				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
-				if(tick_counter - lastTickValueWhenEnemyWasCreated == 20)
-				{					
+				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 20)
+				//engedelmeddel ezen kicsit egyszerusitek - arnold
+				if(tick_counter % 20 == 0)
+				{
+					//teszthez:
+					randomNumber1=3;
 					//Elso ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber1 == 0)
 					{
-						enemies.add(new Human());
+						Human e = new Human();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 1)
 					{
-						enemies.add(new Hobbit());
+						Hobbit e = new Hobbit();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 2)
 					{
-						enemies.add(new Dwarf());
+						Dwarf e = new Dwarf();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 3)
 					{
-						enemies.add(new Elf());
+						Elf e = new Elf();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					
 					//Masodik ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber2 == 0)
 					{
-						enemies.add(new Human());
+						Human e = new Human();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 1)
 					{
-						enemies.add(new Hobbit());
+						Hobbit e = new Hobbit();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 2)
 					{
-						enemies.add(new Dwarf());
+						Dwarf e = new Dwarf();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 3)
 					{
-						enemies.add(new Elf());
+						Elf e = new Elf();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 				}
 			}
 			
 			//Ha a jatekban a masodik tick intervallumban jarunk
-			if((tick_counter > 50) && (tick_counter <= 100))
+			if((tick_counter > 100) && (tick_counter <= 300))
 			{							
 				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
-				if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
-				{					
+				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
+				//engedelmeddel ezen kicsit egyszerusitek - arnold
+				if(tick_counter % 15 == 0)
+				{
+					//teszthez:
+					randomNumber1=3;
 					//Elso ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber1 == 0)
 					{
-						enemies.add(new Human());
+						Human e = new Human();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 1)
 					{
-						enemies.add(new Hobbit());
+						Hobbit e = new Hobbit();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 2)
 					{
-						enemies.add(new Dwarf());
+						Dwarf e = new Dwarf();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 3)
 					{
-						enemies.add(new Elf());
+						Elf e = new Elf();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					
 					//Masodik ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber2 == 0)
 					{
-						enemies.add(new Human());
+						Human e = new Human();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 1)
 					{
-						enemies.add(new Hobbit());
+						Hobbit e = new Hobbit();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 2)
 					{
-						enemies.add(new Dwarf());
+						Dwarf e = new Dwarf();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 3)
 					{
-						enemies.add(new Elf());
+						Elf e = new Elf();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
 					}
 				}
 			}
