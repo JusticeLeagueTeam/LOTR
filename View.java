@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class View extends JPanel{
 	public static LinkedList<EnemyView> enemyviews;
-	
+	public static int cnt = 0;
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -19,23 +19,33 @@ public class View extends JPanel{
 		 * Map texture beolvasasa fajlbol
 		 */
 		BufferedImage img = null;
-		try {
-			img = ImageIO.read(new File("map_v2_balazs.jpg"));
+		try {							
+			img = ImageIO.read(new File("map_v02_balazs_sm.jpg"));
 		} catch (IOException e) {
 		}
+		//Terkep kirajzolasa
 		g.drawImage(img, 0, 0, null);
 		
 		/**
 		 * enemy-k megjelenitese
 		 */
+		
+		//teszt enemy kirajzolashoz
+		Enemy e = new Enemy();
+		Position p = new Position();
+		p.setColumnValue(3);
+		p.setRowValue(2);
+		e.setPosition(p);
+		EnemyView evteszt=new EnemyView(e);
+		enemyviews.add(evteszt);
+		
+		//enemy megjelenitese
 		for(EnemyView ev : enemyviews){
-			ev.Paint(g);					
+			ev.Paint(g);	
 		}
-		/**
-		 * egy teszt enemy
-		 */
-		//EnemyView evteszt=new EnemyView(new Enemy());
-		//evteszt.Paint(g);
+				
+		System.out.println("\n" + cnt + "\n");
+		cnt++;
 		/**
 		 * megegy teszt enemy
 		 */

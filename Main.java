@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.Graphics;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -35,7 +36,7 @@ public class Main extends JPanel{
         //EnemyView ev = new EnemyView();
         //frame.add(ev);
         
-        frame.setSize(800, 800);
+        frame.setSize(850, 840);
         frame.setVisible(true);
         
       

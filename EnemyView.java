@@ -31,12 +31,12 @@ public class EnemyView extends JPanel{
 		 */
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("elf_legolas.jpg"));
+            img = ImageIO.read(new File("elf_legolas_sm.jpg"));
         } catch (IOException e) {
         }
         /**
          * megfelelo cellaba rajzolja
          */
-		g.drawImage(img, e.position.getColumnValue() * 32, e.position.getRowValue() * 32, null);
+		g.drawImage(img, e.position.getColumnValue() * 33, e.position.getRowValue() * 32, null);
 	}
 }
