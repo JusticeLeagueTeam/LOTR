@@ -337,6 +337,16 @@ public class Map {
 	 * A generalt ellenfelek osszetetele valtozhat.
 	 */
 	public static void createEnemy(){
+		/**
+		 * torony letrehozasa TESZTHEZ
+		 */
+		if(tick_counter == 10){
+			BigTower bt = new BigTower();
+			bt.position.setRowValue(5);
+			bt.position.setColumnValue(6);
+			Map.player.createDefenseTool(bt);
+			View.towerviews.add(new TowerView(bt));
+		}
 		//Ha a meg legyarthato ellenfelek szama nagyobb mint nulla
 		//akkor meg letrehozhatunk ujabbakat
 		if(totalNumberOfEnemies > 0)
@@ -439,6 +449,85 @@ public class Map {
 				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
 				//engedelmeddel ezen kicsit egyszerusitek - arnold
 				if(tick_counter % 15 == 0)
+				{
+					//teszthez:
+					randomNumber1=3;
+					//Elso ellenfel tipusanak megallapitasa majd generalasa
+					if(randomNumber1 == 0)
+					{
+						Human e = new Human();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+					if(randomNumber1 == 1)
+					{
+						Hobbit e = new Hobbit();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+					if(randomNumber1 == 2)
+					{
+						Dwarf e = new Dwarf();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+					if(randomNumber1 == 3)
+					{
+						Elf e = new Elf();
+						e.position.setRowValue(2);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+					
+					//Masodik ellenfel tipusanak megallapitasa majd generalasa
+					if(randomNumber2 == 0)
+					{
+						Human e = new Human();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+					if(randomNumber2 == 1)
+					{
+						Hobbit e = new Hobbit();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+					if(randomNumber2 == 2)
+					{
+						Dwarf e = new Dwarf();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+					if(randomNumber2 == 3)
+					{
+						Elf e = new Elf();
+						e.position.setRowValue(13);
+						e.position.setColumnValue(0);
+						enemies.add(e);
+						View.enemyviews.add(new EnemyView(e));
+					}
+				}
+			}
+			//Ha a jatekban a harmadik tick intervallumban jarunk
+			if(tick_counter > 300)
+			{							
+				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
+				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
+				//engedelmeddel ezen kicsit egyszerusitek - arnold
+				if(tick_counter % 10 == 0)
 				{
 					//teszthez:
 					randomNumber1=3;
