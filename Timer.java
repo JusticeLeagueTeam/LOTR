@@ -1,12 +1,13 @@
 package LOTR;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
 
 public class Timer {
-
+	
 	private int period;
 
 	public Timer(){
@@ -28,6 +29,10 @@ public class Timer {
 	 * Meghivja a Map es a Game tick metodusat
 	 */
 	public static void tick() {
+		/**
+		 * GUI ujrarajzolasa
+		 */
+		Map.view.repaint();
 		/**
 		 * kulonbozo tick paramterekhez kulonbozo kimenet
 		 */

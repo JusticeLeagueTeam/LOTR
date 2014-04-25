@@ -43,6 +43,7 @@ public class Enemy extends Observable {
 	 * 
 	 */
 	public Enemy(){
+		position=new Position();
 		this.lastPosition=new Position();
 		this.lastPosition.setColumnValue(0);
 		this.lastPosition.setRowValue(0);

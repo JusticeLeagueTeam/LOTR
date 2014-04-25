@@ -10,10 +10,35 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
-public class Main {
+import javax.imageio.ImageIO;
+import javax.swing.*;
+
+public class Main extends JPanel{
+	
+	
 
 	public static void main(String[] args) {
+		/**
+		 * GUI-hoz szukseges dolgok
+		 */
+		Map.view=new View();
+		
+		JFrame frame = new JFrame("Lord of the Rings - by justice_league");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        View mv = new View();
+        frame.add(mv);
+        
+        //EnemyView ev = new EnemyView();
+        //frame.add(ev);
+        
+        frame.setSize(800, 800);
+        frame.setVisible(true);
+        
+      
 		/**
 		 * gameStatus flag inicializalasa
 		 */
@@ -477,7 +502,12 @@ public class Main {
 						enemy.position.setColumnValue(x);
 						enemy.lastPosition.setRowValue(y);
 						enemy.lastPosition.setColumnValue(x);
+						/**
+						 * enemy hozzaadasa modellhez es view-hoz
+						 */
 						Map.enemies.add(enemy);
+						View.enemyviews.add(new EnemyView(enemy));
+						
 						for(Tower t : Map.towers){
 							Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
 						}

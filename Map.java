@@ -19,7 +19,11 @@ import java.util.Random;
  * @author justice_league Szoftlab4 team
  */
 public class Map {
-
+	/**
+	 * View
+	 */
+	public static View view;
+	
 	/** A Timer altal a jatek kezdete ota kiadott orajelek szamat tarolja */
 	private static int tick_counter;
 	
