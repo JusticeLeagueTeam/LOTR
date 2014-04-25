@@ -20,7 +20,7 @@ public class View extends JPanel{
 		 */
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("map.jpg"));
+			img = ImageIO.read(new File("map_v2_balazs.jpg"));
 		} catch (IOException e) {
 		}
 		g.drawImage(img, 0, 0, null);

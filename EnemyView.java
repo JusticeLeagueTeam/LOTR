@@ -31,7 +31,7 @@ public class EnemyView extends JPanel{
 		 */
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("elf.jpg"));
+            img = ImageIO.read(new File("elf_legolas.jpg"));
         } catch (IOException e) {
         }
         /**
