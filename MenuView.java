@@ -21,6 +21,7 @@ public class MenuView extends JPanel{
 		BufferedImage img4 = null;
 		BufferedImage img5 = null;
 		BufferedImage img6 = null;
+		
 		/**
 		 * TODO: logo balra, cuccok cost-ja cuccikon ala, varazsero jobb oldalt, maradek enemy jobboldalt,
 		 * szebb hatter menu mogott, meretek igazitasa
@@ -48,5 +49,16 @@ public class MenuView extends JPanel{
 		g.drawImage(img4, 250 + 32*4, 0, null);
 		g.drawImage(img5, 250 + 32*5, 0, null);
 		g.drawImage(img6, 250 + 32*6, 0, null);
+		
+        /**
+         * menu elemek koltsegenek kiirasa
+         */
+		g.drawString("600", 250 + 32*0, 45);
+		g.drawString("400", 250 + 32*1, 45);
+		g.drawString("150", 250 + 32*2, 45);
+		g.drawString("200", 250 + 32*3, 45);
+		g.drawString("50", 250 + 32*4, 45);
+		g.drawString("50", 250 + 32*5, 45);
+		g.drawString("100", 250 + 32*6, 45);
 	}
 }
