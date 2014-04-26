@@ -26,6 +26,10 @@ public class Map {
 	 */
 	public static View view;
 	/**
+	 * Control
+	 */
+	public static Control control;
+	/**
 	 * JFrame
 	 */
 	public static JFrame frame;

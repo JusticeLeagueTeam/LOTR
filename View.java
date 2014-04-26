@@ -20,8 +20,8 @@ public class View extends JPanel implements MouseListener{
 	public static MenuView menuview;
 	public static MapView mapview;
 	public static int cnt = 0;
-	
 	boolean BigTowerFlag=false;
+
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -87,49 +87,28 @@ public class View extends JPanel implements MouseListener{
 	public void mouseClicked(MouseEvent e) {
 		int x=e.getPoint().x;
 		int y=e.getPoint().y;
-		if(BigTowerFlag == false && x >= 250 && x <= 250+32 && y >= 0 && y <= 50){
-			BigTowerFlag=true;
-		}
-		else if(BigTowerFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
-			/**
-			 * BigTower letrehozasa
-			 */
-			BigTower bt = new BigTower();
-			bt.position.setRowValue(CellRow);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.towerviews.add(new TowerView(bt));
-			/**
-			 * BigTowerFlag visszaallitasa
-			 */
-			BigTowerFlag=false;
-		}
-		
+		Map.control.controlClick(x,y);
 	}
+
 	@Override
 	public void mousePressed(MouseEvent e) {
-		
+
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
 
-		
+
 	}
 	@Override
 	public void mouseEntered(MouseEvent e) {
 
-		
+
 	}
 	@Override
 	public void mouseExited(MouseEvent e) {
 
-		
+
 	}
-	
-	
+
+
 }

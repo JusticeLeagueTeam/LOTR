@@ -35,13 +35,13 @@ public class EnemyView extends JPanel{
         BufferedImage img = null;
         try {
         	if(e instanceof Elf)
-        		img = ImageIO.read(new File("elf_legolas_sm.jpg"));
+        		img = ImageIO.read(new File("elf_legolas_sm.png"));
         	if(e instanceof Dwarf)
-        		img = ImageIO.read(new File("dwarf_gimli_sm.jpg"));
+        		img = ImageIO.read(new File("dwarf_gimli_sm.png"));
         	if(e instanceof Human)
-        		img = ImageIO.read(new File("human_aragorn_sm.jpg"));
+        		img = ImageIO.read(new File("human_aragorn_sm.png"));
         	if(e instanceof Hobbit)
-        		img = ImageIO.read(new File("hobbit_frodo_sm.jpg"));
+        		img = ImageIO.read(new File("hobbit_frodo_sm.png"));
         } catch (IOException e) {
         }
         /**

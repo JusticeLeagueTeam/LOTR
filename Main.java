@@ -33,6 +33,8 @@ public class Main extends JPanel{
         View mv = new View();
         Map.frame.add(mv);
         
+        Map.control=new Control();
+        
         Map.frame.setSize(850, 890);
         Map.frame.setVisible(true);
         
