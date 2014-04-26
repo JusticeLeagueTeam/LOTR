@@ -16,7 +16,7 @@ public class MapView extends JPanel{
 		 */
 		BufferedImage img = null;
 		try {							
-			img = ImageIO.read(new File("map_v04_balazs_smg"));
+			img = ImageIO.read(new File("map_v04_balazs_sm.png"));
 		} catch (IOException e) {
 		}
 		/**
