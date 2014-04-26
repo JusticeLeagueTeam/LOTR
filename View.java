@@ -14,21 +14,20 @@ public class View extends JPanel{
 	public static LinkedList<TowerView> towerviews;
 	public static LinkedList<BarrierView> barrierviews;
 	public static LinkedList<StoneView> stoneviews;
+	public static MenuView menuview;
+	public static MapView mapview;
 	public static int cnt = 0;
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		/**
-		 * Map texture beolvasasa fajlbol
+		 * terkep rajzolasa
 		 */
-		BufferedImage img = null;
-		try {							
-			img = ImageIO.read(new File("map_v02_balazs_sm.jpg"));
-		} catch (IOException e) {
-		}
-		//Terkep kirajzolasa
-		g.drawImage(img, 0, 0, null);
-		
+		mapview.Paint(g);
+		/**
+		 * menusor rajzolasa
+		 */
+		menuview.Paint(g);
 		/**
 		 * enemy-k megjelenitese
 		 */
@@ -64,9 +63,11 @@ public class View extends JPanel{
 	 * konstruktor
 	 */
 	public View(){
-		enemyviews=new LinkedList<EnemyView>();
-		towerviews=new LinkedList<TowerView>();
-		barrierviews=new LinkedList<BarrierView>();
-		stoneviews=new LinkedList<StoneView>();
+		enemyviews = new LinkedList<EnemyView>();
+		towerviews = new LinkedList<TowerView>();
+		barrierviews = new LinkedList<BarrierView>();
+		stoneviews = new LinkedList<StoneView>();
+		menuview = new MenuView();
+		mapview = new MapView();
 	}
 }

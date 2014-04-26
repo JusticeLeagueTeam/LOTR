@@ -33,7 +33,7 @@ public class Main extends JPanel{
         View mv = new View();
         Map.frame.add(mv);
         
-        Map.frame.setSize(850, 840);
+        Map.frame.setSize(850, 890);
         Map.frame.setVisible(true);
         
       
@@ -185,8 +185,8 @@ public class Main extends JPanel{
 			/**
 			 * szokozoknel tagolas
 			 */
-			String line2 = line.toLowerCase();
-			command = line2.split(" ");
+			//String line2 = line.toLowerCase();
+			//command = line2.split(" ");
 			/**
 			 * jatek kezdese
 			 */
