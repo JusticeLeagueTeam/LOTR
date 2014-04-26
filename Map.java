@@ -59,7 +59,7 @@ public class Map {
 	public static int tickFlag;
 	
 	/** A letrehozhato ellenfelek maximalis szamat adja meg. */
-	public static int totalNumberOfEnemies;
+	public static int totalNumberOfEnemies=30;
 	
 	/** A tick_counter akkori erteke, amikor legutoljara
 	 * hoztunk letre ellenfelet.
