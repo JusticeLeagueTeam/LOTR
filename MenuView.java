@@ -1,5 +1,6 @@
 package LOTR;
 
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -60,5 +61,9 @@ public class MenuView extends JPanel{
 		g.drawString("50", 256 + 32*4, 45);
 		g.drawString("50", 256 + 32*5, 45);
 		g.drawString("100", 253 + 32*6, 45);
+		
+		Font font= new Font("default", Font.BOLD, 16);
+		g.setFont(font);
+		g.drawString("varázserõ: " + Integer.toString(LOTR.Map.player.getMagicPower()) , 253 + 32*14, 45);
 	}
 }
