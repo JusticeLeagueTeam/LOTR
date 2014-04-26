@@ -47,6 +47,6 @@ public class EnemyView extends JPanel{
         /**
          * megfelelo cellaba rajzolja
          */
-		g.drawImage(img, e.position.getColumnValue() * 33, e.position.getRowValue() * 32, null);
+		g.drawImage(img, e.position.getColumnValue() * 32, e.position.getRowValue() * 32, null);
 	}
 }

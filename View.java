@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 public class View extends JPanel{
 	public static LinkedList<EnemyView> enemyviews;
 	public static LinkedList<TowerView> towerviews;
+	public static LinkedList<BarrierView> barrierviews;
+	public static LinkedList<StoneView> stoneviews;
 	public static int cnt = 0;
 
 	public void paintComponent(Graphics g) {
@@ -39,6 +41,18 @@ public class View extends JPanel{
 		for(TowerView tv : towerviews){
 			tv.Paint(g);
 		}
+		/**
+		 * barrier-ek megjelenitese
+		 */
+		for(BarrierView bv : barrierviews){
+			bv.Paint(g);
+		}
+		/**
+		 * stone-ok megjelenitese
+		 */
+		for(StoneView sv : stoneviews){
+			sv.Paint(g);
+		}
 	}
 	/**
 	 * frissites
@@ -52,5 +66,7 @@ public class View extends JPanel{
 	public View(){
 		enemyviews=new LinkedList<EnemyView>();
 		towerviews=new LinkedList<TowerView>();
+		barrierviews=new LinkedList<BarrierView>();
+		stoneviews=new LinkedList<StoneView>();
 	}
 }

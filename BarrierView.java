@@ -8,42 +8,41 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-public class TowerView extends JPanel{
+public class BarrierView extends JPanel{
 	/**
-	 * tower objektum
+	 * barrier objektum
 	 */
-	private Tower t;
+	private Barrier b;
 	/**
 	 * konstruktor
 	 */
-	public TowerView(Tower tower){
+	public BarrierView(Barrier barrier){
 		/**
 		 * referencia szerint adodik at, igy a kovektol esetleg valtozo parameter is mindig frissul
 		 */
-		t=tower;
+		b=barrier;
 	}
 	
 	/**
-	 * tower objektum kirajzolasa
+	 * barrier objektum kirajzolasa
 	 * @param g
 	 */
 	public void Paint(Graphics g) {
 		super.paint(g);
 		/**
-		 * fajlbol olvassa be a tower kepet
+		 * fajlbol olvassa be a barrier kepet
 		 */
         BufferedImage img = null;
         try {
-        	if(t instanceof BigTower)
-        		img = ImageIO.read(new File("bigtower_sm.png"));
-        	if(t instanceof SmallTower)
-        		img = ImageIO.read(new File("smalltower_sm.png"));
+        	if(b instanceof Swamp)
+        		img = ImageIO.read(new File("swamp_sm.png"));
+        	if(b instanceof ShiftingSand)
+        		img = ImageIO.read(new File("shiftingsand_sm.png"));
         } catch (IOException e) {
         }
         /**
          * megfelelo cellaba rajzolja
          */
-		g.drawImage(img, t.position.getColumnValue() * 32, t.position.getRowValue() * 32, null);
+		g.drawImage(img, b.position.getColumnValue() * 32, b.position.getRowValue() * 32, null);
 	}
-
 }
