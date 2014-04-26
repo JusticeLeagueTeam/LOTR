@@ -51,10 +51,5 @@ public class MyTimer {
 		 * Game tick metodus hivasa
 		 */
 		Game.tick();
-		/**
-		 * ellenfelek gyartasa
-		 */
-		Map.createEnemy();
-		
 	}
 }

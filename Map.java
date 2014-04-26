@@ -341,11 +341,7 @@ public class Map {
 		 * torony letrehozasa TESZTHEZ
 		 */
 		if(tick_counter == 10){
-			BigTower bt = new BigTower();
-			bt.position.setRowValue(5);
-			bt.position.setColumnValue(6);
-			Map.player.createDefenseTool(bt);
-			View.towerviews.add(new TowerView(bt));
+			
 		}
 		//Ha a meg legyarthato ellenfelek szama nagyobb mint nulla
 		//akkor meg letrehozhatunk ujabbakat
@@ -968,7 +964,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 			indexOfSplitAttacked=-1;
 		}
 		//Protohoz kikommenteltem a megbeszeltek szerint, GUI-hoz visszakerul
-		//createEnemy();
+		createEnemy();
 		tick_counter++;
 
 	}
