@@ -15,6 +15,8 @@ public class MenuView extends JPanel{
 		super.paint(g);
 
 		BufferedImage img_logo = null;
+		BufferedImage varazsero = null;
+		BufferedImage ellenfelek = null;
 		BufferedImage img0 = null;
 		BufferedImage img1 = null;
 		BufferedImage img2 = null;
@@ -37,6 +39,8 @@ public class MenuView extends JPanel{
         	img4 = ImageIO.read(new File("firingspeedincreasestone_sm.png"));
        		img5 = ImageIO.read(new File("firingrangeincreasestone_sm.png"));
        		img6 = ImageIO.read(new File("elfdwarfspecializedstone_sm.png"));
+       		ellenfelek = ImageIO.read(new File("tovabbi_ellenfelek.png"));
+       		varazsero = ImageIO.read(new File("varazsero.png"));
         } catch (IOException e) {
         }
         /**
@@ -50,6 +54,8 @@ public class MenuView extends JPanel{
 		g.drawImage(img4, 250 + 32*4, 0, null);
 		g.drawImage(img5, 250 + 32*5, 0, null);
 		g.drawImage(img6, 250 + 32*6, 0, null);
+		g.drawImage(varazsero, 376 + 32*8, 20, null);
+		g.drawImage(ellenfelek, 350 + 32*7, 0, null);
 		
         /**
          * menu elemek koltsegenek kiirasa
@@ -62,8 +68,7 @@ public class MenuView extends JPanel{
 		g.drawString("50", 256 + 32*5, 45);
 		g.drawString("100", 253 + 32*6, 45);
 		
-		Font font= new Font("default", Font.BOLD, 16);
-		g.setFont(font);
-		g.drawString("varázserõ: " + Integer.toString(LOTR.Map.player.getMagicPower()) , 253 + 32*14, 45);
+		g.drawString(Integer.toString(Map.player.getMagicPower()) , 370 + 32*11, 40);
+		g.drawString(Integer.toString(Map.totalNumberOfEnemies-Map.enemies.size()) , 370 + 32*11, 20);
 	}
 }
