@@ -243,7 +243,7 @@ public class Map {
 		mainMap[14][23].setRoadFlag(true);
 		
 		//15.sor
-		for(int k=5; k<16; k++)
+		for(int k=5; k<8; k++)
 		{
 			mainMap[15][k].setRoadFlag(true);
 		}
