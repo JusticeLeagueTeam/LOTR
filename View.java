@@ -87,7 +87,6 @@ public class View extends JPanel implements MouseListener{
 	public void mouseClicked(MouseEvent e) {
 		int x=e.getPoint().x;
 		int y=e.getPoint().y;
-		System.out.println("katt " + x + " " + y);
 		if(BigTowerFlag == false && x >= 250 && x <= 250+32 && y >= 0 && y <= 50){
 			BigTowerFlag=true;
 		}
