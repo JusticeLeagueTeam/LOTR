@@ -13,6 +13,7 @@ public class MenuView extends JPanel{
 	public void Paint(Graphics g) {
 		super.paint(g);
 
+		BufferedImage img_logo = null;
 		BufferedImage img0 = null;
 		BufferedImage img1 = null;
 		BufferedImage img2 = null;
@@ -26,6 +27,7 @@ public class MenuView extends JPanel{
 		 */
 		
         try {
+        	img_logo = ImageIO.read(new File("logo.png"));
         	img0 = ImageIO.read(new File("bigtower_sm.png"));
         	img1 = ImageIO.read(new File("smalltower_sm.png"));
         	img2 = ImageIO.read(new File("swamp_sm.png"));
@@ -38,6 +40,7 @@ public class MenuView extends JPanel{
         /**
          * menu elemeket sorban rajzolja
          */
+        g.drawImage(img_logo, 0, 0, null);
 		g.drawImage(img0, 250 + 32*0, 0, null);
 		g.drawImage(img1, 250 + 32*1, 0, null);
 		g.drawImage(img2, 250 + 32*2, 0, null);
