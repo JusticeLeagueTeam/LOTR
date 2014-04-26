@@ -53,12 +53,12 @@ public class MenuView extends JPanel{
         /**
          * menu elemek koltsegenek kiirasa
          */
-		g.drawString("600", 250 + 32*0, 45);
-		g.drawString("400", 250 + 32*1, 45);
-		g.drawString("150", 250 + 32*2, 45);
-		g.drawString("200", 250 + 32*3, 45);
-		g.drawString("50", 250 + 32*4, 45);
-		g.drawString("50", 250 + 32*5, 45);
-		g.drawString("100", 250 + 32*6, 45);
+		g.drawString("600", 253 + 32*0, 45);
+		g.drawString("400", 253 + 32*1, 45);
+		g.drawString("150", 253 + 32*2, 45);
+		g.drawString("200", 253 + 32*3, 45);
+		g.drawString("50", 256 + 32*4, 45);
+		g.drawString("50", 256 + 32*5, 45);
+		g.drawString("100", 253 + 32*6, 45);
 	}
 }
