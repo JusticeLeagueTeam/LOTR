@@ -20,7 +20,6 @@ public class View extends JPanel implements MouseListener{
 	public static MenuView menuview;
 	public static MapView mapview;
 	public static int cnt = 0;
-	boolean BigTowerFlag=false;
 
 
 	public void paintComponent(Graphics g) {

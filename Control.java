@@ -6,13 +6,13 @@ import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
 public class Control{
-	boolean BigTowerFlag=false;
-	boolean SmallTowerFlag=false;
-	boolean SwampFlag=false;
-	boolean ShiftingSandFlag=false;
-	boolean SpeedStoneFlag=false;
-	boolean RangeStoneFlag=false;
-	boolean ElfDwarfStoneFlag=false;
+	private boolean BigTowerFlag=false;
+	private boolean SmallTowerFlag=false;
+	private boolean SwampFlag=false;
+	private boolean ShiftingSandFlag=false;
+	private boolean SpeedStoneFlag=false;
+	private boolean RangeStoneFlag=false;
+	private boolean ElfDwarfStoneFlag=false;
 
 	public void controlClick(int x, int y) {
 		// TODO Auto-generated method stub
