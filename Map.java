@@ -282,7 +282,7 @@ public class Map {
 		
 		//19.sor
 		mainMap[19][8].setRoadFlag(true);
-		for(int k=12; k<19; k++)
+		for(int k=12; k<20; k++)
 		{
 			mainMap[19][k].setRoadFlag(true);
 		}
@@ -290,27 +290,27 @@ public class Map {
 		//20.sor
 		mainMap[20][8].setRoadFlag(true);
 		mainMap[20][14].setRoadFlag(true);
-		mainMap[20][18].setRoadFlag(true);
+		mainMap[20][19].setRoadFlag(true);
 		
 		//21.sor
 		mainMap[21][8].setRoadFlag(true);
 		mainMap[21][14].setRoadFlag(true);
-		mainMap[21][18].setRoadFlag(true);
+		mainMap[21][19].setRoadFlag(true);
 		
 		//22.sor
 		mainMap[22][8].setRoadFlag(true);
 		mainMap[22][14].setRoadFlag(true);
-		mainMap[22][18].setRoadFlag(true);
+		mainMap[22][19].setRoadFlag(true);
 		
 		//23.sor
 		for(int k=8; k<15; k++)
 		{
 			mainMap[23][k].setRoadFlag(true);
 		}
-		mainMap[23][18].setRoadFlag(true);
+		mainMap[23][19].setRoadFlag(true);
 		
 		//24.sor
-		mainMap[24][18].setRoadFlag(true);
+		mainMap[24][19].setRoadFlag(true);
 	}
 	
 	
@@ -356,52 +356,99 @@ public class Map {
 			Random rand = new Random();
 			int randomNumber1 = rand.nextInt(4);
 			int randomNumber2 = rand.nextInt(4);
-			
 			//0 - Human
 			//1 - Hobbit
 			//2 - Dwarf
 			//3 - Elf
+		
+			
+			int randStartPos1 = rand.nextInt(3);
+			int randStartPos2 = rand.nextInt(3);
+			//0 - (2,0) cellabol indul
+			//1 - (13,0) cellabol indul
+			//2 - (24,18) cellabol indul
+			
+			Position startPos1 = new Position();
+			if(randStartPos1 == 0)
+			{
+				startPos1.setRowValue(2);
+				startPos1.setColumnValue(0);
+			}
+			if(randStartPos1 == 1)
+			{
+				startPos1.setRowValue(13);
+				startPos1.setColumnValue(0);
+			}
+			if(randStartPos1 == 2)
+			{
+				startPos1.setRowValue(24);
+				startPos1.setColumnValue(19);
+			}
+			
+			Position startPos2 = new Position();
+			//Ha mindketto random szam megegyezett volna, akkor 2 random ujrageneralas
+			//erejeig probalunk ujat generalni, hogy ne egy helyrol induljanak
+			//de ha harmadikra is megegyezik, akkor ez marad
+			if(randStartPos1 == randStartPos2){
+				randStartPos2 = rand.nextInt(3);	//1. ujrageneralas
+				if(randStartPos1 == randStartPos2){
+					randStartPos2 = rand.nextInt(3);	//2. ujrageneralas
+				}
+			}
+			if(randStartPos2 == 0)
+			{
+				startPos2.setRowValue(2);
+				startPos2.setColumnValue(0);
+			}
+			if(randStartPos2 == 1)
+			{
+				startPos2.setRowValue(13);
+				startPos2.setColumnValue(0);
+			}
+			if(randStartPos2 == 2)
+			{
+				startPos2.setRowValue(24);
+				startPos2.setColumnValue(19);
+			}
+			
+
 			
 			//Ha a jatek elejen jarunk, az elso tick_count intervallumban
 			if((tick_counter > 0) && (tick_counter <= 100))
 			{							
-				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
-				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 20)
-				//engedelmeddel ezen kicsit egyszerusitek - arnold
-				if(tick_counter % 20 == 0)
+				//tick-ek szamatol fuggoen generalodnak
+				if(tick_counter % 15 == 0)
 				{
-					//teszthez:
-					randomNumber1=3;
 					//Elso ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber1 == 0)
 					{
 						Human e = new Human();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 1)
 					{
 						Hobbit e = new Hobbit();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 2)
 					{
 						Dwarf e = new Dwarf();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 3)
 					{
 						Elf e = new Elf();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
@@ -410,32 +457,32 @@ public class Map {
 					if(randomNumber2 == 0)
 					{
 						Human e = new Human();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 1)
 					{
 						Hobbit e = new Hobbit();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 2)
 					{
 						Dwarf e = new Dwarf();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 3)
 					{
 						Elf e = new Elf();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
@@ -448,40 +495,38 @@ public class Map {
 				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
 				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
 				//engedelmeddel ezen kicsit egyszerusitek - arnold
-				if(tick_counter % 15 == 0)
+				if(tick_counter % 10 == 0)
 				{
-					//teszthez:
-					randomNumber1=3;
 					//Elso ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber1 == 0)
 					{
 						Human e = new Human();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 1)
 					{
 						Hobbit e = new Hobbit();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 2)
 					{
 						Dwarf e = new Dwarf();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 3)
 					{
 						Elf e = new Elf();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
@@ -490,32 +535,32 @@ public class Map {
 					if(randomNumber2 == 0)
 					{
 						Human e = new Human();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 1)
 					{
 						Hobbit e = new Hobbit();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 2)
 					{
 						Dwarf e = new Dwarf();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 3)
 					{
 						Elf e = new Elf();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
@@ -527,40 +572,38 @@ public class Map {
 				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
 				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
 				//engedelmeddel ezen kicsit egyszerusitek - arnold
-				if(tick_counter % 10 == 0)
+				if(tick_counter % 7 == 0)
 				{
-					//teszthez:
-					randomNumber1=3;
 					//Elso ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber1 == 0)
 					{
 						Human e = new Human();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 1)
 					{
 						Hobbit e = new Hobbit();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 2)
 					{
 						Dwarf e = new Dwarf();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber1 == 3)
 					{
 						Elf e = new Elf();
-						e.position.setRowValue(2);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos1.getRowValue());
+						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
@@ -569,32 +612,32 @@ public class Map {
 					if(randomNumber2 == 0)
 					{
 						Human e = new Human();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 1)
 					{
 						Hobbit e = new Hobbit();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 2)
 					{
 						Dwarf e = new Dwarf();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}
 					if(randomNumber2 == 3)
 					{
 						Elf e = new Elf();
-						e.position.setRowValue(13);
-						e.position.setColumnValue(0);
+						e.position.setRowValue(startPos2.getRowValue());
+						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 					}

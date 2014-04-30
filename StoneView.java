@@ -45,7 +45,7 @@ public class StoneView extends JPanel{
         /**
          * megfelelo cellaba rajzolja
          */
-		g.drawImage(img, m.position.getColumnValue() * 32, m.position.getRowValue() * 32, null);
+		g.drawImage(img, m.position.getColumnValue() * 33, m.position.getRowValue() * 33+60, null);
 	}
 
 }

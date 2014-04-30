@@ -35,7 +35,7 @@ public class Main extends JPanel{
         
         Map.control=new Control();
         
-        Map.frame.setSize(840, 880);
+        Map.frame.setSize(840, 892);
         Map.frame.setVisible(true);
         
       

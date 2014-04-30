@@ -43,6 +43,6 @@ public class BarrierView extends JPanel{
         /**
          * megfelelo cellaba rajzolja
          */
-		g.drawImage(img, b.position.getColumnValue() * 32, b.position.getRowValue() * 32, null);
+		g.drawImage(img, b.position.getColumnValue() * 33, b.position.getRowValue() * 33+60, null);
 	}
 }

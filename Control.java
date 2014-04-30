@@ -15,7 +15,15 @@ public class Control{
 	private boolean ElfDwarfStoneFlag=false;
 
 	public void controlClick(int x, int y) {
-		// TODO Auto-generated method stub
+
+		/**
+		 * cella sor es oszlop kiszamolasahoz leosztok 33-vel
+		 * Kiemeltem a szamitast elore, mivel mindenhol ezt kell hasznalni,
+		 * es ne legyen kodismetles
+		 */
+		int CellColumn = (x - (x % 33)) / 33;
+		int CellRow = (y - (y % 33)) / 33;
+		
 		if(BigTowerFlag == false && x >= 250 && x <= 250+32 && y >= 0 && y <= 50){
 			/**
 			 * BigTower ikonra kattintott
@@ -23,16 +31,12 @@ public class Control{
 			BigTowerFlag=true;
 		}
 		else if(BigTowerFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
+
 			/**
 			 * BigTower letrehozasa
 			 */
 			BigTower bt = new BigTower();
-			bt.position.setRowValue(CellRow);
+			bt.position.setRowValue(CellRow-2);
 			bt.position.setColumnValue(CellColumn);
 			Map.player.createDefenseTool(bt);
 			View.towerviews.add(new TowerView(bt));
@@ -48,16 +52,12 @@ public class Control{
 			SmallTowerFlag=true;
 		}
 		else if(SmallTowerFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
+
 			/**
 			 * SmallTower letrehozasa
 			 */
 			SmallTower bt = new SmallTower();
-			bt.position.setRowValue(CellRow);
+			bt.position.setRowValue(CellRow-2);
 			bt.position.setColumnValue(CellColumn);
 			Map.player.createDefenseTool(bt);
 			View.towerviews.add(new TowerView(bt));
@@ -73,16 +73,12 @@ public class Control{
 			SwampFlag=true;
 		}
 		else if(SwampFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
+
 			/**
 			 * Swamp letrehozasa
 			 */
 			Swamp bt = new Swamp();
-			bt.position.setRowValue(CellRow);
+			bt.position.setRowValue(CellRow-2);
 			bt.position.setColumnValue(CellColumn);
 			Map.player.createDefenseTool(bt);
 			View.barrierviews.add(new BarrierView(bt));
@@ -98,16 +94,12 @@ public class Control{
 			ShiftingSandFlag=true;
 		}
 		else if(ShiftingSandFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
+
 			/**
 			 * ShiftingSand letrehozasa
 			 */
 			ShiftingSand bt = new ShiftingSand();
-			bt.position.setRowValue(CellRow);
+			bt.position.setRowValue(CellRow-2);
 			bt.position.setColumnValue(CellColumn);
 			Map.player.createDefenseTool(bt);
 			View.barrierviews.add(new BarrierView(bt));
@@ -123,16 +115,12 @@ public class Control{
 			SpeedStoneFlag=true;
 		}
 		else if(SpeedStoneFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
+
 			/**
 			 * SpeedStone letrehozasa
 			 */
 			FiringSpeedIncreaseStone bt = new FiringSpeedIncreaseStone();
-			bt.position.setRowValue(CellRow);
+			bt.position.setRowValue(CellRow-2);
 			bt.position.setColumnValue(CellColumn);
 			Map.player.createDefenseTool(bt);
 			View.stoneviews.add(new StoneView(bt));
@@ -148,16 +136,12 @@ public class Control{
 			RangeStoneFlag=true;
 		}
 		else if(RangeStoneFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
+
 			/**
 			 * RangeStone letrehozasa
 			 */
 			RangeExtenderStone bt = new RangeExtenderStone();
-			bt.position.setRowValue(CellRow);
+			bt.position.setRowValue(CellRow-2);
 			bt.position.setColumnValue(CellColumn);
 			Map.player.createDefenseTool(bt);
 			View.stoneviews.add(new StoneView(bt));
@@ -173,16 +157,12 @@ public class Control{
 			ElfDwarfStoneFlag=true;
 		}
 		else if(ElfDwarfStoneFlag == true){
-			/**
-			 * cella sor es oszlop kiszamolasahoz leosztok 32-vel
-			 */
-			int CellColumn = (x - (x % 32)) / 32;
-			int CellRow = (y - (y % 32)) / 32;
+
 			/**
 			 * ElfDwarfStone letrehozasa
 			 */
 			ElfDwarfSpecializedStone bt = new ElfDwarfSpecializedStone();
-			bt.position.setRowValue(CellRow);
+			bt.position.setRowValue(CellRow-2);
 			bt.position.setColumnValue(CellColumn);
 			Map.player.createDefenseTool(bt);
 			View.stoneviews.add(new StoneView(bt));

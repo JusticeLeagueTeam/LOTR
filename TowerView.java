@@ -43,7 +43,7 @@ public class TowerView extends JPanel{
         /**
          * megfelelo cellaba rajzolja
          */
-		g.drawImage(img, t.position.getColumnValue() * 32, t.position.getRowValue() * 32, null);
+		g.drawImage(img, t.position.getColumnValue() * 33, t.position.getRowValue() * 33+60, null);
 	}
 
 }
