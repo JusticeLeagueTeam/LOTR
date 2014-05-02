@@ -19,6 +19,7 @@ public class View extends JPanel implements MouseListener{
 	public static LinkedList<StoneView> stoneviews;
 	public static MenuView menuview;
 	public static MapView mapview;
+	public static FogView fogview;
 
 
 	public void paintComponent(Graphics g) {
@@ -55,6 +56,12 @@ public class View extends JPanel implements MouseListener{
 		for(StoneView sv : stoneviews){
 			sv.Paint(g);
 		}
+		/**
+		 * kod (fog) kirajzolasa
+		 */
+		if(Game.isFog == true){
+			fogview.Paint(g);
+		}
 	}
 	/**
 	 * frissites
@@ -72,6 +79,7 @@ public class View extends JPanel implements MouseListener{
 		stoneviews = new LinkedList<StoneView>();
 		menuview = new MenuView();
 		mapview = new MapView();
+		fogview = new FogView();
 		/**
 		 * eger figyelo beallitasa
 		 */
@@ -107,6 +115,4 @@ public class View extends JPanel implements MouseListener{
 
 
 	}
-
-
 }

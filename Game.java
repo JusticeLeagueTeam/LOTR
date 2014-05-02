@@ -3,6 +3,7 @@ package LOTR;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.Random;
 
 
 
@@ -42,9 +43,17 @@ public class Game {
 	 */
 	public static boolean isFog=false;
 	/**
+	 * Kod melyik orajelnel jelent meg
+	 */
+	public static int fogTick=-1;
+	/**
 	 * Kod print uzenete miatt szukseges flag
 	 */
 	public static boolean fogPrint=false;
+	/**
+	 * csak egy szamoljuk ki, hogy a kod (fog) mikor jojjon
+	 */
+	public static int FogRandom = -1;
 	/**
 	 * Specialis lovedeket jelzo flag.
 	 */
@@ -371,6 +380,29 @@ public class Game {
 	 * vagy veszitett-e mar.
 	 */
 	public static void tick() {
+		/**
+		 * kod beallitasa
+		 */
+		Random rand = new Random();
+		//ha meg nincs beallitva, akkor a jatek soran egyszer beallitjuk a random kezdoidopontot
+		if(Game.FogRandom == -1){
+			/**
+			 * 30 es 500 kozotti tick
+			 */
+			Game.FogRandom = rand.nextInt(500) + 30;
+			}
+		
+		if(Map.getTickCount() == FogRandom && Game.isFog == false){
+			//tesztelesnel 30. ticknel fog leszallni a kod
+			//flag-et felkapcsoljuk es elmentjuk a tick-szamot amikor indult
+			Game.isFog=true;
+			Game.fogTick=Map.getTickCount();
+		}
+		if(Game.isFog == true && Map.getTickCount() - Game.fogTick == 10){
+			//10 msp utan eloszlik a kod
+			Game.isFog=false;
+			Game.fogTick=-1;
+		}
 
 		//Valamit bekene hozza allitani
 		winGame();
