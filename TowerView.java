@@ -38,6 +38,8 @@ public class TowerView extends JPanel{
         		img = ImageIO.read(new File("bigtower_sm.png"));
         	if(t instanceof SmallTower)
         		img = ImageIO.read(new File("smalltower_sm.png"));
+        	if(Game.isSpecial == true)
+        		img = ImageIO.read(new File("special_attack_sm.png"));
         } catch (IOException e) {
         }
         /**

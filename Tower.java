@@ -139,7 +139,7 @@ public class Tower extends DefenseTools implements Observer{
 			if(is_in_target == true){
 				//ha specialis a lovedek
 				if(Game.isSpecial == true){
-					Game.isSpecial=false;//TODO:tobb torony eseten ez rossz helyen van
+					Game.isSpecial=false;
 					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
 						e.splitAttacked(firingPower + 10);
 					else

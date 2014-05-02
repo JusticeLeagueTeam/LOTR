@@ -381,7 +381,7 @@ public class Game {
 	 */
 	public static void tick() {
 		/**
-		 * kod beallitasa
+		 * kod kezdo tick-jenek beallitasa
 		 */
 		Random rand = new Random();
 		//ha meg nincs beallitva, akkor a jatek soran egyszer beallitjuk a random kezdoidopontot
@@ -391,7 +391,10 @@ public class Game {
 			 */
 			Game.FogRandom = rand.nextInt(500) + 30;
 			}
-		
+
+		/**
+		 * kod beallitasa
+		 */
 		if(Map.getTickCount() == FogRandom && Game.isFog == false){
 			//tesztelesnel 30. ticknel fog leszallni a kod
 			//flag-et felkapcsoljuk es elmentjuk a tick-szamot amikor indult
@@ -403,6 +406,17 @@ public class Game {
 			Game.isFog=false;
 			Game.fogTick=-1;
 		}
+		
+		/**
+		 * specialis lovedek beallitasa
+		 * 10% esellyel lesz specialis lovedek
+		 * de csak minimum 50-edik tick utan
+		 * ezt a flag-et a Tower osztaly allitja vissza, tamadas utan
+		 * igy csak egyetlen tower-nel fog elsulni ami pont jo
+		 */
+		if(Game.isSpecial == false && rand.nextInt(10) == 1 && Map.getTickCount() >= 50)
+			Game.isSpecial=true;
+
 
 		//Valamit bekene hozza allitani
 		winGame();
