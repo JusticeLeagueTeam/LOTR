@@ -427,6 +427,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 1)
 					{
@@ -435,6 +442,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 2)
 					{
@@ -443,6 +457,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 3)
 					{
@@ -451,6 +472,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					
 					//Masodik ellenfel tipusanak megallapitasa majd generalasa
@@ -461,6 +489,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 1)
 					{
@@ -469,6 +504,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 2)
 					{
@@ -477,6 +519,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 3)
 					{
@@ -485,6 +534,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 				}
 			}
@@ -505,6 +561,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 1)
 					{
@@ -513,6 +576,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 2)
 					{
@@ -521,6 +591,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 3)
 					{
@@ -529,6 +606,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					
 					//Masodik ellenfel tipusanak megallapitasa majd generalasa
@@ -539,6 +623,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 1)
 					{
@@ -547,6 +638,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 2)
 					{
@@ -555,6 +653,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 3)
 					{
@@ -563,6 +668,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 				}
 			}
@@ -582,6 +694,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 1)
 					{
@@ -590,6 +709,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 2)
 					{
@@ -598,6 +724,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber1 == 3)
 					{
@@ -606,6 +739,13 @@ public class Map {
 						e.position.setColumnValue(startPos1.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					
 					//Masodik ellenfel tipusanak megallapitasa majd generalasa
@@ -616,6 +756,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 1)
 					{
@@ -624,6 +771,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 2)
 					{
@@ -632,6 +786,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 					if(randomNumber2 == 3)
 					{
@@ -640,6 +801,13 @@ public class Map {
 						e.position.setColumnValue(startPos2.getColumnValue());
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
+						//Observer minta feliratkozasok
+						for(Tower t : Map.towers){
+							e.addObserver(t);
+						}
+						for(Barrier b : Map.barriers){
+							e.addObserver(b);
+						}
 					}
 				}
 			}
@@ -930,6 +1098,8 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		}
 		if(temp >= 0){
 			Map.enemies.remove(temp);
+			if(View.enemyviews.size() >= temp)
+				View.enemyviews.remove(temp);
 		}
 		/**
 		 * osszes ellenfelet ellenorizzuk, hogy meghalt-e
@@ -942,6 +1112,8 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		}
 		if(temp >= 0){
 			Map.enemies.remove(temp);
+			if(View.enemyviews.size() >= temp)
+				View.enemyviews.remove(temp);
 		}
 		/**
 		 * osszes torony tick() metodusa lefut

@@ -102,7 +102,6 @@ public class Tower extends DefenseTools implements Observer{
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
-		
 		// segedvaltozo
 		//minden ellenfelen vegigmegy a ciklus es ellenorzi a hatotavot
 		//ha benne van es eljott a tamadas ideje, akkor megtamadja
@@ -148,21 +147,8 @@ public class Tower extends DefenseTools implements Observer{
 					 * publci static flag beallitasa, hogy a minden enemies-en vegigmeno cikluson kivul jojjon letre az uj enemy
 					 */
 					Map.indexOfSplitAttacked=Map.enemies.indexOf(e);
-							
-					if(Game.fileMode){
-						try{
-							Game.bufferedWriter.newLine();
-							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
-							Game.bufferedWriter.newLine();
-							Game.bufferedWriter.newLine();
-						}
-						catch(IOException ex) {
-							System.out.println("Hibas output fajl.");
-						}
-					}
-					else{
-						System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
-					}
+
+					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
 				}
 				else{
 					//normal lovedek
@@ -172,20 +158,7 @@ public class Tower extends DefenseTools implements Observer{
 						e.Attacked(firingPower + 10);
 					else
 						e.Attacked(firingPower);
-					if(Game.fileMode){
-						try{
-							Game.bufferedWriter.newLine();
-							Game.bufferedWriter.write(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
-							Game.bufferedWriter.newLine();
-							//Game.bufferedWriter.newLine();
-						}
-						catch(IOException ex) {
-							System.out.println("Hibas output fajl.");
-						}
-					}
-					else{
-						System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
-					}
+					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
 				}
 			}
 		}
