@@ -1137,6 +1137,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
 		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
 		       	Map.enemies.add(enemy);
+		       	View.enemyviews.add(new EnemyView(enemy));
 		       	for(Tower t : Map.towers){
 		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
 		       	}
@@ -1149,6 +1150,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
 		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
 		       	Map.enemies.add(enemy);
+		       	View.enemyviews.add(new EnemyView(enemy));
 		       	for(Tower t : Map.towers){
 		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
 		       	}
@@ -1161,6 +1163,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
 		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
 		       	Map.enemies.add(enemy);
+		       	View.enemyviews.add(new EnemyView(enemy));
 		       	for(Tower t : Map.towers){
 		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
 		       	}
@@ -1173,6 +1176,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		       	enemy.lastPosition.setColumnValue(Map.enemies.get(indexOfSplitAttacked).lastPosition.getColumnValue());
 		       	enemy.setHealth(Map.enemies.get(indexOfSplitAttacked).health);
 		       	Map.enemies.add(enemy);
+		       	View.enemyviews.add(new EnemyView(enemy));
 		       	for(Tower t : Map.towers){
 		       		Map.enemies.get(Map.enemies.indexOf(enemy)).addObserver(t);
 		       	}
