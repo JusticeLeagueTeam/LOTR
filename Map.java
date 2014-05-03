@@ -1098,7 +1098,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		}
 		if(temp >= 0){
 			Map.enemies.remove(temp);
-			if(View.enemyviews.size() >= temp)
+			if(View.enemyviews.size()-1 >= temp)
 				View.enemyviews.remove(temp);
 		}
 		/**
@@ -1112,7 +1112,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		}
 		if(temp >= 0){
 			Map.enemies.remove(temp);
-			if(View.enemyviews.size() >= temp)
+			if(View.enemyviews.size()-1 >= temp)
 				View.enemyviews.remove(temp);
 		}
 		/**
