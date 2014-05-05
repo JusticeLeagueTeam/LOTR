@@ -13,6 +13,7 @@ import java.util.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -113,6 +114,25 @@ public class Main extends JPanel{
 			System.out.println("Udvozollek a Justice League prototipus programjaban!");
 			System.out.println("---------------------------------------------------");	
 		}
+		
+        	
+		ImageIcon img_logo = new ImageIcon("logo.png") ;
+        JLabel lbl = new JLabel(img_logo);
+	
+		final JComponent[] inputs = new JComponent[] {
+				new JLabel(img_logo),
+				new JLabel("Csapattagok:"),
+				new JLabel("         - Vámos Arnold"),
+				new JLabel("         - Valyon Balázs"),
+				new JLabel("         - Horváth Olivér"),
+				new JLabel("         - Reé Tamás"),
+				new JLabel(""),
+				new JLabel("A játék indításához kattintson az Ok gombra!")
+		};
+		
+		JOptionPane.showMessageDialog(null, inputs, "Üdvözlünk a játékban!",JOptionPane.PLAIN_MESSAGE);
+		
+		
 		/**
 		 * elso szekvencia diagram kezdete
 		 */

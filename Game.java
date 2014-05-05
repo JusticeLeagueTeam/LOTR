@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 
 
 /**Game osztaly, ososztalya nincsen, jatek "mozgasat" biztositja.
@@ -110,6 +112,10 @@ public class Game {
 				/**
 				 * vereseg kiirasa
 				 */
+				
+				JOptionPane.showMessageDialog(null, "A játéknak vége. Ön veszített!");
+				System.exit(0);
+				
 				if(Game.fileMode){
 					try{
 						Game.bufferedWriter.write("Game endGame - A jatekos veszitett, jatek vege");
@@ -371,6 +377,9 @@ public class Game {
 		{
 			//A jatekos nyert, flag beallitasa.
 			gameStatus = 3;
+			
+			JOptionPane.showMessageDialog(null, "A játéknak vége. Ön nyert!");
+			System.exit(0);
 		}
 	}
 
