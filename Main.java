@@ -24,6 +24,10 @@ public class Main extends JPanel{
 
 	public static void main(String[] args) {
 		/**
+		 * game es azon belul player letrejon
+		 */
+		Game game=new Game();
+		/**
 		 * GUI-hoz szukseges dolgok
 		 */
 		Map.view=new View();
@@ -133,10 +137,7 @@ public class Main extends JPanel{
 		JOptionPane.showMessageDialog(null, inputs, "Üdvözlünk a játékban!",JOptionPane.PLAIN_MESSAGE);
 		
 		
-		/**
-		 * elso szekvencia diagram kezdete
-		 */
-		Game game=new Game();
+
 		/**
 		 * ebbe olvassuk majd az inputot (konzol)
 		 */
