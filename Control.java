@@ -35,11 +35,28 @@ public class Control{
 			/**
 			 * BigTower letrehozasa
 			 */
-			BigTower bt = new BigTower();
-			bt.position.setRowValue(CellRow-2);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.towerviews.add(new TowerView(bt));
+			
+			/**
+			 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
+			 */
+			boolean positionIsUsed = false;	
+			if(!Map.towers.isEmpty()){
+				for(Tower t : Map.towers){
+					if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
+						positionIsUsed = true;
+					}
+				}
+			}
+			/**
+			 * Amennyiben az adott hely nem foglalt, letrehozzuk a BigTowert
+			 */
+			if(positionIsUsed == false){
+				BigTower bt = new BigTower();
+				bt.position.setRowValue(CellRow-2);
+				bt.position.setColumnValue(CellColumn);
+				Map.player.createDefenseTool(bt);
+				View.towerviews.add(new TowerView(bt));
+			}
 			/**
 			 * BigTowerFlag visszaallitasa
 			 */
@@ -56,11 +73,29 @@ public class Control{
 			/**
 			 * SmallTower letrehozasa
 			 */
-			SmallTower bt = new SmallTower();
-			bt.position.setRowValue(CellRow-2);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.towerviews.add(new TowerView(bt));
+			
+			/**
+			 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
+			 */
+			boolean positionIsUsed = false;	
+			if(!Map.towers.isEmpty()){
+				for(Tower t : Map.towers){
+					if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
+						positionIsUsed = true;
+						System.out.println("Foglalt");
+					}
+				}
+			}
+			/**
+			 * Amennyiben az adott hely nem foglalt, letrehozzuk a SmallTowert
+			 */
+			if(positionIsUsed == false){
+				SmallTower bt = new SmallTower();
+				bt.position.setRowValue(CellRow-2);
+				bt.position.setColumnValue(CellColumn);
+				Map.player.createDefenseTool(bt);
+				View.towerviews.add(new TowerView(bt));
+			}
 			/**
 			 * SmallTowerFlag visszaallitasa
 			 */
