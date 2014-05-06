@@ -1,10 +1,5 @@
 package LOTR;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.JPanel;
-
 public class Control{
 	private boolean BigTowerFlag=false;
 	private boolean SmallTowerFlag=false;
@@ -31,31 +26,36 @@ public class Control{
 			BigTowerFlag=true;
 		}
 		else if(BigTowerFlag == true){
-
 			/**
-			 * BigTower letrehozasa
+			 * Amennyiben a jatekos a palyara kattintott:
 			 */
-			
-			/**
-			 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
-			 */
-			boolean positionIsUsed = false;	
-			if(!Map.towers.isEmpty()){
-				for(Tower t : Map.towers){
-					if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
-						positionIsUsed = true;
+			if(CellRow-2 >= 0 && CellColumn >= 0){
+				/**
+				 * BigTower letrehozasa
+				 */
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
+				 */
+				boolean positionIsUsed = false;	
+				if(!Map.towers.isEmpty()){
+					for(Tower t : Map.towers){
+						if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
+							positionIsUsed = true;
+						}
 					}
 				}
-			}
-			/**
-			 * Amennyiben az adott hely nem foglalt, letrehozzuk a BigTowert
-			 */
-			if(positionIsUsed == false){
-				BigTower bt = new BigTower();
-				bt.position.setRowValue(CellRow-2);
-				bt.position.setColumnValue(CellColumn);
-				Map.player.createDefenseTool(bt);
-				View.towerviews.add(new TowerView(bt));
+				/**
+				 * Amennyiben az adott hely nem foglalt,
+				 * es nem ut, letrehozzuk a BigTowert
+				 */
+				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== false){
+					BigTower bt = new BigTower();
+					bt.position.setRowValue(CellRow-2);
+					bt.position.setColumnValue(CellColumn);
+					Map.player.createDefenseTool(bt);
+					View.towerviews.add(new TowerView(bt));
+				}
 			}
 			/**
 			 * BigTowerFlag visszaallitasa
@@ -69,32 +69,36 @@ public class Control{
 			SmallTowerFlag=true;
 		}
 		else if(SmallTowerFlag == true){
-
 			/**
-			 * SmallTower letrehozasa
+			 * Amennyiben a jatekos a palyara kattintott:
 			 */
-			
-			/**
-			 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
-			 */
-			boolean positionIsUsed = false;	
-			if(!Map.towers.isEmpty()){
-				for(Tower t : Map.towers){
-					if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
-						positionIsUsed = true;
-						System.out.println("Foglalt");
+			if(CellRow-2 >= 0 && CellColumn >= 0){
+				/**
+				 * SmallTower letrehozasa
+				 */
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
+				 */
+				boolean positionIsUsed = false;	
+				if(!Map.towers.isEmpty()){
+					for(Tower t : Map.towers){
+						if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
+							positionIsUsed = true;
+						}
 					}
 				}
-			}
-			/**
-			 * Amennyiben az adott hely nem foglalt, letrehozzuk a SmallTowert
-			 */
-			if(positionIsUsed == false){
-				SmallTower bt = new SmallTower();
-				bt.position.setRowValue(CellRow-2);
-				bt.position.setColumnValue(CellColumn);
-				Map.player.createDefenseTool(bt);
-				View.towerviews.add(new TowerView(bt));
+				/**
+				 * Amennyiben az adott hely nem foglalt,
+				 * es nem ut, letrehozzuk a SmallTowert
+				 */
+				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== false){
+					SmallTower bt = new SmallTower();
+					bt.position.setRowValue(CellRow-2);
+					bt.position.setColumnValue(CellColumn);
+					Map.player.createDefenseTool(bt);
+					View.towerviews.add(new TowerView(bt));
+				}
 			}
 			/**
 			 * SmallTowerFlag visszaallitasa
@@ -108,15 +112,37 @@ public class Control{
 			SwampFlag=true;
 		}
 		else if(SwampFlag == true){
-
 			/**
-			 * Swamp letrehozasa
+			 * Amennyiben a jatekos a palyara kattintott:
 			 */
-			Swamp bt = new Swamp();
-			bt.position.setRowValue(CellRow-2);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.barrierviews.add(new BarrierView(bt));
+			if(CellRow-2 >= 0 && CellColumn >= 0){
+				/**
+				 * Swamp letrehozasa
+				 */
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen nincs-e mar akadaly
+				 */
+				boolean positionIsUsed = false;	
+				if(!Map.barriers.isEmpty()){
+					for(Barrier b : Map.barriers){
+						if(b.getPosition().getRowValue() == CellRow-2 && b.getPosition().getColumnValue() == CellColumn){
+							positionIsUsed = true;
+						}
+					}
+				}
+				/**
+				 * Amennyiben az adott hely nem foglalt,
+				 * es ut, letrehozzuk a Swampet
+				 */
+				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== true){
+					Swamp bt = new Swamp();
+					bt.position.setRowValue(CellRow-2);
+					bt.position.setColumnValue(CellColumn);
+					Map.player.createDefenseTool(bt);
+					View.barrierviews.add(new BarrierView(bt));
+				}
+			}
 			/**
 			 * SwampFlag visszaallitasa
 			 */
@@ -129,15 +155,37 @@ public class Control{
 			ShiftingSandFlag=true;
 		}
 		else if(ShiftingSandFlag == true){
-
 			/**
-			 * ShiftingSand letrehozasa
+			 * Amennyiben a jatekos a palyara kattintott:
 			 */
-			ShiftingSand bt = new ShiftingSand();
-			bt.position.setRowValue(CellRow-2);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.barrierviews.add(new BarrierView(bt));
+			if(CellRow-2 >= 0 && CellColumn >= 0){
+				/**
+				 * ShiftingSand letrehozasa
+				 */
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen nincs-e mar akadaly
+				 */
+				boolean positionIsUsed = false;	
+				if(!Map.barriers.isEmpty()){
+					for(Barrier b : Map.barriers){
+						if(b.getPosition().getRowValue() == CellRow-2 && b.getPosition().getColumnValue() == CellColumn){
+							positionIsUsed = true;
+						}
+					}
+				}
+				/**
+				 * Amennyiben az adott hely nem foglalt,
+				 * es ut, letrehozzuk a ShiftingSandet
+				 */
+				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== true){
+					ShiftingSand bt = new ShiftingSand();
+					bt.position.setRowValue(CellRow-2);
+					bt.position.setColumnValue(CellColumn);
+					Map.player.createDefenseTool(bt);
+					View.barrierviews.add(new BarrierView(bt));
+				}
+			}
 			/**
 			 * ShiftingSandFlag visszaallitasa
 			 */
@@ -150,15 +198,37 @@ public class Control{
 			SpeedStoneFlag=true;
 		}
 		else if(SpeedStoneFlag == true){
-
 			/**
-			 * SpeedStone letrehozasa
+			 * Amennyiben a jatekos a palyara kattintott:
 			 */
-			FiringSpeedIncreaseStone bt = new FiringSpeedIncreaseStone();
-			bt.position.setRowValue(CellRow-2);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.stoneviews.add(new StoneView(bt));
+			if(CellRow-2 >= 0 && CellColumn >= 0){
+				/**
+				 * SpeedStone letrehozasa
+				 */
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
+				 * amire a varazskovet ratehetjuk
+				 */
+				boolean towerOnPosition = false;	
+				if(!Map.towers.isEmpty()){
+					for(Tower t : Map.towers){
+						if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
+							towerOnPosition = true;
+						}
+					}
+				}
+				/**
+				 * Ha van mar torony az aktualis pozicion, akkor rahelyezzuk a varazskovet
+				 */
+				if(towerOnPosition == true){
+					FiringSpeedIncreaseStone bt = new FiringSpeedIncreaseStone();
+					bt.position.setRowValue(CellRow-2);
+					bt.position.setColumnValue(CellColumn);
+					Map.player.createDefenseTool(bt);
+					View.stoneviews.add(new StoneView(bt));
+				}
+			}
 			/**
 			 * SpeedStoneFlag visszaallitasa
 			 */
@@ -171,15 +241,37 @@ public class Control{
 			RangeStoneFlag=true;
 		}
 		else if(RangeStoneFlag == true){
-
 			/**
-			 * RangeStone letrehozasa
+			 * Amennyiben a jatekos a palyara kattintott:
 			 */
-			RangeExtenderStone bt = new RangeExtenderStone();
-			bt.position.setRowValue(CellRow-2);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.stoneviews.add(new StoneView(bt));
+			if(CellRow-2 >= 0 && CellColumn >= 0){
+				/**
+				 * RangeStone letrehozasa
+				 */
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
+				 * amire a varazskovet ratehetjuk
+				 */
+				boolean towerOnPosition = false;	
+				if(!Map.towers.isEmpty()){
+					for(Tower t : Map.towers){
+						if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
+							towerOnPosition = true;
+						}
+					}
+				}
+				/**
+				 * Ha van mar torony az aktualis pozicion, akkor rahelyezzuk a varazskovet
+				 */
+				if(towerOnPosition == true){
+					RangeExtenderStone bt = new RangeExtenderStone();
+					bt.position.setRowValue(CellRow-2);
+					bt.position.setColumnValue(CellColumn);
+					Map.player.createDefenseTool(bt);
+					View.stoneviews.add(new StoneView(bt));
+				}
+			}
 			/**
 			 * RangeStoneFlag visszaallitasa
 			 */
@@ -192,20 +284,54 @@ public class Control{
 			ElfDwarfStoneFlag=true;
 		}
 		else if(ElfDwarfStoneFlag == true){
-
 			/**
-			 * ElfDwarfStone letrehozasa
+			 * Amennyiben a jatekos a palyara kattintott:
 			 */
-			ElfDwarfSpecializedStone bt = new ElfDwarfSpecializedStone();
-			bt.position.setRowValue(CellRow-2);
-			bt.position.setColumnValue(CellColumn);
-			Map.player.createDefenseTool(bt);
-			View.stoneviews.add(new StoneView(bt));
+			if(CellRow-2 >= 0 && CellColumn >= 0){
+				/**
+				 * ElfDwarfStone letrehozasa
+				 */
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
+				 * amire a varazskovet ratehetjuk
+				 */
+				boolean towerOnPosition = false;	
+				if(!Map.towers.isEmpty()){
+					for(Tower t : Map.towers){
+						if(t.getPosition().getRowValue() == CellRow-2 && t.getPosition().getColumnValue() == CellColumn){
+							towerOnPosition = true;
+						}
+					}
+				}
+				
+				/**
+				 * Annak vizsgalata, hogy az adott helyen van-e mar akadaly
+				 * amire a varazskovet ratehetjuk
+				 */
+				boolean barrierOnPosition = false;	
+				if(!Map.barriers.isEmpty()){
+					for(Barrier b : Map.barriers){
+						if(b.getPosition().getRowValue() == CellRow-2 && b.getPosition().getColumnValue() == CellColumn){
+							barrierOnPosition = true;
+						}
+					}
+				}
+				/**
+				 * Ha van mar torony VAGY akadaly az aktualis pozicion, akkor rahelyezzuk a varazskovet
+				 */
+				if(towerOnPosition == true || barrierOnPosition == true){
+					ElfDwarfSpecializedStone bt = new ElfDwarfSpecializedStone();
+					bt.position.setRowValue(CellRow-2);
+					bt.position.setColumnValue(CellColumn);
+					Map.player.createDefenseTool(bt);
+					View.stoneviews.add(new StoneView(bt));
+				}
+			}
 			/**
 			 * ElfDwarfStoneFlag visszaallitasa
 			 */
 			ElfDwarfStoneFlag=false;
 		}
 	}
-
 }
