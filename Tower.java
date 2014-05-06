@@ -147,8 +147,6 @@ public class Tower extends DefenseTools implements Observer{
 					 * publci static flag beallitasa, hogy a minden enemies-en vegigmeno cikluson kivul jojjon letre az uj enemy
 					 */
 					Map.indexOfSplitAttacked=Map.enemies.indexOf(e);
-
-					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
 				}
 				else{
 					//normal lovedek
@@ -158,7 +156,6 @@ public class Tower extends DefenseTools implements Observer{
 						e.Attacked(firingPower + 10);
 					else
 						e.Attacked(firingPower);
-					System.out.println(Map.towers.indexOf(this) + ". sorszamu torony tamadja " + Map.enemies.indexOf(e) + ". sorszamu ellenfelet");
 				}
 			}
 		}
