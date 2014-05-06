@@ -19,6 +19,11 @@ public class Control{
 		int CellColumn = (x - (x % 33)) / 33;
 		int CellRow = (y - (y % 33)) / 33;
 		
+		for(Tower t : Map.towers){
+			System.out.println(t.getPosition().getRowValue()+" "+t.getPosition().getColumnValue()+
+					" "+t.firingPower+" "+" "+t.firingRange+" "+" "+t.firingSpeed);
+		}
+		
 		if(BigTowerFlag == false && x >= 250 && x <= 250+32 && y >= 0 && y <= 50){
 			/**
 			 * BigTower ikonra kattintott
@@ -207,6 +212,18 @@ public class Control{
 				 */
 				
 				/**
+				 * Annak vizsgalata, hogy az adott helyen nincs-e mar varazsko
+				 */
+				boolean positionIsUsed = false;	
+				if(!Map.magicStones.isEmpty()){
+					for(MagicStone st : Map.magicStones){
+						if(st.getPosition().getRowValue() == CellRow-2 && st.getPosition().getColumnValue() == CellColumn){
+							positionIsUsed = true;
+						}
+					}
+				}
+				
+				/**
 				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
 				 * amire a varazskovet ratehetjuk
 				 */
@@ -219,9 +236,10 @@ public class Control{
 					}
 				}
 				/**
-				 * Ha van mar torony az aktualis pozicion, akkor rahelyezzuk a varazskovet
+				 * Ha van mar torony az aktualis pozicion es meg nincs rajta varazsko,
+				 * akkor rahelyezzuk a varazskovet
 				 */
-				if(towerOnPosition == true){
+				if(positionIsUsed == false && towerOnPosition == true){
 					FiringSpeedIncreaseStone bt = new FiringSpeedIncreaseStone();
 					bt.position.setRowValue(CellRow-2);
 					bt.position.setColumnValue(CellColumn);
@@ -250,6 +268,18 @@ public class Control{
 				 */
 				
 				/**
+				 * Annak vizsgalata, hogy az adott helyen nincs-e mar varazsko
+				 */
+				boolean positionIsUsed = false;	
+				if(!Map.magicStones.isEmpty()){
+					for(MagicStone st : Map.magicStones){
+						if(st.getPosition().getRowValue() == CellRow-2 && st.getPosition().getColumnValue() == CellColumn){
+							positionIsUsed = true;
+						}
+					}
+				}
+				
+				/**
 				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
 				 * amire a varazskovet ratehetjuk
 				 */
@@ -262,9 +292,10 @@ public class Control{
 					}
 				}
 				/**
-				 * Ha van mar torony az aktualis pozicion, akkor rahelyezzuk a varazskovet
+				 * Ha van mar torony az aktualis pozicion es meg nincs rajta varazsko,
+				 * akkor rahelyezzuk a varazskovet
 				 */
-				if(towerOnPosition == true){
+				if(positionIsUsed == false && towerOnPosition == true){
 					RangeExtenderStone bt = new RangeExtenderStone();
 					bt.position.setRowValue(CellRow-2);
 					bt.position.setColumnValue(CellColumn);
@@ -293,6 +324,18 @@ public class Control{
 				 */
 				
 				/**
+				 * Annak vizsgalata, hogy az adott helyen nincs-e mar varazsko
+				 */
+				boolean positionIsUsed = false;	
+				if(!Map.magicStones.isEmpty()){
+					for(MagicStone st : Map.magicStones){
+						if(st.getPosition().getRowValue() == CellRow-2 && st.getPosition().getColumnValue() == CellColumn){
+							positionIsUsed = true;
+						}
+					}
+				}
+				
+				/**
 				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
 				 * amire a varazskovet ratehetjuk
 				 */
@@ -306,21 +349,10 @@ public class Control{
 				}
 				
 				/**
-				 * Annak vizsgalata, hogy az adott helyen van-e mar akadaly
-				 * amire a varazskovet ratehetjuk
+				 * Ha van mar torony az aktualis pozicion es meg nincs rajta varazsko,
+				 * akkor rahelyezzuk a varazskovet
 				 */
-				boolean barrierOnPosition = false;	
-				if(!Map.barriers.isEmpty()){
-					for(Barrier b : Map.barriers){
-						if(b.getPosition().getRowValue() == CellRow-2 && b.getPosition().getColumnValue() == CellColumn){
-							barrierOnPosition = true;
-						}
-					}
-				}
-				/**
-				 * Ha van mar torony VAGY akadaly az aktualis pozicion, akkor rahelyezzuk a varazskovet
-				 */
-				if(towerOnPosition == true || barrierOnPosition == true){
+				if(positionIsUsed == false && towerOnPosition == true){
 					ElfDwarfSpecializedStone bt = new ElfDwarfSpecializedStone();
 					bt.position.setRowValue(CellRow-2);
 					bt.position.setColumnValue(CellColumn);
