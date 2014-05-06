@@ -18,13 +18,13 @@ public class Main extends JPanel{
 		Map.frame = new JFrame("Lord of the Rings - by justice_league");
 		Map.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        View mv = new View();
-        Map.frame.add(mv);
+        	View mv = new View();
+        	Map.frame.add(mv);
         
-        Map.control=new Control();
+        	Map.control=new Control();
         
-        Map.frame.setSize(840, 892);
-        Map.frame.setVisible(true);
+        	Map.frame.setSize(840, 892);
+        	Map.frame.setVisible(true);
         
       
 		/**
@@ -35,7 +35,7 @@ public class Main extends JPanel{
 		Game.gameStatus=1;
         	
 		ImageIcon img_logo = new ImageIcon("logo.png") ;
-        JLabel lbl = new JLabel(img_logo);
+        	JLabel lbl = new JLabel(img_logo);
 	
 		final JComponent[] inputs = new JComponent[] {
 				new JLabel(img_logo),
