@@ -69,7 +69,11 @@ public class Player {
 			 */
 			this.magicPower -= dt.getCost();
 		}
-		else
-			System.out.println("Nincs eleg varazsero.");
+		/**
+		 * Amennyiben nincs eleg varazsero
+		 */
+		else{
+			//DO NOTHING
+		}
 	}
 }
