@@ -1,7 +1,5 @@
 package LOTR;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -30,16 +28,6 @@ public class Game {
 	 *  3 = A jatekos nyert, winGame() metodus allitja be, a jatek megallt.
 	 */
 	public static int gameStatus;
-	/**
-	 * fileMode flag
-	 * ha fajlbol vesszuk az input-kat es fajlba irjuk az output-okat akkor true lesz
-	 * program indulasakor a Main arugmentumkent kapja meg a fajlneveket
-	 */
-	public static boolean fileMode=false;
-	/**
-	 * BufferedWriter az output fajlba irasahoz
-	 */
-	public static BufferedWriter bufferedWriter = null;
 	/**
 	 * Kodot jelzo flag.
 	 */
@@ -96,254 +84,11 @@ public class Game {
 					(e.position.getRowValue() == 1 && e.position.getColumnValue() == 24))
 			{
 				/**
-				 * lehetseges input-ok
-				 */
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.newLine();
-						Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, swamp, printdefensetools, printall, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
-						Game.bufferedWriter.newLine();
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				/**
 				 * vereseg kiirasa
 				 */
-				
-				JOptionPane.showMessageDialog(null, "A j·tÈknak vÈge. ÷n veszÌtett!");
+				JOptionPane.showMessageDialog(null, "A j√°t√©knak v√©ge. √ñn vesz√≠tett!");
 				System.exit(0);
 				
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("Game endGame - A jatekos veszitett, jatek vege");
-						Game.bufferedWriter.newLine();
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				/**
-				 * lehetseges input-ok
-				 */
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, swamp, printdefensetools, printall, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
-						Game.bufferedWriter.newLine();
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				/**
-				 * printall
-				 */
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("tick "+Map.getTickCount());
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("player varazsereje "+Map.player.getMagicPower());
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				//Tornyok kiiratasa
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("tornyok listaja:");
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				if(Map.towers.isEmpty()){
-					if(Game.fileMode){
-						try{
-							Game.bufferedWriter.write("nincs torony");
-							Game.bufferedWriter.newLine();
-						}
-						catch(IOException ex) {
-							System.out.println("Hibas output fajl.");
-						}
-					}
-				}
-				else{
-					LinkedList<Tower> towers = Map.getTowers();
-					for(Tower element : towers){
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-								Game.bufferedWriter.newLine();
-							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
-							}
-						}
-					}
-				}
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				//Akadalyok kiiratasa
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("akadalyok listaja:");
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				if(Map.barriers.isEmpty()){
-					if(Game.fileMode){
-						try{
-							Game.bufferedWriter.write("nincs akadaly");
-							Game.bufferedWriter.newLine();
-						}
-						catch(IOException ex) {
-							System.out.println("Hibas output fajl.");
-						}
-					}
-				}
-				else{
-					LinkedList<Barrier> barriers = Map.getBarriers();
-					for(Barrier element : barriers){
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-								Game.bufferedWriter.newLine();
-							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
-							}
-						}
-					}
-				}
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				//Varazskovek kiiratasa
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("varazskovek listaja:");
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				if(Map.magicStones.isEmpty()){
-					if(Game.fileMode){
-						try{
-							Game.bufferedWriter.write("nincs varazsko");
-							Game.bufferedWriter.newLine();
-						}
-						catch(IOException ex) {
-							System.out.println("Hibas output fajl.");
-						}
-					}
-				}
-				else{
-					LinkedList<MagicStone> magicStones = Map.getMagicStones();
-					for(MagicStone element : magicStones){
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue());
-								Game.bufferedWriter.newLine();
-							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
-							}
-						}
-					}
-				}
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				//Ellenfelek kiiaratasa
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("ellenfelek:");
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				if(Map.enemies.isEmpty()){
-					if(Game.fileMode){
-						try{
-							Game.bufferedWriter.write("nincs ellenfel");
-							Game.bufferedWriter.newLine();
-						}
-						catch(IOException ex) {
-							System.out.println("Hibas output fajl.");
-						}
-					}
-				}
-				else{
-					LinkedList<Enemy> enemies = Map.getEnemies();
-					for(Enemy element : enemies){
-						if(Game.fileMode){
-							try{
-								Game.bufferedWriter.write(element.getClass().toString().substring(6).toLowerCase()+" "+element.position.getRowValue()+" "+element.position.getColumnValue()+" "+element.getHealth());
-								Game.bufferedWriter.newLine();
-							}
-							catch(IOException ex) {
-								System.out.println("Hibas output fajl.");
-							}
-						}
-					}
-				}
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.newLine();
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
-				
-				/**
-				 * lehetseges input-ok
-				 */
-				if(Game.fileMode){
-					try{
-						Game.bufferedWriter.write("Lehetseges inputok: gamestart, bigtower, smalltower, enemy , shiftingsand, swamp, printdefensetools, printall, firingspeedincreaserstone, rangeextenderstone, elfdwarfspecializedstone, tick, endgame, exit");
-					}
-					catch(IOException ex) {
-						System.out.println("Hibas output fajl.");
-					}
-				}
 				
 				//A jatekos veszitett, flag beallitasa.
 				gameStatus = 2;
@@ -378,7 +123,7 @@ public class Game {
 			//A jatekos nyert, flag beallitasa.
 			gameStatus = 3;
 			
-			JOptionPane.showMessageDialog(null, "A j·tÈknak vÈge. ÷n nyert!");
+			JOptionPane.showMessageDialog(null, "A j√°t√©knak v√©ge. √ñn nyert!");
 			System.exit(0);
 		}
 	}
