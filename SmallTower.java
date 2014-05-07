@@ -33,7 +33,7 @@ public class SmallTower extends Tower {
 		/**
 		 * kisebb tuzero
 		 */
-	 	firingPower = 30;
+	 	firingPower = 1;
 	 	/**
 	 	 * alapbol nincs rajta ko
 	 	 */
