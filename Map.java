@@ -75,6 +75,11 @@ public class Map {
 	 */
 	public static int indexOfSplitAttacked = -1;
 	
+	/**
+	 * Az elso enemy gyartasanak idozitesehez szukseges flag
+	 */
+	private static boolean firstEnemyFlag = true;
+	
 	/**A Map osztaly konstruktora, amely egy Map objektum letrehozasakor hivodik meg. 
 	 * A konstruktor hozza letre a Jatekost (Player) reprezentalo objektumot, amelyet a 
 	 * jatek soran vegig hasznalunk. 
@@ -414,11 +419,12 @@ public class Map {
 
 			
 			//Ha a jatek elejen jarunk, az elso tick_count intervallumban
-			if((tick_counter > 0) && (tick_counter <= 100))
+			if(Game.gameStatus == 1 && tick_counter <= 100)
 			{							
 				//tick-ek szamatol fuggoen generalodnak
-				if(tick_counter % 15 == 0)
-				{
+				//elso enemy egybol a jatek kezdetekor
+				if(tick_counter % 15 == 0 || (Map.enemies.isEmpty() == true && firstEnemyFlag == true))
+				{	firstEnemyFlag = false;
 					//Elso ellenfel tipusanak megallapitasa majd generalasa
 					if(randomNumber1 == 0)
 					{
@@ -898,7 +904,7 @@ public class Map {
 
 	
 	/**A generalt ellenfelek lepteteseert felelo metodus.
-	 * ParamĂ©terkĂ©nt megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
+	 * ParamÄ‚Â©terkÄ‚Â©nt megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
 	 * a kovetkezo, ahova lepnie kell a kovetkezo orajel ciklusban.
 	 * @param position Az ellenfel aktualis pozicioja a palyan (cella, mezo)
 	 * @return Az uj cella helyzete, ahova az ellenfelek lepnie kell.
