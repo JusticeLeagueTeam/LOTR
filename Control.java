@@ -19,11 +19,6 @@ public class Control{
 		int CellColumn = (x - (x % 33)) / 33;
 		int CellRow = (y - (y % 33)) / 33;
 		
-		for(Tower t : Map.towers){
-			System.out.println(t.getPosition().getRowValue()+" "+t.getPosition().getColumnValue()+
-					" "+t.firingPower+" "+" "+t.firingRange+" "+" "+t.firingSpeed);
-		}
-		
 		if(BigTowerFlag == false && x >= 250 && x <= 250+32 && y >= 0 && y <= 50){
 			/**
 			 * BigTower ikonra kattintott
