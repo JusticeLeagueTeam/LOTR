@@ -86,7 +86,7 @@ public class Game {
 				/**
 				 * vereseg kiirasa
 				 */
-				JOptionPane.showMessageDialog(null, "A játéknak vége. Ön veszített!");
+				JOptionPane.showMessageDialog(null, "A jateknak vege! On vesztett!");
 				System.exit(0);
 				
 				
@@ -123,7 +123,7 @@ public class Game {
 			//A jatekos nyert, flag beallitasa.
 			gameStatus = 3;
 			
-			JOptionPane.showMessageDialog(null, "A játéknak vége. Ön nyert!");
+			JOptionPane.showMessageDialog(null, "A jateknak vege! On nyert!");
 			System.exit(0);
 		}
 	}
