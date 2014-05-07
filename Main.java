@@ -40,15 +40,15 @@ public class Main extends JPanel{
 		final JComponent[] inputs = new JComponent[] {
 				new JLabel(img_logo),
 				new JLabel("Csapattagok:"),
-				new JLabel("         - Vámos Arnold"),
-				new JLabel("         - Valyon Balázs"),
-				new JLabel("         - Horváth Olivér"),
-				new JLabel("         - Reé Tamás"),
+				new JLabel("         - Vamos Arnold"),
+				new JLabel("         - Valyon Balazs"),
+				new JLabel("         - Horvath Oliver"),
+				new JLabel("         - Ree Tamas"),
 				new JLabel(""),
-				new JLabel("A játék indításához kattintson az Ok gombra!")
+				new JLabel("A jatek inditasahoz kattintson az Ok gombra!")
 		};
 		
-		JOptionPane.showMessageDialog(null, inputs, "Üdvözlünk a játékban!",JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null, inputs, "Udvozlunk a jatekban!",JOptionPane.PLAIN_MESSAGE);
 
 	}
 }

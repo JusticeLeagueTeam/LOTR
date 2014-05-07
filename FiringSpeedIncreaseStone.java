@@ -45,7 +45,7 @@ public class FiringSpeedIncreaseStone extends MagicStone {
 		{
 			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())
 			{
-				t.setFiringSpeed(t.getFiringSpeed() - this.firingSpeedIncreaseValue);
+				t.setFiringSpeed(t.getFiringSpeed() + this.firingSpeedIncreaseValue);
 			}
 		}
 	}

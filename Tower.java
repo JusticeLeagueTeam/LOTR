@@ -3,6 +3,7 @@ package LOTR;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Random;
 
 
 /**
@@ -149,13 +150,24 @@ public class Tower extends DefenseTools implements Observer{
 					Map.indexOfSplitAttacked=Map.enemies.indexOf(e);
 				}
 				else{
+					//random valtozo FiringSpeedIncreaseStone-hoz
+					Random rand = new Random();
+					int randomNumber = rand.nextInt(5);
 					//normal lovedek
-					//elotte ellenorzi, hogy van-e a tornyon specialis ko
+					//elotte ellenorzi, hogy van-e a tornyon ko
 					//illetve ahhoz tartozo ellenfelrol van-e szo
 					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
 						e.Attacked(firingPower + 10);
-					else
+					else if(this.firingSpeed == 1 && randomNumber % 2 == 0){
+						//gyakori tuzelest ugy oldjuk meg, hogy ha a ko aktiv,
+						//akkor 50% esellyel dupla tamadas tortenik
 						e.Attacked(firingPower);
+						e.Attacked(firingPower);
+					}
+					else
+					{
+						e.Attacked(firingPower);
+					}
 				}
 			}
 		}

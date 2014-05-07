@@ -22,9 +22,10 @@ public class SmallTower extends Tower {
 		 */
 		cost = 400;
 		/**
-		 * 4 tick utan tuzel
+		 * normal tuzeles = 0
+		 * gyorsabb tuzeles = 1
 		 */
-		firingSpeed = 4;
+		firingSpeed = 0;
 		/**
 		 * kisebb lotav
 		 */

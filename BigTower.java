@@ -21,9 +21,10 @@ public class BigTower extends Tower {
 		 */
 		cost = 600;
 		/**
-		 * 6 tick utan tuzel
+		 * normal tuzeles = 0
+		 * gyorsabb tuzeles = 1
 		 */
-		firingSpeed = 6;
+		firingSpeed = 0;
 		/**
 		 * nagyobb lotav
 		 */
