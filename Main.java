@@ -18,21 +18,15 @@ public class Main extends JPanel{
 		Map.frame = new JFrame("Lord of the Rings - by justice_league");
 		Map.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        	View mv = new View();
-        	Map.frame.add(mv);
+        View mv = new View();
+        Map.frame.add(mv);
         
-        	Map.control=new Control();
+        Map.control=new Control();
         
-        	Map.frame.setSize(840, 892);
-        	Map.frame.setVisible(true);
+        Map.frame.setSize(840, 892);
+        Map.frame.setVisible(true);
         
-      
-		/**
-		 * gameStatus flag inicializalasa
-		 * protonal 0-an volt
-		 * amig nincs start gomb, addig gui-nal 1
-		 */
-		Game.gameStatus=1;
+		Game.gameStatus=0;
         	
 		ImageIcon img_logo = new ImageIcon("logo.png") ;
         	JLabel lbl = new JLabel(img_logo);
@@ -49,6 +43,8 @@ public class Main extends JPanel{
 		};
 		
 		JOptionPane.showMessageDialog(null, inputs, "Udvozlunk a jatekban!",JOptionPane.PLAIN_MESSAGE);
+		
+		Game.gameStatus=1;
 
 	}
 }
