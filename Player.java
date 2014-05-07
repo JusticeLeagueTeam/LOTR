@@ -14,7 +14,7 @@ public class Player {
 	private int magicPower;
 
 	public Player(){
-		this.magicPower = 155500;
+		this.magicPower = 1500;
 	}
 	/**
 	 * visszaadja a jatekos varazserejet
