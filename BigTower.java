@@ -32,7 +32,7 @@ public class BigTower extends Tower {
 		/**
 		 * nagyobb tuzero
 		 */
-	 	firingPower = 50;
+	 	firingPower = 2;
 	 	/**
 	 	 * alapbol nincs rajta ko
 	 	 */
