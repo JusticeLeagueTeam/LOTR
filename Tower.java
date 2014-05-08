@@ -1,5 +1,4 @@
 package LOTR;
-
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
@@ -156,8 +155,9 @@ public class Tower extends DefenseTools implements Observer{
 					//normal lovedek
 					//elotte ellenorzi, hogy van-e a tornyon ko
 					//illetve ahhoz tartozo ellenfelrol van-e szo
-					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
+					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf)){
 						e.Attacked(firingPower + 10);
+						}
 					else if(this.firingSpeed == 1 && randomNumber % 2 == 0){
 						//gyakori tuzelest ugy oldjuk meg, hogy ha a ko aktiv,
 						//akkor 50% esellyel dupla tamadas tortenik

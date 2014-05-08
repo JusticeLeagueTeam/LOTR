@@ -1,5 +1,4 @@
 package LOTR;
-
 public class Control{
 	private boolean BigTowerFlag=false;
 	private boolean SmallTowerFlag=false;

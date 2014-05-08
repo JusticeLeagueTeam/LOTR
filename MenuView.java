@@ -1,4 +1,4 @@
-package LOTR;
+package LOTR; 
 
 import java.awt.Font;
 import java.awt.Graphics;
@@ -69,6 +69,6 @@ public class MenuView extends JPanel{
 		g.drawString("100", 253 + 32*6, 45);
 		
 		g.drawString(Integer.toString(Map.player.getMagicPower()) , 370 + 32*11, 40);
-		g.drawString(Integer.toString(Map.totalNumberOfEnemies-Map.enemies.size()) , 370 + 32*11, 20);
+		g.drawString(Integer.toString(Map.totalNumberOfEnemies-Map.numberOfCreatedEnemies) , 370 + 32*11, 20);
 	}
 }

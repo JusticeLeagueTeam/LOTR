@@ -1,4 +1,4 @@
-package LOTR;
+package LOTR; 
 
 
 
@@ -153,7 +153,7 @@ public class Enemy extends Observable {
 		//az orajel erteke minden tick()-nel no
 		tick_counter++;
 		//megfelelo orajel letelte utan lep egyet
-		if(tick_counter % this.getSpeed() == 0 && tick_counter > 2){
+		if(tick_counter != 0 && tick_counter % this.getSpeed() == 0 && tick_counter > 2){
 			/**
 			 * tick nullazasa a lassitas aktivalasa miatt kell
 			 * a lenyeg az oszthatosag ugyis
@@ -172,7 +172,6 @@ public class Enemy extends Observable {
 			//a lepesrol ertesitjuk a tornyokat, akadalyokat
 			setChanged();
 			notifyObservers();
-
 		}
 	}
 

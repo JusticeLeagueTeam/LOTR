@@ -1,4 +1,4 @@
-package LOTR;
+package LOTR; 
 
 
 
@@ -59,7 +59,9 @@ public class Map {
 	public static int tickFlag;
 	
 	/** A letrehozhato ellenfelek maximalis szamat adja meg. */
-	public static int totalNumberOfEnemies=30;
+	public static int totalNumberOfEnemies;
+	/** Az eddig legyartott ellenfelek szama */
+	public static int numberOfCreatedEnemies;
 	
 	/** A tick_counter akkori erteke, amikor legutoljara
 	 * hoztunk letre ellenfelet.
@@ -97,8 +99,9 @@ public class Map {
 		magicStones=new LinkedList<MagicStone>();		
 		tick_counter=0;
 		tickFlag=0;
-		totalNumberOfEnemies=20;
+		totalNumberOfEnemies=30;
 		lastTickValueWhenEnemyWasCreated=0;
+		numberOfCreatedEnemies = 0;
 		
 		
 		//A palyat tarolo adatszerkezet letrehozasa, valamint
@@ -346,15 +349,10 @@ public class Map {
 	 * A generalt ellenfelek osszetetele valtozhat.
 	 */
 	public static void createEnemy(){
-		/**
-		 * torony letrehozasa TESZTHEZ
-		 */
-		if(tick_counter == 10){
-			
-		}
+
 		//Ha a meg legyarthato ellenfelek szama nagyobb mint nulla
 		//akkor meg letrehozhatunk ujabbakat
-		if(totalNumberOfEnemies > 0)
+		if(totalNumberOfEnemies >= numberOfCreatedEnemies)
 		{
 			//Random generatorral hozunk letre ellenfeleket
 			//Egy alkalommal mindig ketto darabot
@@ -548,7 +546,9 @@ public class Map {
 							e.addObserver(b);
 						}
 					}
+					numberOfCreatedEnemies += 2;
 				}
+				
 			}
 			
 			//Ha a jatekban a masodik tick intervallumban jarunk
@@ -682,7 +682,9 @@ public class Map {
 							e.addObserver(b);
 						}
 					}
+					numberOfCreatedEnemies += 2;
 				}
+				
 			}
 			//Ha a jatekban a harmadik tick intervallumban jarunk
 			if(tick_counter > 300)
@@ -815,6 +817,7 @@ public class Map {
 							e.addObserver(b);
 						}
 					}
+					numberOfCreatedEnemies += 2;
 				}
 			}
 			

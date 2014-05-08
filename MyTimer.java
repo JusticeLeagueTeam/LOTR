@@ -1,4 +1,4 @@
-package LOTR;
+package LOTR; 
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
