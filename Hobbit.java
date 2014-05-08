@@ -27,7 +27,7 @@ public class Hobbit extends Enemy {
 		/**
 		 * ennyit nyer a jatekos ha megoli
 		 */
-		magicPowerGain = 240;
+		magicPowerGain = health/4;
 		/**
 		 * alapbol nulla az orajel
 		 */
