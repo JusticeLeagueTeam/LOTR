@@ -429,6 +429,15 @@ public class Map {
 						Human e = new Human();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -444,6 +453,15 @@ public class Map {
 						Hobbit e = new Hobbit();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -459,6 +477,15 @@ public class Map {
 						Dwarf e = new Dwarf();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -474,6 +501,15 @@ public class Map {
 						Elf e = new Elf();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -491,6 +527,15 @@ public class Map {
 						Human e = new Human();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -506,6 +551,15 @@ public class Map {
 						Hobbit e = new Hobbit();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -521,6 +575,15 @@ public class Map {
 						Dwarf e = new Dwarf();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -536,6 +599,15 @@ public class Map {
 						Elf e = new Elf();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -565,6 +637,15 @@ public class Map {
 						Human e = new Human();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -580,6 +661,15 @@ public class Map {
 						Hobbit e = new Hobbit();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -595,6 +685,15 @@ public class Map {
 						Dwarf e = new Dwarf();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -610,6 +709,15 @@ public class Map {
 						Elf e = new Elf();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -627,6 +735,15 @@ public class Map {
 						Human e = new Human();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -642,6 +759,15 @@ public class Map {
 						Hobbit e = new Hobbit();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -657,6 +783,15 @@ public class Map {
 						Dwarf e = new Dwarf();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -672,6 +807,15 @@ public class Map {
 						Elf e = new Elf();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -700,6 +844,15 @@ public class Map {
 						Human e = new Human();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -715,6 +868,15 @@ public class Map {
 						Hobbit e = new Hobbit();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -730,6 +892,15 @@ public class Map {
 						Dwarf e = new Dwarf();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -745,6 +916,15 @@ public class Map {
 						Elf e = new Elf();
 						e.position.setRowValue(startPos1.getRowValue());
 						e.position.setColumnValue(startPos1.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -762,6 +942,15 @@ public class Map {
 						Human e = new Human();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -777,6 +966,15 @@ public class Map {
 						Hobbit e = new Hobbit();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -792,6 +990,15 @@ public class Map {
 						Dwarf e = new Dwarf();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -807,6 +1014,15 @@ public class Map {
 						Elf e = new Elf();
 						e.position.setRowValue(startPos2.getRowValue());
 						e.position.setColumnValue(startPos2.getColumnValue());
+						/**
+						 * A jatek folyaman egyre erosebb enemy-ket hozunk letre
+						 */
+						if(numberOfCreatedEnemies >= 10 && numberOfCreatedEnemies < 20){
+							e.setHealth(e.getHealth()*2);
+						}
+						else if(numberOfCreatedEnemies > 20){
+							e.setHealth(e.getHealth()*3);
+						}
 						enemies.add(e);
 						View.enemyviews.add(new EnemyView(e));
 						//Observer minta feliratkozasok
@@ -820,10 +1036,6 @@ public class Map {
 					numberOfCreatedEnemies += 2;
 				}
 			}
-			
-			//TODO: tovabbi intervallumokat megcsinalni, de ehhez
-			//a tobbiekkel kell egyeztetni a konkret ertekekrol
-			//Tovabbi tick intervallumok definialhatoak
 		}
 		
 	}
@@ -907,7 +1119,7 @@ public class Map {
 
 	
 	/**A generalt ellenfelek lepteteseert felelo metodus.
-	 * ParamÄ‚Â©terkÄ‚Â©nt megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
+	 * ParamĂ„â€šĂ‚Â©terkĂ„â€šĂ‚Â©nt megkapja az ellenfel helyzetet, majd az alapjan kiszamitja, hogy melyik mezo
 	 * a kovetkezo, ahova lepnie kell a kovetkezo orajel ciklusban.
 	 * @param position Az ellenfel aktualis pozicioja a palyan (cella, mezo)
 	 * @return Az uj cella helyzete, ahova az ellenfelek lepnie kell.
