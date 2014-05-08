@@ -140,7 +140,7 @@ public class Tower extends DefenseTools implements Observer{
 				if(Game.isSpecial == true){
 					Game.isSpecial=false;
 					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf))
-						e.splitAttacked(firingPower + 10);
+						e.splitAttacked(firingPower + 4);
 					else
 						e.splitAttacked(firingPower);
 					/**
@@ -156,7 +156,7 @@ public class Tower extends DefenseTools implements Observer{
 					//elotte ellenorzi, hogy van-e a tornyon ko
 					//illetve ahhoz tartozo ellenfelrol van-e szo
 					if(elfOrDwarfFlag == true && (e instanceof Elf || e instanceof Dwarf)){
-						e.Attacked(firingPower + 10);
+						e.Attacked(firingPower + 4);
 						}
 					else if(this.firingSpeed == 1 && randomNumber % 2 == 0){
 						//gyakori tuzelest ugy oldjuk meg, hogy ha a ko aktiv,
