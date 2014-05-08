@@ -15,7 +15,7 @@ public class Hobbit extends Enemy {
 		/**
 		 * eletereje alacsony
 		 */
-		health = 80;
+		health = 960;
 		/**
 		 * furgen mozog
 		 */
@@ -27,7 +27,7 @@ public class Hobbit extends Enemy {
 		/**
 		 * ennyit nyer a jatekos ha megoli
 		 */
-		magicPowerGain = 80;
+		magicPowerGain = 240;
 		/**
 		 * alapbol nulla az orajel
 		 */
