@@ -14,7 +14,7 @@ public class Dwarf extends Enemy {
 		/**
 		 * eletereje nagy, eros pancelja van
 		 */
-		health = 120;
+		health = 1440;
 		/**
 		 * sok pancel es alacsony termet miatt lassu
 		 */
@@ -26,7 +26,7 @@ public class Dwarf extends Enemy {
 		/**
 		 * ennyit nyer a jatekos ha megoli
 		 */
-		magicPowerGain = 120;
+		magicPowerGain = 360;
 		/**
 		 * alapbol nulla az orajel
 		 */
