@@ -26,7 +26,7 @@ public class Dwarf extends Enemy {
 		/**
 		 * ennyit nyer a jatekos ha megoli
 		 */
-		magicPowerGain = 360;
+		magicPowerGain = health/4;
 		/**
 		 * alapbol nulla az orajel
 		 */
