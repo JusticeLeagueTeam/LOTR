@@ -87,17 +87,19 @@ public class View extends JPanel implements MouseListener{
 	}
 	/**
 	 * Mouselistener kotelezoen felulirando metodusai
-	 * ezek kozul az elso eleg egyelore, max jovo heten finomitjuk
+	 * ezek kozul csak az egyiket implementaljuk tenylegesen
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		int x=e.getPoint().x;
-		int y=e.getPoint().y;
-		Map.control.controlClick(x,y);
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		//kattintas helyet atadjuk a Control-nak
+		int x=e.getPoint().x;
+		int y=e.getPoint().y;
+		Map.control.controlClick(x,y);
 
 	}
 	@Override
