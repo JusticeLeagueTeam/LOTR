@@ -181,7 +181,7 @@ public class Enemy extends Observable {
 	 */
 	public void Attacked(int a){
 		setHealth(getHealth() - a);
-		Map.player.setMagicPower(Map.player.getMagicPower() + a);
+		Map.player.setMagicPower(Map.player.getMagicPower() + a/4);
 	}
 	/**
 	 * specialis lovedekkel lett megtamadva az ellenfel
@@ -191,7 +191,7 @@ public class Enemy extends Observable {
 		setHealth(getHealth() - a);
 		setHealth(getHealth()/2);
 
-		Map.player.setMagicPower(Map.player.getMagicPower() + a);
+		Map.player.setMagicPower(Map.player.getMagicPower() + a/4);
 	}
 
 }
