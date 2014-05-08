@@ -31,7 +31,7 @@ public class Human extends Enemy {
 		/**
 		 * ennyit nyer a jatekos ha megoli
 		 */
-		magicPowerGain = 300;
+		magicPowerGain = health/4;
 		/**
 		 * alapbol nulla az orajel
 		 */
