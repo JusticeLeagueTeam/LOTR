@@ -19,7 +19,7 @@ public class Human extends Enemy {
 		/**
 		 * eletereje kozepes
 		 */
-		health = 100;
+		health = 1200;
 		/**
 		 * sebessge kozepes
 		 */
@@ -31,7 +31,7 @@ public class Human extends Enemy {
 		/**
 		 * ennyit nyer a jatekos ha megoli
 		 */
-		magicPowerGain = 100;
+		magicPowerGain = 300;
 		/**
 		 * alapbol nulla az orajel
 		 */
