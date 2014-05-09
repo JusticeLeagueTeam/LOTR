@@ -686,7 +686,7 @@ public class Map {
 			}
 			
 			//Ha a jatekban a masodik tick intervallumban jarunk
-			if((tick_counter > 70) && (tick_counter <= 140))
+			if((tick_counter > 70) && (tick_counter <= 150))
 			{							
 				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
 				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
@@ -894,7 +894,7 @@ public class Map {
 			}
 			//Ha a jatekban a harmadik tick intervallumban jarunk
 			//Itt 3db ellenfelet hozunk letre 
-			if(tick_counter > 140)
+			if(tick_counter > 150)
 			{							
 				//Ha az utolso letrehozas ota eltelt megfelelo mennyisegu tick
 				//if(tick_counter - lastTickValueWhenEnemyWasCreated == 15)
