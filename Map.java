@@ -1508,7 +1508,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 		 * specialis lovedek ellenorzese
 		 * ha azzal lottunk akkor uj enemy letrehozasa
 		 */
-		if(indexOfSplitAttacked != -1){
+		if(indexOfSplitAttacked != -1 && Map.enemies.size() > 0){
 			//elotte ellenorzi, hogy van-e a tornyon specialis ko
 			//illetve ahhoz tartozo ellenfelrol van-e szo
 			if(Map.enemies.get(indexOfSplitAttacked) instanceof Elf == true){
