@@ -1317,7 +1317,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 				e.tick();
 			}
 		}
-		if(temp >= 0){
+		if(temp >= 0 && temp <= Map.enemies.size() && temp <= View.enemyviews.size()){
 			Map.enemies.remove(temp);
 			if(View.enemyviews.size()-1 >= temp)
 				View.enemyviews.remove(temp);
@@ -1331,7 +1331,7 @@ LinkedList<Position> positionList = new LinkedList<Position>();
 				temp=Map.enemies.indexOf(e);
 			}
 		}
-		if(temp >= 0){
+		if(temp >= 0 && temp <= Map.enemies.size() && temp <= View.enemyviews.size()){
 			Map.enemies.remove(temp);
 			if(View.enemyviews.size()-1 >= temp)
 				View.enemyviews.remove(temp);

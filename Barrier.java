@@ -70,10 +70,10 @@ public class Barrier extends DefenseTools implements Observer {
 		for(Enemy e : Map.enemies){
 			if((e.getPosition().getRowValue() == this.position.getRowValue()) && e.getPosition().getColumnValue() == this.position.getColumnValue()){
 				//akadaly tipusatol fuggoen kicsit vagy jobban lassitja az ellenfelet
-				if(retardingValue == 1){
+				if(retardingValue == 1 && e.getSpeed() <= 8){
 					e.setSpeed(e.getSpeed() +1);
 				}
-				if(retardingValue == 2){
+				if(retardingValue == 2 && e.getSpeed() <= 10){
 					e.setSpeed(e.getSpeed() +2);
 				}
 			}

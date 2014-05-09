@@ -17,7 +17,7 @@ public class Control{
 		 */
 		int CellColumn = (x - (x % 33)) / 33;
 		int CellRow = (y - (y % 33)) / 33;
-		
+
 		if(BigTowerFlag == false && x >= 250 && x <= 250+32 && y >= 0 && y <= 50){
 			/**
 			 * BigTower ikonra kattintott
@@ -32,7 +32,7 @@ public class Control{
 				/**
 				 * BigTower letrehozasa
 				 */
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
 				 */
@@ -45,15 +45,18 @@ public class Control{
 					}
 				}
 				/**
-				 * Amennyiben az adott hely nem foglalt,
-				 * es nem ut, letrehozzuk a BigTowert
+				 * Amennyiben az adott hely nem foglalt, es nem ut
+				 * letrehozzuk a BigTowert
 				 */
 				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== false){
 					BigTower bt = new BigTower();
-					bt.position.setRowValue(CellRow-2);
-					bt.position.setColumnValue(CellColumn);
-					Map.player.createDefenseTool(bt);
-					View.towerviews.add(new TowerView(bt));
+					//varazsero ellenorzes
+					if(bt.getCost() <= Map.player.getMagicPower()){
+						bt.position.setRowValue(CellRow-2);
+						bt.position.setColumnValue(CellColumn);
+						Map.player.createDefenseTool(bt);
+						View.towerviews.add(new TowerView(bt));
+					}
 				}
 			}
 			/**
@@ -75,7 +78,7 @@ public class Control{
 				/**
 				 * SmallTower letrehozasa
 				 */
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen nincs-e mar torony
 				 */
@@ -93,10 +96,13 @@ public class Control{
 				 */
 				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== false){
 					SmallTower bt = new SmallTower();
-					bt.position.setRowValue(CellRow-2);
-					bt.position.setColumnValue(CellColumn);
-					Map.player.createDefenseTool(bt);
-					View.towerviews.add(new TowerView(bt));
+					//varazsero ellenorzes
+					if(bt.getCost() <= Map.player.getMagicPower()){
+						bt.position.setRowValue(CellRow-2);
+						bt.position.setColumnValue(CellColumn);
+						Map.player.createDefenseTool(bt);
+						View.towerviews.add(new TowerView(bt));
+					}
 				}
 			}
 			/**
@@ -118,7 +124,7 @@ public class Control{
 				/**
 				 * Swamp letrehozasa
 				 */
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen nincs-e mar akadaly
 				 */
@@ -136,10 +142,13 @@ public class Control{
 				 */
 				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== true){
 					Swamp bt = new Swamp();
-					bt.position.setRowValue(CellRow-2);
-					bt.position.setColumnValue(CellColumn);
-					Map.player.createDefenseTool(bt);
-					View.barrierviews.add(new BarrierView(bt));
+					//van-e eleg varazsero
+					if(bt.getCost() <= Map.player.getMagicPower()){
+						bt.position.setRowValue(CellRow-2);
+						bt.position.setColumnValue(CellColumn);
+						Map.player.createDefenseTool(bt);
+						View.barrierviews.add(new BarrierView(bt));
+					}
 				}
 			}
 			/**
@@ -161,7 +170,7 @@ public class Control{
 				/**
 				 * ShiftingSand letrehozasa
 				 */
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen nincs-e mar akadaly
 				 */
@@ -179,10 +188,13 @@ public class Control{
 				 */
 				if(positionIsUsed == false && Map.mainMap[CellRow-2][CellColumn].getRoadFlag()== true){
 					ShiftingSand bt = new ShiftingSand();
-					bt.position.setRowValue(CellRow-2);
-					bt.position.setColumnValue(CellColumn);
-					Map.player.createDefenseTool(bt);
-					View.barrierviews.add(new BarrierView(bt));
+					//van-e eleg varazsero
+					if(bt.getCost() <= Map.player.getMagicPower()){
+						bt.position.setRowValue(CellRow-2);
+						bt.position.setColumnValue(CellColumn);
+						Map.player.createDefenseTool(bt);
+						View.barrierviews.add(new BarrierView(bt));
+					}
 				}
 			}
 			/**
@@ -204,7 +216,7 @@ public class Control{
 				/**
 				 * SpeedStone letrehozasa
 				 */
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen nincs-e mar varazsko
 				 */
@@ -216,7 +228,7 @@ public class Control{
 						}
 					}
 				}
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
 				 * amire a varazskovet ratehetjuk
@@ -235,10 +247,13 @@ public class Control{
 				 */
 				if(positionIsUsed == false && towerOnPosition == true){
 					FiringSpeedIncreaseStone bt = new FiringSpeedIncreaseStone();
-					bt.position.setRowValue(CellRow-2);
-					bt.position.setColumnValue(CellColumn);
-					Map.player.createDefenseTool(bt);
-					View.stoneviews.add(new StoneView(bt));
+					//van-e eleg varazsero
+					if(bt.getCost() <= Map.player.getMagicPower()){
+						bt.position.setRowValue(CellRow-2);
+						bt.position.setColumnValue(CellColumn);
+						Map.player.createDefenseTool(bt);
+						View.stoneviews.add(new StoneView(bt));
+					}
 				}
 			}
 			/**
@@ -260,7 +275,7 @@ public class Control{
 				/**
 				 * RangeStone letrehozasa
 				 */
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen nincs-e mar varazsko
 				 */
@@ -272,7 +287,7 @@ public class Control{
 						}
 					}
 				}
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
 				 * amire a varazskovet ratehetjuk
@@ -291,10 +306,13 @@ public class Control{
 				 */
 				if(positionIsUsed == false && towerOnPosition == true){
 					RangeExtenderStone bt = new RangeExtenderStone();
-					bt.position.setRowValue(CellRow-2);
-					bt.position.setColumnValue(CellColumn);
-					Map.player.createDefenseTool(bt);
-					View.stoneviews.add(new StoneView(bt));
+					//van-e eleg varazsero
+					if(bt.getCost() <= Map.player.getMagicPower()){
+						bt.position.setRowValue(CellRow-2);
+						bt.position.setColumnValue(CellColumn);
+						Map.player.createDefenseTool(bt);
+						View.stoneviews.add(new StoneView(bt));
+					}
 				}
 			}
 			/**
@@ -316,7 +334,7 @@ public class Control{
 				/**
 				 * ElfDwarfStone letrehozasa
 				 */
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen nincs-e mar varazsko
 				 */
@@ -328,7 +346,7 @@ public class Control{
 						}
 					}
 				}
-				
+
 				/**
 				 * Annak vizsgalata, hogy az adott helyen van-e mar torony
 				 * amire a varazskovet ratehetjuk
@@ -341,17 +359,20 @@ public class Control{
 						}
 					}
 				}
-				
+
 				/**
 				 * Ha van mar torony az aktualis pozicion es meg nincs rajta varazsko,
 				 * akkor rahelyezzuk a varazskovet
 				 */
 				if(positionIsUsed == false && towerOnPosition == true){
 					ElfDwarfSpecializedStone bt = new ElfDwarfSpecializedStone();
-					bt.position.setRowValue(CellRow-2);
-					bt.position.setColumnValue(CellColumn);
-					Map.player.createDefenseTool(bt);
-					View.stoneviews.add(new StoneView(bt));
+					//van-e eleg varazsero
+					if(bt.getCost() <= Map.player.getMagicPower()){
+						bt.position.setRowValue(CellRow-2);
+						bt.position.setColumnValue(CellColumn);
+						Map.player.createDefenseTool(bt);
+						View.stoneviews.add(new StoneView(bt));						
+					}
 				}
 			}
 			/**
