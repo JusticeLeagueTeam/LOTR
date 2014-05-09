@@ -22,7 +22,10 @@ public class ElfDwarfSpecializedStone extends MagicStone {
 	/**
 	 * A tornyok tulajdonsagait modositani kepes metodus.
 	 */
-	public void effectTower() {		
+	public void effectTower() {	
+		/**
+		 * vegigmegy a tornyokon es kivalasztja azt amelyik tulajdonsagat frissiteni kell
+		 */
 		for(Tower t : Map.towers)
 		{
 			if(t.position.getColumnValue()==this.position.getColumnValue() && t.position.getRowValue() == this.position.getRowValue())

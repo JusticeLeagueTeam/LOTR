@@ -8,15 +8,27 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-
+/**
+ * Menu megjeleniteseert felelos osztaly
+ * @author justice_league
+ *
+ */
 public class MenuView extends JPanel{
-	
+	/**
+	 * megjelenitest vegzo metodus
+	 * @param g
+	 */
 	public void Paint(Graphics g) {
 		super.paint(g);
-
+		/**
+		 * ezekbe a valtozokba tolti a menuhoz szukeges ikonokat, logot, stb.-t
+		 */
 		BufferedImage img_logo = null;
 		BufferedImage varazsero = null;
 		BufferedImage ellenfelek = null;
+		/**
+		 * ikonok
+		 */
 		BufferedImage img0 = null;
 		BufferedImage img1 = null;
 		BufferedImage img2 = null;
@@ -26,19 +38,21 @@ public class MenuView extends JPanel{
 		BufferedImage img6 = null;
 		
 		/**
-		 * TODO: logo balra, cuccok cost-ja cuccikon ala, varazsero jobb oldalt, maradek enemy jobboldalt,
-		 * szebb hatter menu mogott, meretek igazitasa
+		 * betolti a png fajlokat
 		 */
-		
         try {
+        	//logo
         	img_logo = ImageIO.read(new File("logo.png"));
+        	//tornyok es akadalyok
         	img0 = ImageIO.read(new File("bigtower_sm.png"));
         	img1 = ImageIO.read(new File("smalltower_sm.png"));
         	img2 = ImageIO.read(new File("swamp_sm.png"));
         	img3 = ImageIO.read(new File("shiftingsand_sm.png"));
+        	//varazskovek
         	img4 = ImageIO.read(new File("firingspeedincreasestone_sm.png"));
        		img5 = ImageIO.read(new File("firingrangeincreasestone_sm.png"));
        		img6 = ImageIO.read(new File("elfdwarfspecializedstone_sm.png"));
+       		//tovabbi ellenfelek es varazsero
        		ellenfelek = ImageIO.read(new File("tovabbi_ellenfelek.png"));
        		varazsero = ImageIO.read(new File("varazsero.png"));
         } catch (IOException e) {
@@ -67,7 +81,10 @@ public class MenuView extends JPanel{
 		g.drawString("50", 256 + 32*4, 45);
 		g.drawString("50", 256 + 32*5, 45);
 		g.drawString("100", 253 + 32*6, 45);
-		
+		/**
+		 * tovabbi ellenfelek szama
+		 * jatekos varazsereje
+		 */
 		g.drawString(Integer.toString(Map.player.getMagicPower()) , 370 + 32*11, 40);
 		g.drawString(Integer.toString(Map.totalNumberOfEnemies-Map.numberOfCreatedEnemies) , 370 + 32*11, 20);
 	}

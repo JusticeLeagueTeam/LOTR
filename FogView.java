@@ -6,8 +6,16 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-
+/**
+ * Kod megjeleniteseert felelos osztaly
+ * @author justice_league
+ *
+ */
 public class FogView extends JPanel{
+	/**
+	 * rajzolast vegzo metodus
+	 * @param g
+	 */
 	public void Paint(Graphics g) {
 		super.paint(g);
 		/**

@@ -43,7 +43,9 @@ public class Player {
 			boolean isRoad=Map.mainMap[dt.getPosition().getRowValue()][dt.getPosition().getColumnValue()].getRoadFlag();
 			String dtClass = dt.getClass().toString();
 			dtClass = dtClass.substring(11);	//TODO
-
+			/**
+			 * tornyok
+			 */
 			if(dt instanceof Tower && isRoad == false)
 			{
 				Map.towers.add((Tower) dt);
@@ -51,6 +53,9 @@ public class Player {
 					e.addObserver(Map.towers.get(Map.towers.indexOf(dt)));
 				}
 			}
+			/**
+			 * akadalyok
+			 */
 			if(dt instanceof Barrier && isRoad)
 			{
 				Map.barriers.add((Barrier) dt);
@@ -58,6 +63,9 @@ public class Player {
 					e.addObserver(Map.barriers.get(Map.barriers.indexOf(dt)));
 				}
 			}
+			/**
+			 * varazskovek
+			 */
 			if(dt instanceof MagicStone)
 			{
 				Map.magicStones.add((MagicStone) dt);

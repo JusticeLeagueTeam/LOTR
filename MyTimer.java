@@ -8,21 +8,31 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
+/**
+ * orajelgeneralasert felelos osztaly
+ * o hivja meg a tobbi osztaly tick metodusat
+ * es a GUI frissiteset is inditja
+ * @author justice_league
+ *
+ */
 public class MyTimer {
-	
+	/**
+	 * periodusido es Java beepitett Timer osztalya
+	 */
 	private int period;
 	Timer timer;
-
+	/**
+	 * konstruktor
+	 * elinditja a Timer-t ami 1000 ms-onkent general orajelet (tick)
+	 */
 	public MyTimer(){
 		timer=new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
-			  @Override
-			  public void run() {
-				 // if(Game.gameStatus == 1)
-					  MyTimer.tick();
-			  }
-			}, 1000, 1000);
+			@Override
+			public void run() {
+				MyTimer.tick();
+			}
+		}, 1000, 1000);
 	}
 	/**
 	 * Elinditja az idozitot

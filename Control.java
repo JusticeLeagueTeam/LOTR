@@ -1,5 +1,17 @@
 package LOTR;
+/**
+ * Control osztaly
+ * MVC model szerinti Control funkciokat latja el
+ * ami jelen esetben a kattintas hatasanak kezeleset jelenti
+ * @author justice_league
+ *
+ */
 public class Control{
+	/**
+	 * ezek a flag-ek arra kellenek, hogy megjegyezze a program
+	 * ha mar rakattintott a menuben egy ikonra
+	 * kovetkezo kattintasra visszaall false-ra a flag
+	 */
 	private boolean BigTowerFlag=false;
 	private boolean SmallTowerFlag=false;
 	private boolean SwampFlag=false;
@@ -7,9 +19,13 @@ public class Control{
 	private boolean SpeedStoneFlag=false;
 	private boolean RangeStoneFlag=false;
 	private boolean ElfDwarfStoneFlag=false;
-
+	/**
+	 * ezt hiva meg a View MouseListener metodusa
+	 * parameterkent megkapja a kattintas pixel-koordinatait
+	 * @param x
+	 * @param y
+	 */
 	public void controlClick(int x, int y) {
-
 		/**
 		 * cella sor es oszlop kiszamolasahoz leosztok 33-vel
 		 * Kiemeltem a szamitast elore, mivel mindenhol ezt kell hasznalni,

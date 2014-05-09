@@ -7,7 +7,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-
+/**
+ * Ellenfelek megjeleniteseert felelos osztaly
+ * @author justice_league
+ *
+ */
 public class EnemyView extends JPanel{
 	/**
 	 * enemy objektum
@@ -31,6 +35,7 @@ public class EnemyView extends JPanel{
 		super.paint(g);
 		/**
 		 * fajlbol olvassa be a karater kepet
+		 * megfelelo faj ikonjat valasztja ki
 		 */
         BufferedImage img = null;
         try {

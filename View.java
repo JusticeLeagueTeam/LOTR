@@ -12,6 +12,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class View extends JPanel implements MouseListener{
+	/**
+	 * kollekciok a megjeleniteshez szukseges objektumok szamara
+	 * minden a GUI-ban megjelenitett objektumhoz van View osztaly
+	 * menunek, palyanak, kodnek kulon view-ja van
+	 */
 	public static LinkedList<EnemyView> enemyviews;
 	public static LinkedList<TowerView> towerviews;
 	public static LinkedList<BarrierView> barrierviews;
@@ -20,7 +25,9 @@ public class View extends JPanel implements MouseListener{
 	public static MapView mapview;
 	public static FogView fogview;
 
-
+	/**
+	 * a megjelenitest vegzo metodus
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		/**
@@ -72,6 +79,9 @@ public class View extends JPanel implements MouseListener{
 	 * konstruktor
 	 */
 	public View(){
+		/**
+		 * kollekciok inicializalasa
+		 */
 		enemyviews = new LinkedList<EnemyView>();
 		towerviews = new LinkedList<TowerView>();
 		barrierviews = new LinkedList<BarrierView>();
@@ -90,12 +100,12 @@ public class View extends JPanel implements MouseListener{
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-
+		//kotelezo implementalni a metodust, de nem hasznaljuk, emiatt ures
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		//kattintas helyet atadjuk a Control-nak
+		//kattintas pixel-koordinatait atadjuk a Control-nak
 		int x=e.getPoint().x;
 		int y=e.getPoint().y;
 		Map.control.controlClick(x,y);
@@ -103,17 +113,14 @@ public class View extends JPanel implements MouseListener{
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
-
-
+		//kotelezo implementalni a metodust, de nem hasznaljuk, emiatt ures
 	}
 	@Override
 	public void mouseEntered(MouseEvent e) {
-
-
+		//kotelezo implementalni a metodust, de nem hasznaljuk, emiatt ures
 	}
 	@Override
 	public void mouseExited(MouseEvent e) {
-
-
+		//kotelezo implementalni a metodust, de nem hasznaljuk, emiatt ures
 	}
 }
