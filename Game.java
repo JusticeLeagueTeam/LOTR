@@ -163,12 +163,12 @@ public class Game {
 		
 		/**
 		 * specialis lovedek beallitasa
-		 * 10% esellyel lesz specialis lovedek
+		 * 3% esellyel lesz specialis lovedek
 		 * de csak minimum 50-edik tick utan
 		 * ezt a flag-et a Tower osztaly allitja vissza, tamadas utan
 		 * igy csak egyetlen tower-nel fog elsulni ami pont jo
 		 */
-		if(Game.isSpecial == false && rand.nextInt(10) == 1 && Map.getTickCount() >= 50)
+		if(Game.isSpecial == false && rand.nextInt(30) == 1 && Map.getTickCount() >= 50)
 			Game.isSpecial=true;
 
 
